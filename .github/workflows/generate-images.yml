@@ -1,0 +1,52 @@
+name: Generate Site Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'all | site | blog | post:filename.md'
+        required: false
+        default: 'all'
+
+concurrency:
+  group: generate-images
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate images
+        env:
+          IMAGE_WORKER_URL: https://master-image-generator.speech-recognition-cloud.workers.dev/generate
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          R2_PUBLIC_BASE: ${{ vars.R2_PUBLIC_BASE }}
+          SITE_ID: dragonmedicalone
+        run: node generate-images.js ${{ github.event.inputs.mode }}
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add -A
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "chore: update images and manifest"
+          git push
