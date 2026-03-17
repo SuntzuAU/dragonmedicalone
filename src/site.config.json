@@ -78,6 +78,7 @@
     "columns": [
       {
         "name": "Dragon Medical One",
+        "url": "https://www.voicerecognition.com.au/products/dragon-medical-one",
         "tier": "primary",
         "type": "Cloud (Azure)",
         "medicalVocab": "Yes - multiple medical specialties",
@@ -91,6 +92,7 @@
       },
       {
         "name": "SRC Medical Ultra",
+        "url": "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software",
         "tier": "secondary",
         "type": "Cloud + local install",
         "medicalVocab": "Expansive medical vocabulary across multiple specialties",
