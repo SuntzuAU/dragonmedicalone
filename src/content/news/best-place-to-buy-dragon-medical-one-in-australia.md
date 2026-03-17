@@ -10,6 +10,9 @@ externalLinks:
   - to: "dictationsolutions.com.au"
     anchor: "professional dictation solutions"
     url: "https://www.dictationsolutions.com.au"
+  - to: "pdfsoftware.com.au"
+    anchor: "PDF software"
+    url: "https://www.pdfsoftware.com.au"
 ---
 
 Dragon Medical One is available in Australia through Microsoft's authorised reseller network. It is not sold directly by Microsoft or Nuance in Australia — purchasing is done through resellers who are authorised to license the product, provide local support, and assist with deployment.
@@ -41,6 +44,8 @@ Dragon Medical One can be purchased directly at [voicerecognition.com.au](https:
 For practices that also need dictation recorders, microphones, transcription services, or workflow management software alongside Dragon Medical One, it is worth considering whether your reseller can supply those too. A practice that dictates heavily often needs more than just speech recognition software — the full documentation workflow includes capture hardware, file management, and sometimes transcription support.
 
 For the full range of [professional dictation solutions](https://www.dictationsolutions.com.au) including Philips SpeechLive, dictation hardware, and transcription services, Dictation Solutions covers the broader workflow beyond Dragon itself.
+
+Clinicians who dictate heavily also tend to generate a high volume of clinical documents — letters, referrals, reports. Having capable [PDF software](https://www.pdfsoftware.com.au) to edit, combine, and manage those documents without an expensive Adobe subscription is a practical complement to a dictation workflow.
 
 ## Free Trial Before You Buy
 
