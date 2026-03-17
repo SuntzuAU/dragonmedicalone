@@ -6,8 +6,8 @@
   },
   "about-banner": {
     "key": "about-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/nuance-dragon-medical-australia.jpg",
-    "altText": "Nuance Dragon Medical speech recognition software - Australian healthcare documentation"
+    "r2Key": "dragonmedicalone/2026/03/17/voice-to-text-medical.jpg",
+    "altText": "Voice to text medical software - Australian healthcare documentation with Dragon Medical One"
   },
   "cta-banner": {
     "key": "cta-banner",
@@ -21,13 +21,13 @@
   },
   "feature-cloud-security": {
     "key": "feature-cloud-security",
-    "r2Key": "dragonmedicalone/2026/03/17/Speech-Recognition-Australia.jpg",
-    "altText": "Speech recognition Australia - Microsoft Azure cloud security with Australian data residency"
+    "r2Key": "dragonmedicalone/2026/03/17/dragon-medical-one-australia.jpg",
+    "altText": "Dragon Medical One cloud security - Microsoft Azure with Australian data residency"
   },
   "feature-specialty-vocab": {
     "key": "feature-specialty-vocab",
-    "r2Key": "dragonmedicalone/2026/03/17/dragon-medical-1.jpg",
-    "altText": "Dragon Medical One specialty vocabulary - medical speech to text for Australian doctors"
+    "r2Key": "dragonmedicalone/2026/03/17/Speech-to-text-medical-software.jpg",
+    "altText": "Speech to text medical software with specialty vocabulary for Australian doctors"
   },
   "workflow-banner": {
     "key": "workflow-banner",
@@ -36,7 +36,7 @@
   },
   "emr-banner": {
     "key": "emr-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical One-Australia.jpg",
+    "r2Key": "dragonmedicalone/2026/03/17/nuance-dragon-medical-australia.jpg",
     "altText": "Dragon Medical One EMR integration - works with Best Practice, Genie, Medical Director and more"
   }
 }
