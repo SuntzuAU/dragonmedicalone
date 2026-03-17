@@ -118,7 +118,7 @@ const comparisonRows = [
       .card p{color:#475569;font-size:15px;margin:0}
 
       /* FULL-WIDTH IMAGE BREAK */
-      .img-break{border-radius:16px;overflow:hidden;aspect-ratio:21/6;background:#e0f2fe;margin:0 0 0}
+      .img-break{border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#e0f2fe;margin:0}
       .img-break img{width:100%;height:100%;object-fit:cover}
 
       /* COMPARISON TABLE */
@@ -199,7 +199,7 @@ const comparisonRows = [
         .hero h1{font-size:32px}
         .c6,.c4,.c7,.c5,.c3{grid-column:span 12}
         .sh h2{font-size:26px}
-        .img-break{aspect-ratio:16/6}
+        .img-break{aspect-ratio:16/9}
       }
       @media(max-width:600px){
         .nav-links{display:none}
@@ -219,7 +219,7 @@ const comparisonRows = [
         .footer-inner{flex-direction:column;align-items:center;text-align:center}
         .footer-links{justify-content:center}
         .enterprise-grid{grid-template-columns:1fr !important}
-        .img-break{aspect-ratio:16/7}
+        .img-break{aspect-ratio:16/9}
       }
     </style>
   </head>
@@ -335,7 +335,6 @@ const comparisonRows = [
             ))}
           </div>
 
-          <!-- Image break after benefits -->
           {imgSrc("benefits-banner") && (
             <div class="img-break" style="margin-top:24px">
               <img src={imgSrc("benefits-banner")} alt={imgAlt("benefits-banner")} loading="lazy" decoding="async" />
@@ -361,7 +360,6 @@ const comparisonRows = [
             ))}
           </div>
 
-          <!-- Image break after how it works -->
           {imgSrc("workflow-banner") && (
             <div class="img-break" style="margin-top:24px">
               <img src={imgSrc("workflow-banner")} alt={imgAlt("workflow-banner")} loading="lazy" decoding="async" />
@@ -387,7 +385,6 @@ const comparisonRows = [
             <span style="display:inline-flex;align-items:center;padding:12px 20px;font-size:14px;color:#475569">+ Epic, Cerner, and more</span>
           </div>
 
-          <!-- Image break after EMR section -->
           {imgSrc("emr-banner") && (
             <div class="img-break" style="margin-top:32px">
               <img src={imgSrc("emr-banner")} alt={imgAlt("emr-banner")} loading="lazy" decoding="async" />
