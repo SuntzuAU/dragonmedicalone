@@ -1,0 +1,43 @@
+---
+import site from '../site.config.json';
+const c = site.colours;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Use - {site.siteName}</title>
+  <link rel="canonical" href={`${site.domain}/terms`} />
+  <style is:inline>
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.7}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 24px}
+    h1{font-size:32px;margin:0 0 8px}
+    h2{font-size:20px;margin:32px 0 8px}
+    p{color:#334155;font-size:15px}
+    a{text-decoration:underline;text-underline-offset:2px}
+    .back{display:inline-block;margin-bottom:24px;font-size:14px;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/" style={`color:${c.primary}`}>&larr; Back to {site.siteName}</a>
+    <h1>Terms of Use</h1>
+    <p><em>Last updated: March 2026</em></p>
+    <h2>About this website</h2>
+    <p>This website is operated by Voice Recognition Australia and provides information about Dragon Medical One and related products. It is intended for Australian healthcare professionals and organisations.</p>
+    <h2>Information accuracy</h2>
+    <p>We make reasonable efforts to ensure the information on this website is accurate and current. However, product features, pricing, availability, and specifications may change without notice. Always verify current details directly with the vendor or with our team before making purchasing decisions.</p>
+    <h2>Product trademarks</h2>
+    <p>Dragon, Dragon Medical One, Dragon Copilot, Nuance, and PowerMic are trademarks of Microsoft Corporation or its affiliates. This website is operated by an authorised reseller and is not affiliated with, endorsed by, or sponsored by Microsoft or Nuance Communications except through authorised reseller agreements.</p>
+    <h2>Medical disclaimer</h2>
+    <p>Dragon Medical One is a clinical documentation tool designed to assist with administrative documentation workflows. It does not provide clinical advice, diagnosis, or treatment recommendations. It is not a medical device. Clinicians are responsible for reviewing and verifying all documentation produced using speech recognition software.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the extent permitted by Australian law, Voice Recognition Australia accepts no liability for loss or damage arising from the use of information on this website. This does not affect your rights under the Australian Consumer Law.</p>
+    <h2>Contact</h2>
+    <p>For questions about these terms, contact Voice Recognition Australia at <a href="https://www.voicerecognition.com.au">voicerecognition.com.au</a> or call 1300 255 900.</p>
+    <p style="color:#94a3b8;font-size:13px;margin-top:48px">&copy; {year} {site.siteName}</p>
+  </div>
+</body>
+</html>

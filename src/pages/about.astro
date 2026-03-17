@@ -1,0 +1,72 @@
+---
+import site from '../site.config.json';
+const c = site.colours;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - {site.siteName}</title>
+  <meta name="description" content="Voice Recognition Australia is Australia's longest-serving Dragon distributor. Over 26 years of deploying Dragon Medical One and speech recognition solutions for Australian healthcare professionals." />
+  <link rel="canonical" href={`${site.domain}/about`} />
+  {site.googleAnalyticsId && (
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.googleAnalyticsId}`}></script>
+    <script define:vars={{ gaId: site.googleAnalyticsId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+  )}
+  <style is:inline>
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.7}
+    .wrap{max-width:800px;margin:0 auto;padding:48px 24px}
+    h1{font-size:36px;margin:0 0 16px;letter-spacing:-0.02em}
+    h2{font-size:24px;margin:40px 0 12px}
+    p{color:#334155;font-size:16px;margin:0 0 16px}
+    .back{display:inline-block;margin-bottom:24px;font-size:14px;font-weight:600;text-decoration:none}
+    .proof{display:inline-block;background:#f0f9ff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#0c4a6e;margin:4px 4px 4px 0}
+    .cta-btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;font-size:16px;color:white;text-decoration:none;margin-top:24px}
+    footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:64px}
+    .footer-inner{max-width:800px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{color:#64748b;text-decoration:none}
+    .footer-links a:hover{color:white}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/" style={`color:${c.primary}`}>&larr; Back to {site.siteName}</a>
+    <h1>About Voice Recognition Australia</h1>
+    <p>Voice Recognition Australia is Australia's longest-serving Dragon distributor, with over 26 years of experience deploying Dragon speech recognition solutions across healthcare, legal, government, and enterprise environments.</p>
+    <p>We have more Dragon Medical One subscribers than any other Australian distributor. Our team provides remote installation, personalised one-on-one training, and ongoing technical support from Australia.</p>
+
+    <h2>Russell Bewsell, Founder and CEO</h2>
+    <p>Russell Bewsell has 28 years of experience in the speech recognition industry. He is one of Australia's leading authorities on Dragon deployment in healthcare and enterprise, and presented the Dragonology national training series on behalf of Nuance in 2017, speaking to thousands of Australian professionals across multiple cities.</p>
+    <p>Russell's approach is practical and grounded in real-world deployment. Voice Recognition Australia exists to help Australian clinicians and professionals get the most from speech recognition technology, with honest advice, local support, and deep product expertise.</p>
+
+    <div style="margin-top:32px">
+      {site.proofPoints?.map((p) => (
+        <span class="proof">&#10003; {p}</span>
+      ))}
+    </div>
+
+    <h2>What we provide with Dragon Medical One</h2>
+    <p>Every Dragon Medical One subscription from Voice Recognition Australia includes professional remote installation via TeamViewer, one hour of personalised one-on-one training, the PowerMic Mobile smartphone app, 12 months of Australian-based technical support, access to subscriber-only training videos, and automatic cloud updates.</p>
+    <p>For hospitals and large medical centres, we provide enterprise deployment planning, volume licensing, Nuance Management Center configuration, and ongoing support for VDI and Citrix environments.</p>
+
+    <a class="cta-btn" href="/#final-cta" style={`background:${c.accent};color:${c.text}`}>Get in touch</a>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>&copy; {year} {site.siteName}</div>
+      <div class="footer-links">
+        {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

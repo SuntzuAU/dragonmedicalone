@@ -1,0 +1,45 @@
+---
+import site from '../site.config.json';
+const c = site.colours;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - {site.siteName}</title>
+  <link rel="canonical" href={`${site.domain}/privacy`} />
+  <style is:inline>
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.7}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 24px}
+    h1{font-size:32px;margin:0 0 8px}
+    h2{font-size:20px;margin:32px 0 8px}
+    p{color:#334155;font-size:15px}
+    a{text-decoration:underline;text-underline-offset:2px}
+    .back{display:inline-block;margin-bottom:24px;font-size:14px;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/" style={`color:${c.primary}`}>&larr; Back to {site.siteName}</a>
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: March 2026</em></p>
+    <h2>Who we are</h2>
+    <p>This website is operated by Voice Recognition Australia ABN [to be confirmed]. We are committed to protecting the privacy of visitors to this website and users of our services.</p>
+    <h2>What information we collect</h2>
+    <p>When you submit an enquiry form on this website, we collect the information you provide including your name, email address, phone number, and any details you include in your message. We use this information solely to respond to your enquiry and provide information about our products and services.</p>
+    <h2>How we use your information</h2>
+    <p>Your information is used to respond to your enquiry, provide product information, arrange trials and demonstrations, and provide ongoing support. We may also use your email address to send relevant product updates. You can unsubscribe at any time.</p>
+    <h2>Third-party services</h2>
+    <p>This website uses Google Analytics to understand how visitors use the site. Google Analytics collects anonymised usage data. We use ActiveCampaign to manage enquiry forms and email communications. Your data may be processed by these services in accordance with their respective privacy policies.</p>
+    <h2>Data security</h2>
+    <p>We take reasonable steps to protect the personal information we hold from misuse, interference, loss, and from unauthorised access, modification, or disclosure.</p>
+    <h2>Your rights</h2>
+    <p>You may request access to, correction of, or deletion of your personal information by contacting us. If you believe we have breached the Australian Privacy Principles, you may lodge a complaint with the Office of the Australian Information Commissioner.</p>
+    <h2>Contact</h2>
+    <p>For privacy-related enquiries, contact Voice Recognition Australia at <a href="https://www.voicerecognition.com.au">voicerecognition.com.au</a> or call 1300 255 900.</p>
+    <p style="color:#94a3b8;font-size:13px;margin-top:48px">&copy; {year} {site.siteName}</p>
+  </div>
+</body>
+</html>
