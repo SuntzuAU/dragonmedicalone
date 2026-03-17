@@ -106,6 +106,7 @@
       },
       {
         "name": "Dragon Professional 16",
+        "url": "https://www.dragonprofessional16.com.au",
         "tier": "other",
         "type": "Desktop (local)",
         "medicalVocab": "No medical vocabulary",
@@ -132,6 +133,7 @@
       },
       {
         "name": "Dragon Copilot",
+        "url": "https://www.voicerecognition.com.au/pages/dragon-copilot",
         "tier": "other",
         "type": "Cloud (Azure)",
         "medicalVocab": "Yes - inherits DMO",
