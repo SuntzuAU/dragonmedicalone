@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "key": "hero",
+    "r2Key": "",
+    "altText": "Dragon Medical One cloud speech recognition interface Australian medical practice clinical documentation"
+  },
+  "about-banner": {
+    "key": "about-banner",
+    "r2Key": "",
+    "altText": "Voice Recognition Australia team providing Dragon Medical One support to Australian healthcare professionals"
+  },
+  "feature-cloud-security": {
+    "key": "feature-cloud-security",
+    "r2Key": "",
+    "altText": "Microsoft Azure cloud security infrastructure Australian data residency healthcare encryption"
+  },
+  "feature-specialty-vocab": {
+    "key": "feature-specialty-vocab",
+    "r2Key": "",
+    "altText": "Medical specialty vocabulary selection interface Dragon Medical One clinical terminology"
+  },
+  "cta-banner": {
+    "key": "cta-banner",
+    "r2Key": "",
+    "altText": "Australian clinician using Dragon Medical One speech recognition in medical practice"
+  }
+}

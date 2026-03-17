@@ -1,0 +1,14 @@
+{
+  "thisSite": "dragonmedicalone.au",
+  "lastRebuilt": "2026-03-17",
+  "_note": "Link audit from actual blog posts. Tracks external link coverage and anchor text variation.",
+  "external": {
+    "voicerecognition.com.au": { "count": 0, "anchorsUsed": [] },
+    "pdfsoftware.com.au": { "count": 0, "anchorsUsed": [] },
+    "dragonprofessional16.com.au": { "count": 0, "anchorsUsed": [] },
+    "dragonnaturallyspeaking.com.au": { "count": 0, "anchorsUsed": [] },
+    "dictationsolutions.com.au": { "count": 0, "anchorsUsed": [] },
+    "speechrecognition.cloud": { "count": 0, "anchorsUsed": [] },
+    "cloudprinting.au": { "count": 0, "anchorsUsed": [] }
+  }
+}
