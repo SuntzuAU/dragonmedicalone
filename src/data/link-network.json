@@ -1,0 +1,45 @@
+{
+  "_readme": "Master network interlink config. Copied from astro-gateway-master. Never add footer links - all links must be contextual in-body only.",
+  "authority": {
+    "company": {
+      "name": "Voice Recognition Australia",
+      "shortName": "VRA",
+      "url": "https://www.voicerecognition.com.au",
+      "yearsInBusiness": "25 years",
+      "resellerStatus": "Nuance Platinum-tier authorised reseller",
+      "approvedClaims": [
+        "Australia's most experienced Nuance Platinum reseller for Dragon software",
+        "Authorised Dragon reseller since Dragon first launched in Australia",
+        "25 years of Dragon deployment across healthcare, legal, government and enterprise in Australia"
+      ]
+    },
+    "founder": {
+      "name": "Russell Bewsell",
+      "title": "Founder and CEO, Voice Recognition Australia",
+      "yearsExperience": 28,
+      "approvedClaims": [
+        "Russell Bewsell, Founder and CEO of Voice Recognition Australia, has 28 years of experience in the speech recognition industry",
+        "One of Australia's leading authorities on Dragon deployment in healthcare and enterprise"
+      ]
+    },
+    "hardRules": [
+      "Only use claims explicitly listed in this authority block",
+      "Never invent statistics, client names, rankings, or award claims",
+      "Never claim clinical outcomes, patient safety improvements, or medical device status"
+    ]
+  },
+  "rules": {
+    "_note": "No footer links. All links must be contextual.",
+    "internal": { "minPerPage": 1, "maxPerPage": 3 },
+    "external": { "minPerPage": 1, "maxPerPage": 2, "maxSameSitePerPage": 1 }
+  },
+  "network": {
+    "voicerecognition.com.au": { "label": "Voice Recognition Australia", "role": "primary-ecommerce", "url": "https://www.voicerecognition.com.au", "productivityCategory": "voice-input" },
+    "pdfsoftware.com.au": { "label": "Tungsten Power PDF", "role": "gateway", "url": "https://www.pdfsoftware.com.au", "productivityCategory": "document-output" },
+    "dragonprofessional16.com.au": { "label": "Dragon Professional 16", "role": "gateway", "url": "https://www.dragonprofessional16.com.au", "productivityCategory": "voice-input" },
+    "dragonnaturallyspeaking.com.au": { "label": "Dragon NaturallySpeaking Australia", "role": "gateway", "url": "https://www.dragonnaturallyspeaking.com.au", "productivityCategory": "voice-input" },
+    "dictationsolutions.com.au": { "label": "Dictation Solutions Australia", "role": "gateway", "url": "https://www.dictationsolutions.com.au", "productivityCategory": "voice-input" },
+    "speechrecognition.cloud": { "label": "SpeechRecognition Cloud", "role": "saas-platform", "url": "https://www.speechrecognition.cloud", "productivityCategory": "saas-platform" },
+    "cloudprinting.au": { "label": "CloudPrinting Australia - PrintX", "role": "gateway", "url": "https://www.cloudprinting.au", "productivityCategory": "output-delivery" }
+  }
+}
