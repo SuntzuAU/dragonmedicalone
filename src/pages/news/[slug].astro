@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import site from '../../site.config.json';
+import manifest from '../../data/image-manifest.json';
+const c = site.colours;
+const year = new Date().getFullYear();
+const R2_BASE = import.meta.env.PUBLIC_R2_BASE || '';
+function imgSrc(key) {
+  if (!key || !R2_BASE) return '';
+  const entry = manifest[key];
+  if (entry?.r2Key) return `${R2_BASE.replace(/\/$/, '')}/${entry.r2Key}`;
+  if (key.includes('/')) return `${R2_BASE.replace(/\/$/, '')}/${key}`;
+  return '';
+}
+export async function getStaticPaths() {
+  const posts = await getCollection('news');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+const d = post.data;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{d.title} - {site.siteName}</title>
+  <meta name="description" content={d.metaDescription} />
+  <link rel="canonical" href={`${site.domain}/news/${post.slug}`} />
+  {site.googleAnalyticsId && (
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.googleAnalyticsId}`}></script>
+    <script define:vars={{ gaId: site.googleAnalyticsId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+  )}
+  <style is:inline>
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.8}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 24px}
+    .back{display:inline-block;margin-bottom:24px;font-size:14px;font-weight:600;text-decoration:none}
+    h1{font-size:32px;margin:0 0 12px;letter-spacing:-0.02em;line-height:1.2}
+    .meta{font-size:13px;color:#94a3b8;margin-bottom:32px}
+    .hero-img{border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#f0f9ff;margin-bottom:32px}
+    .hero-img img{width:100%;height:100%;object-fit:cover}
+    .break-img{border-radius:12px;overflow:hidden;aspect-ratio:16/7;background:#f0f9ff;margin:32px 0}
+    .break-img img{width:100%;height:100%;object-fit:cover}
+    article{font-size:16px;color:#334155}
+    article h2{font-size:24px;color:#0f172a;margin:36px 0 12px}
+    article h3{font-size:19px;color:#0f172a;margin:28px 0 8px}
+    article p{margin:0 0 16px}
+    article a{text-decoration:underline;text-underline-offset:2px}
+    article ul,article ol{padding-left:24px;margin:0 0 16px}
+    article li{margin-bottom:6px}
+    footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:64px}
+    .footer-inner{max-width:720px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{color:#64748b;text-decoration:none}
+    .footer-links a:hover{color:white}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/news" style={`color:${c.primary}`}>&larr; All news</a>
+    <h1>{d.title}</h1>
+    <div class="meta">{d.date}</div>
+    {d.heroImage && imgSrc(d.heroImage) && (
+      <div class="hero-img"><img src={imgSrc(d.heroImage)} alt={d.heroImageAlt || d.title} loading="eager" decoding="async" /></div>
+    )}
+    <article>
+      {d.section1Title && <h2>{d.section1Title}</h2>}
+      <Content />
+    </article>
+    {d.breakImage1 && imgSrc(d.breakImage1) && (
+      <div class="break-img"><img src={imgSrc(d.breakImage1)} alt={d.breakImage1Alt || ''} loading="lazy" decoding="async" /></div>
+    )}
+    {d.breakImage2 && imgSrc(d.breakImage2) && (
+      <div class="break-img"><img src={imgSrc(d.breakImage2)} alt={d.breakImage2Alt || ''} loading="lazy" decoding="async" /></div>
+    )}
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div>&copy; {year} {site.siteName}</div>
+      <div class="footer-links">
+        {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
