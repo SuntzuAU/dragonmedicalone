@@ -104,7 +104,7 @@ const comparisonRows = [
       .sh h2{font-size:32px;letter-spacing:-0.02em;margin:0 0 10px}
       .sh p{font-size:17px;margin:0;max-width:600px;color:#475569}
       .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-      .c6{grid-column:span 6}.c4{grid-column:span 4}.c7{grid-column:span 7}.c5{grid-column:span 5}.c3{grid-column:span 3}
+      .c6{grid-column:span 6}.c4{grid-column:span 4}.c7{grid-column:span 7}.c5{grid-column:span 5}.c3{grid-column:span 3}.c12{grid-column:span 12}
 
       /* CARDS */
       .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px}
@@ -117,6 +117,10 @@ const comparisonRows = [
       .card h3{margin:0 0 8px;font-size:17px}
       .card p{color:#475569;font-size:15px;margin:0}
 
+      /* FULL-WIDTH IMAGE BREAK */
+      .img-break{border-radius:16px;overflow:hidden;aspect-ratio:21/6;background:#e0f2fe;margin:0 0 0}
+      .img-break img{width:100%;height:100%;object-fit:cover}
+
       /* COMPARISON TABLE */
       .comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:2px solid #0c4a6e;box-shadow:0 8px 32px rgba(12,74,110,.12)}
       .comparison-table{width:100%;border-collapse:collapse;min-width:700px}
@@ -126,14 +130,16 @@ const comparisonRows = [
       .comparison-table th{padding:16px 14px;font-size:13px;font-weight:700;text-align:center;color:#94a3b8;border-right:1px solid rgba(255,255,255,.1);white-space:normal;line-height:1.3}
       .comparison-table th:last-child{border-right:none}
       .comparison-table th.th-feature{text-align:left;color:#94a3b8;min-width:130px}
+      .col-header-link{color:inherit;text-decoration:none;display:block}
+      .col-header-link:hover{text-decoration:underline;text-underline-offset:3px}
 
       /* Primary column (DMO) - teal highlight */
       .comparison-table th.col-primary{background:#0e7490;color:#ffffff;font-size:14px}
-      .comparison-table td.col-primary{background:#f0f9ff;color:#0c4a6e;font-weight:600;border-right:2px solid #0e7490;border-left:2px solid #0e7490}
+      .comparison-table td.col-primary{background:#ffffff;color:#0c4a6e;font-weight:600;border-right:2px solid #0e7490;border-left:2px solid #0e7490}
 
-      /* Secondary column (SRC) - lighter blue */
-      .comparison-table th.col-secondary{background:#155e75;color:#e0f2fe;font-size:13px}
-      .comparison-table td.col-secondary{background:#f8fdff;color:#155e75;font-weight:500}
+      /* Secondary column (SRC) - bright cyan header, white body */
+      .comparison-table th.col-secondary{background:#0891b2;color:#ffffff;font-size:13px}
+      .comparison-table td.col-secondary{background:#ffffff;color:#0e7490;font-weight:500;border-right:1px solid #e0f2fe;border-left:1px solid #e0f2fe}
 
       /* Other columns */
       .comparison-table th.col-other{color:#94a3b8}
@@ -149,9 +155,6 @@ const comparisonRows = [
       .comparison-table td:last-child{border-right:none}
       .comparison-table tbody tr:nth-child(even) td.col-other{background:#fafafa}
       .comparison-table tbody tr:nth-child(even) td.row-label{background:#f1f5f9}
-
-      /* Section divider rows */
-      .comparison-table tr.section-row td{background:#0c4a6e;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;text-align:left;border:none}
 
       /* ENTERPRISE */
       .enterprise-card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.15)}
@@ -196,6 +199,7 @@ const comparisonRows = [
         .hero h1{font-size:32px}
         .c6,.c4,.c7,.c5,.c3{grid-column:span 12}
         .sh h2{font-size:26px}
+        .img-break{aspect-ratio:16/6}
       }
       @media(max-width:600px){
         .nav-links{display:none}
@@ -215,6 +219,7 @@ const comparisonRows = [
         .footer-inner{flex-direction:column;align-items:center;text-align:center}
         .footer-links{justify-content:center}
         .enterprise-grid{grid-template-columns:1fr !important}
+        .img-break{aspect-ratio:16/7}
       }
     </style>
   </head>
@@ -329,6 +334,13 @@ const comparisonRows = [
               </div>
             ))}
           </div>
+
+          <!-- Image break after benefits -->
+          {imgSrc("benefits-banner") && (
+            <div class="img-break" style="margin-top:24px">
+              <img src={imgSrc("benefits-banner")} alt={imgAlt("benefits-banner")} loading="lazy" decoding="async" />
+            </div>
+          )}
         </div>
       </section>
 
@@ -348,6 +360,13 @@ const comparisonRows = [
               </div>
             ))}
           </div>
+
+          <!-- Image break after how it works -->
+          {imgSrc("workflow-banner") && (
+            <div class="img-break" style="margin-top:24px">
+              <img src={imgSrc("workflow-banner")} alt={imgAlt("workflow-banner")} loading="lazy" decoding="async" />
+            </div>
+          )}
         </div>
       </section>
 
@@ -367,6 +386,13 @@ const comparisonRows = [
             ))}
             <span style="display:inline-flex;align-items:center;padding:12px 20px;font-size:14px;color:#475569">+ Epic, Cerner, and more</span>
           </div>
+
+          <!-- Image break after EMR section -->
+          {imgSrc("emr-banner") && (
+            <div class="img-break" style="margin-top:32px">
+              <img src={imgSrc("emr-banner")} alt={imgAlt("emr-banner")} loading="lazy" decoding="async" />
+            </div>
+          )}
         </div>
       </section>
 
@@ -384,7 +410,10 @@ const comparisonRows = [
                   <th class="th-feature">Feature</th>
                   {site.comparison.columns.map((col) => (
                     <th class={col.tier === 'primary' ? 'col-primary' : col.tier === 'secondary' ? 'col-secondary' : 'col-other'}>
-                      {col.name}
+                      {col.url
+                        ? <a href={col.url} class="col-header-link" target="_blank" rel="noopener">{col.name}</a>
+                        : col.name
+                      }
                     </th>
                   ))}
                 </tr>
