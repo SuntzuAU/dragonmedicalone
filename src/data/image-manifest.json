@@ -1,13 +1,23 @@
 {
   "hero": {
     "key": "hero",
-    "r2Key": "",
-    "altText": "Dragon Medical One cloud speech recognition interface Australian medical practice clinical documentation"
+    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical-One-Australia.jpg",
+    "altText": "Dragon Medical One cloud speech recognition for Australian clinicians - doctor dictating patient notes"
   },
   "about-banner": {
     "key": "about-banner",
-    "r2Key": "",
+    "r2Key": "dragonmedicalone/2026/03/17/dragon-medical-one-australia.jpg",
     "altText": "Voice Recognition Australia team providing Dragon Medical One support to Australian healthcare professionals"
+  },
+  "cta-banner": {
+    "key": "cta-banner",
+    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical-One-where-to-buy.jpg",
+    "altText": "Australian clinician using Dragon Medical One speech recognition - get a free trial today"
+  },
+  "benefits-banner": {
+    "key": "benefits-banner",
+    "r2Key": "dragonmedicalone/2026/03/17/Where-to-buy-Dragon-Medical-One-in-Australia.jpg",
+    "altText": "Where to buy Dragon Medical One in Australia - authorised reseller Voice Recognition Australia"
   },
   "feature-cloud-security": {
     "key": "feature-cloud-security",
@@ -19,9 +29,14 @@
     "r2Key": "",
     "altText": "Medical specialty vocabulary selection interface Dragon Medical One clinical terminology"
   },
-  "cta-banner": {
-    "key": "cta-banner",
+  "workflow-banner": {
+    "key": "workflow-banner",
     "r2Key": "",
-    "altText": "Australian clinician using Dragon Medical One speech recognition in medical practice"
+    "altText": "Dragon Medical One clinical documentation workflow for Australian medical practices"
+  },
+  "emr-banner": {
+    "key": "emr-banner",
+    "r2Key": "",
+    "altText": "Dragon Medical One EMR integration with Australian clinical software systems"
   }
 }
