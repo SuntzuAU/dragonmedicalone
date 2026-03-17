@@ -2,6 +2,12 @@
 title: "Best Place to Buy Dragon Medical One in Australia"
 date: "2026-03-17"
 metaDescription: "Where to buy Dragon Medical One in Australia, what to look for in a reseller, and why the distributor you choose matters for setup, training, and ongoing support."
+heroPrompt: "Professional Australian healthcare consultant meeting with doctor in modern office, friendly authoritative atmosphere, photorealistic"
+heroImageAlt: "Voice Recognition Australia Dragon Medical One reseller consultation with Australian clinician"
+breakPrompt1: "Australian doctor using speech recognition software in consulting room, focused professional, natural clinic lighting"
+breakImage1Alt: "Dragon Medical One free trial setup in Australian medical practice"
+breakPrompt2: "Friendly Australian medical software support team assisting clinician at computer, professional office environment"
+breakImage2Alt: "Dragon Medical One local Australian support from Voice Recognition Australia"
 ---
 
 Dragon Medical One is available in Australia through Microsoft's authorised reseller network. It is not sold directly by Microsoft or Nuance in Australia — purchasing is done through resellers who are authorised to license the product, provide local support, and assist with deployment.

@@ -2,6 +2,12 @@
 title: "Dragon Medical Practice Edition is Now Dragon Medical One"
 date: "2026-03-17"
 metaDescription: "Dragon Medical Practice Edition was renamed Dragon Medical One in 2019. Here is what changed, what stayed the same, and why Australian clinicians are still choosing it in 2026."
+heroPrompt: "Australian GP doctor dictating clinical notes at desktop computer in warm modern clinic, professional photorealistic"
+heroImageAlt: "Australian doctor dictating clinical notes using Dragon Medical One speech recognition software"
+breakPrompt1: "Cloud computing concept with medical data, clean blue tones, stethoscope and laptop, professional healthcare technology"
+breakImage1Alt: "Dragon Medical One cloud-based speech recognition for Australian healthcare professionals"
+breakPrompt2: "Modern Australian medical clinic reception, doctor reviewing patient records on screen, natural light, professional"
+breakImage2Alt: "Dragon Medical One integration with Australian medical practice management software"
 ---
 
 If you have been searching for Dragon Medical Practice Edition and finding references to Dragon Medical One instead, you are not missing a product. They are the same software — Microsoft renamed Dragon Medical Practice Edition to Dragon Medical One in 2019 when it moved the product to a cloud-based subscription model.
