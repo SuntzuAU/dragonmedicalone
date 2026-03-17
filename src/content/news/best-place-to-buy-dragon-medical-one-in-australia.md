@@ -1,18 +1,7 @@
 ---
 title: "Best Place to Buy Dragon Medical One in Australia"
 date: "2026-03-17"
-description: "Where to buy Dragon Medical One in Australia, what to look for in a reseller, and why the distributor you choose matters for setup, training, and ongoing support."
-context: "descriptive"
-internalLinks:
-  - to: "/dragon-copilot"
-    anchor: "Dragon Copilot"
-externalLinks:
-  - to: "dictationsolutions.com.au"
-    anchor: "professional dictation solutions"
-    url: "https://www.dictationsolutions.com.au"
-  - to: "pdfsoftware.com.au"
-    anchor: "PDF software"
-    url: "https://www.pdfsoftware.com.au"
+metaDescription: "Where to buy Dragon Medical One in Australia, what to look for in a reseller, and why the distributor you choose matters for setup, training, and ongoing support."
 ---
 
 Dragon Medical One is available in Australia through Microsoft's authorised reseller network. It is not sold directly by Microsoft or Nuance in Australia — purchasing is done through resellers who are authorised to license the product, provide local support, and assist with deployment.

@@ -1,15 +1,7 @@
 ---
 title: "Dragon Medical Practice Edition is Now Dragon Medical One"
 date: "2026-03-17"
-description: "Dragon Medical Practice Edition was renamed Dragon Medical One in 2019. Here is what changed, what stayed the same, and why Australian clinicians are still choosing it in 2026."
-context: "descriptive"
-internalLinks:
-  - to: "/"
-    anchor: "Dragon Medical One in Australia"
-externalLinks:
-  - to: "dragonnaturallyspeaking.com.au"
-    anchor: "Dragon NaturallySpeaking"
-    url: "https://www.dragonnaturallyspeaking.com.au"
+metaDescription: "Dragon Medical Practice Edition was renamed Dragon Medical One in 2019. Here is what changed, what stayed the same, and why Australian clinicians are still choosing it in 2026."
 ---
 
 If you have been searching for Dragon Medical Practice Edition and finding references to Dragon Medical One instead, you are not missing a product. They are the same software — Microsoft renamed Dragon Medical Practice Edition to Dragon Medical One in 2019 when it moved the product to a cloud-based subscription model.
@@ -56,8 +48,7 @@ For clinicians, the medical-specific product has always been the right choice be
 
 ## Dragon Medical One in Australian Practice Today
 
-As of 2026, [Dragon Medical One in Australia](/)
-is distributed through authorised resellers including Voice Recognition Australia, which has been deploying Dragon in healthcare environments across the country for over 26 years.
+As of 2026, [Dragon Medical One in Australia](/) is distributed through authorised resellers including Voice Recognition Australia, which has been deploying Dragon in healthcare environments across the country for over 26 years.
 
 The product has continued to develop since 2019. Integration with Australian EMR and practice management systems has expanded, cloud infrastructure has matured, and the product now sits within Microsoft's broader healthcare AI portfolio alongside Dragon Copilot, the ambient documentation product that extends beyond dictation into AI-generated notes.
 
