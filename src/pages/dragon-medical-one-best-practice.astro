@@ -1,8 +1,8 @@
 ---
 import site from '../site.config.json';
+import ACForm from '../components/ACForm.astro';
 const c = site.colours;
 const year = new Date().getFullYear();
-const formId = site.form.id;
 const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice');
 ---
 <!doctype html>
@@ -46,10 +46,6 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice
     .benefits-list{list-style:none;padding:0;margin:24px 0}
     .benefits-list li{padding:12px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#334155;display:flex;gap:10px;align-items:flex-start}
     .benefits-list li::before{content:"\2713";font-weight:700;flex-shrink:0}
-    .formbox{background:#fff;border-radius:16px;padding:28px;max-width:480px}
-    ._form_element{margin-bottom:12px}
-    ._form_element input,._form_element textarea{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;color:#0f172a;font-size:14px;font-family:system-ui,-apple-system,sans-serif;padding:10px 12px;width:100%;box-sizing:border-box}
-    ._submit{border:none;border-radius:8px;font-weight:700;font-size:15px;padding:12px 20px;width:100%;margin-top:8px;cursor:pointer}
     .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
     footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:0}
     .footer-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
@@ -130,24 +126,8 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice
           <p style="color:#94a3b8;margin:0 0 20px">Tell us about your practice and we will arrange a free trial with remote installation and personalised training.</p>
           <p style="color:#94a3b8;font-size:14px;margin:0">Voice Recognition Australia has been distributing Dragon in Australia for over 26 years. We have the most Dragon Medical One subscribers of any Australian distributor.</p>
         </div>
-        <div class="formbox">
-          <div style="font-weight:800;font-size:18px;color:#0f172a;margin-bottom:4px">Request free trial</div>
-          <div style="color:#475569;font-size:14px;margin-bottom:12px">Local Australian support. Fast response.</div>
-          <form method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate>
-            <input type="hidden" name="u" value={site.form.hiddenU} />
-            <input type="hidden" name="f" value={site.form.hiddenF} />
-            <input type="hidden" name="s" />
-            <input type="hidden" name="c" value="0" />
-            <input type="hidden" name="m" value="0" />
-            <input type="hidden" name="act" value="sub" />
-            <input type="hidden" name="v" value="2" />
-            <input type="hidden" name="or" value={site.form.hiddenOr} />
-            <div class="_form_element"><input type="text" name="firstname" placeholder="Your Name" required /></div>
-            <div class="_form_element"><input type="text" name="email" placeholder="Your Email" required /></div>
-            <div class="_form_element"><input type="text" name="phone" placeholder="Phone" /></div>
-            <div class="_form_element"><input type="text" name="field[35]" placeholder="Practice / Organisation" /></div>
-            <button class="_submit" type="submit" style={`background:${c.accent};color:${c.text}`}>{site.form.submitText}</button>
-          </form>
+        <div>
+          <ACForm submitText="Request Free Trial" />
         </div>
       </div>
     </div>

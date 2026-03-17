@@ -1,8 +1,8 @@
 ---
 import site from '../site.config.json';
+import ACForm from '../components/ACForm.astro';
 const c = site.colours;
 const year = new Date().getFullYear();
-const formId = site.form.id;
 ---
 <!doctype html>
 <html lang="en">
@@ -49,10 +49,6 @@ const formId = site.form.id;
     .availability-table th{text-align:left;padding:10px 16px;font-size:13px;font-weight:600;color:#475569;border-bottom:2px solid #e2e8f0;background:#f8fafc}
     .availability-table td{padding:12px 16px;font-size:15px;border-bottom:1px solid #f1f5f9}
     .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent}
-    .formbox{background:#fff;border-radius:16px;padding:28px;max-width:500px;margin:0 auto}
-    ._form_element{margin-bottom:12px}
-    ._form_element input{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;color:#0f172a;font-size:14px;font-family:system-ui,-apple-system,sans-serif;padding:10px 12px;width:100%;box-sizing:border-box}
-    ._submit{border:none;border-radius:8px;font-weight:700;font-size:15px;padding:12px 20px;width:100%;margin-top:8px;cursor:pointer}
     footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:48px}
     .footer-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
     .footer-links{display:flex;gap:20px}
@@ -175,22 +171,8 @@ const formId = site.form.id;
     <div class="wrap" style="text-align:center">
       <h2 style="color:white;font-size:28px;margin:0 0 12px">Register your interest for Dragon Copilot in Australia</h2>
       <p style="color:#94a3b8;margin:0 0 28px">Be among the first Australian clinicians notified when Dragon Copilot becomes available. No obligation.</p>
-      <div class="formbox">
-        <form method="POST" action="https://voicerecognition.activehosted.com/proc.php" id={`_form_${formId}_`} novalidate>
-          <input type="hidden" name="u" value={site.form.hiddenU} />
-          <input type="hidden" name="f" value={site.form.hiddenF} />
-          <input type="hidden" name="s" />
-          <input type="hidden" name="c" value="0" />
-          <input type="hidden" name="m" value="0" />
-          <input type="hidden" name="act" value="sub" />
-          <input type="hidden" name="v" value="2" />
-          <input type="hidden" name="or" value={site.form.hiddenOr} />
-          <div class="_form_element"><input type="text" name="firstname" placeholder="Your Name" required /></div>
-          <div class="_form_element"><input type="text" name="email" placeholder="Your Email" required /></div>
-          <div class="_form_element"><input type="text" name="phone" placeholder="Phone (optional)" /></div>
-          <div class="_form_element"><input type="text" name="field[35]" placeholder="Practice / Organisation" /></div>
-          <button class="_submit" type="submit" style={`background:${c.accent};color:${c.text}`}>Register Interest</button>
-        </form>
+      <div style="max-width:480px;margin:0 auto">
+        <ACForm submitText="Register Interest" />
       </div>
     </div>
   </section>

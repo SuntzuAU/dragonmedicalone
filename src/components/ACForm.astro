@@ -1,9 +1,11 @@
 ---
 // ActiveCampaign Form 289 - Dragon Medical One Australia
 // Full embed including validation JavaScript - submits via JSONP to stay on page
+// Optional prop: submitText overrides site.form.submitText (e.g. for dragon-copilot "Register Interest")
 import site from '../site.config.json';
 const c = site.colours;
 const formId = site.form.id;
+const { submitText = site.form.submitText } = Astro.props;
 ---
 <div class="formbox">
   <div style="font-weight:800;font-size:20px;color:#0f172a;margin-bottom:4px">Get in touch</div>
@@ -45,7 +47,7 @@ const formId = site.form.id;
         </div>
       </div>
       <div class="_button-wrapper _full_width">
-        <button id={`_form_${formId}_submit`} class="_submit" type="submit" style={`background:${c.accent};color:${c.text}`}>{site.form.submitText}</button>
+        <button id={`_form_${formId}_submit`} class="_submit" type="submit" style={`background:${c.accent};color:${c.text}`}>{submitText}</button>
       </div>
     </div>
     <div class="_form-thank-you" style="display:none;"></div>
