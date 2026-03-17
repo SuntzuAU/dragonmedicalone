@@ -1,0 +1,47 @@
+{
+  "_readme": [
+    "PER-SITE IMAGE PROMPTS - dragonmedicalone.au",
+    "Uses custom prompts tailored for Dragon Medical One healthcare context.",
+    "Run: Actions > Generate Site Images (manual trigger) after editing.",
+    "To regenerate one image: delete its r2Key from image-manifest.json, re-run workflow.",
+    "DO NOT change 'key' values - referenced by index.astro.",
+    "No emoji or special characters in this file."
+  ],
+  "images": [
+    {
+      "key": "hero",
+      "role": "hero",
+      "type": "hero",
+      "prompt": "Australian GP doctor wearing stethoscope dictating patient notes by voice into a modern EMR system, clean medical practice, natural warm lighting, photorealistic",
+      "altText": "Dragon Medical One cloud speech recognition - Australian doctor dictating patient notes by voice into EMR system"
+    },
+    {
+      "key": "about-banner",
+      "role": "about-banner",
+      "type": "break",
+      "prompt": "Friendly Australian healthcare IT support specialist helping a clinician set up voice recognition software on a desktop computer in a medical office, professional warm lighting",
+      "altText": "Voice Recognition Australia team providing Dragon Medical One implementation support to Australian healthcare professionals"
+    },
+    {
+      "key": "feature-cloud-security",
+      "role": "feature-cloud-security",
+      "type": "break",
+      "prompt": "Abstract digital illustration of secure cloud infrastructure with glowing blue data streams, padlock icon, Microsoft Azure branding, clean dark background, enterprise healthcare security concept",
+      "altText": "Microsoft Azure cloud security infrastructure with Australian data residency for Dragon Medical One healthcare encryption"
+    },
+    {
+      "key": "feature-specialty-vocab",
+      "role": "feature-specialty-vocab",
+      "type": "break",
+      "prompt": "Close-up of a medical specialist reviewing clinical notes on a tablet with a speech waveform overlay and medical terminology highlighted, clean modern UI, photorealistic",
+      "altText": "Dragon Medical One specialty vocabulary interface showing clinical terminology and speech recognition for Australian medical specialists"
+    },
+    {
+      "key": "cta-banner",
+      "role": "cta-banner",
+      "type": "break",
+      "prompt": "Confident Australian female doctor smiling while using a headset microphone at a desk in a modern medical clinic, dictating into a computer, natural light, professional atmosphere",
+      "altText": "Australian clinician using Dragon Medical One speech recognition with headset microphone in modern medical practice"
+    }
+  ]
+}
