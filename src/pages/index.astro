@@ -119,7 +119,7 @@ const comparisonRows = [
 
       /* FULL-WIDTH IMAGE BREAK — cinematic strip, centre-crops 16:9 images */
       .img-break{border-radius:16px;overflow:hidden;aspect-ratio:21/9;max-height:320px;background:#e0f2fe;margin:0}
-      .img-break img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+      .img-break img{width:100%;height:100%;object-fit:cover;object-position:center center}
 
       /* COMPARISON TABLE */
       .comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:2px solid #0c4a6e;box-shadow:0 8px 32px rgba(12,74,110,.12)}
@@ -477,7 +477,7 @@ const comparisonRows = [
               {imgSrc("about-banner") && <div class="card-img"><img src={imgSrc("about-banner")} alt={imgAlt("about-banner")} loading="lazy" decoding="async" /></div>}
               <h3>{site.branding.aboutHeading}</h3>
               <p style="font-size:15px;color:#334155">{site.branding.aboutBody}</p>
-              <p style="font-size:15px;color:#475569;margin-top:8px">Dragon Medical One is sold and supported in Australia by <a href="https://www.voicerecognition.com.au" class="about-link">Voice Recognition Australia</a> - Australia's longest-serving Dragon distributor with over 26 years of deployment across healthcare, legal, government, and enterprise environments.</p>
+              <p style="font-size:15px;color:#475569;margin-top:8px">You can <a href="https://www.voicerecognition.com.au/pages/dragon-medical-one" class="about-link">buy Dragon Medical One in Australia</a> from Voice Recognition Australia - the country's longest-serving Dragon distributor with over 26 years of deployment across healthcare, legal, government, and enterprise environments.</p>
               <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px">
                 {site.proofPoints?.map((p) => (
                   <div style="background:#f0f9ff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#0c4a6e">&#10003; {p}</div>
@@ -519,7 +519,7 @@ const comparisonRows = [
         <div class="wrap">
           <div class="grid">
             <div class="c7">
-              {imgSrc("cta-banner") && <div style="border-radius:16px;overflow:hidden;aspect-ratio:21/9;max-height:280px;margin-bottom:24px"><img src={imgSrc("cta-banner")} alt={imgAlt("cta-banner")} loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 20%" /></div>}
+              {imgSrc("cta-banner") && <div style="border-radius:16px;overflow:hidden;aspect-ratio:21/9;max-height:280px;margin-bottom:24px"><img src={imgSrc("cta-banner")} alt={imgAlt("cta-banner")} loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center" /></div>}
               <h2 style="color:white;font-size:28px;margin:0 0 12px">{site.branding.ctaHeading}</h2>
               <p style="color:#94a3b8;margin:0 0 20px">{site.branding.ctaBody}</p>
               <ul style="color:#94a3b8;margin:0;padding-left:20px;line-height:2.2;font-size:15px">
