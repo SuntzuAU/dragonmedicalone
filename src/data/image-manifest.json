@@ -1,42 +1,42 @@
 {
   "hero": {
     "key": "hero",
-    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical One-Australia.jpg",
+    "r2Key": "dragonmedicalone/2026/03/17/Best-Value-Speech-to-text-doctor.jpg",
     "altText": "Dragon Medical One cloud speech recognition for Australian clinicians - doctor dictating patient notes by voice"
   },
   "about-banner": {
     "key": "about-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/best-medical-speech-to-text.jpg",
-    "altText": "Best medical speech to text software for Australian healthcare professionals - Dragon Medical One"
+    "r2Key": "dragonmedicalone/2026/03/17/nuance-dragon-medical-australia.jpg",
+    "altText": "Nuance Dragon Medical speech recognition software - Australian healthcare documentation"
   },
   "cta-banner": {
     "key": "cta-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical-One-where-to-buy.jpg",
-    "altText": "Where to buy Dragon Medical One in Australia - authorised reseller Voice Recognition Australia"
+    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical One-Australia.jpg",
+    "altText": "Dragon Medical One Australia - request a free trial from Voice Recognition Australia"
   },
   "benefits-banner": {
     "key": "benefits-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/voice-to-text-medical.jpg",
-    "altText": "Voice to text medical software for Australian clinicians - Dragon Medical One speech recognition"
+    "r2Key": "dragonmedicalone/2026/03/17/Dragon-Medical-One-where-to-buy.jpg",
+    "altText": "Where to buy Dragon Medical One in Australia - cloud speech recognition for medical professionals"
   },
   "feature-cloud-security": {
     "key": "feature-cloud-security",
-    "r2Key": "dragonmedicalone/2026/03/17/Speech-to-text-medical-software.jpg",
-    "altText": "Speech to text medical software with Microsoft Azure cloud security and Australian data residency"
+    "r2Key": "dragonmedicalone/2026/03/17/Speech-Recognition-Australia.jpg",
+    "altText": "Speech recognition Australia - Microsoft Azure cloud security with Australian data residency"
   },
   "feature-specialty-vocab": {
     "key": "feature-specialty-vocab",
-    "r2Key": "dragonmedicalone/2026/03/17/speech-to-text-software.jpg",
-    "altText": "Speech to text software with medical specialty vocabulary for Australian doctors and specialists"
+    "r2Key": "dragonmedicalone/2026/03/17/dragon-medical-1.jpg",
+    "altText": "Dragon Medical One specialty vocabulary - medical speech to text for Australian doctors"
   },
   "workflow-banner": {
     "key": "workflow-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/dragon-medical-one-australia.jpg",
-    "altText": "Dragon Medical One Australia - clinical documentation workflow for medical practices"
+    "r2Key": "dragonmedicalone/2026/03/17/Where-to-buy-Dragon-Medical-One-in-Australia.jpg",
+    "altText": "Dragon Medical One clinical documentation workflow for Australian medical practices"
   },
   "emr-banner": {
     "key": "emr-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/Where-to-buy-Dragon-Medical-One-in-Australia.jpg",
-    "altText": "Dragon Medical One EMR integration - works with Australian clinical software systems"
+    "r2Key": "dragonmedicalone/2026/03/17/best-medical-voice-to-text-male.jpg",
+    "altText": "Dragon Medical One EMR integration - works with Best Practice, Genie, Medical Director and more"
   }
 }
