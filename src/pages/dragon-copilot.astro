@@ -176,7 +176,7 @@ const formId = site.form.id;
       <h2 style="color:white;font-size:28px;margin:0 0 12px">Register your interest for Dragon Copilot in Australia</h2>
       <p style="color:#94a3b8;margin:0 0 28px">Be among the first Australian clinicians notified when Dragon Copilot becomes available. No obligation.</p>
       <div class="formbox">
-        <form method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate>
+        <form method="POST" action="https://voicerecognition.activehosted.com/proc.php" id={`_form_${formId}_`} novalidate>
           <input type="hidden" name="u" value={site.form.hiddenU} />
           <input type="hidden" name="f" value={site.form.hiddenF} />
           <input type="hidden" name="s" />
