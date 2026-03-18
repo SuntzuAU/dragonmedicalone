@@ -2,6 +2,14 @@
 // ActiveCampaign Form 289 - Dragon Medical One Australia
 // Full embed including validation JavaScript - submits via JSONP to stay on page
 // Optional prop: submitText overrides site.form.submitText (e.g. for dragon-copilot "Register Interest")
+//
+// IMPORTANT: Phone field uses name="field[36]" (custom field), NOT name="phone".
+// Using name="phone" triggers AC's server-side phone validation which rejects any
+// value that isn't in +XXXXXXXXXXXXX international format, even though phone is
+// optional. Mapping to a custom field bypasses this entirely.
+// field[35] = practice_organisation
+// field[36] = phone_number (custom text field in AC - any format accepted)
+// field[18] = comments_about_your_needs
 import site from '../site.config.json';
 const c = site.colours;
 const formId = site.form.id;
@@ -28,7 +36,8 @@ const { submitText = site.form.submitText } = Astro.props;
         <input type="text" id="email" name="email" placeholder="Your Email" required autocomplete="email" />
       </div>
       <div class="vra-field">
-        <input type="text" id="phone" name="phone" placeholder="Your Phone Number" autocomplete="tel" />
+        <!-- NOTE: name="field[36]" not name="phone" — avoids AC server-side +E.164 phone validation -->
+        <input type="text" id="field36" name="field[36]" placeholder="Your Phone Number" autocomplete="off" />
       </div>
       <div class="vra-field">
         <input type="text" id="field35" name="field[35]" placeholder="Practice / Organisation" />
@@ -95,7 +104,7 @@ const { submitText = site.form.submitText } = Astro.props;
 </style>
 
 <script define:vars={{ formId }}>
-  window.cfields = {"35": "practice_organisation", "18": "comments_about_your_needs"};
+  window.cfields = {"35": "practice_organisation", "36": "phone_number", "18": "comments_about_your_needs"};
 
   window._show_thank_you = function(id, message, trackcmp_url, email) {
     var form = document.getElementById('vra_form_' + id),
@@ -168,7 +177,7 @@ const { submitText = site.form.submitText } = Astro.props;
           no_error = false;
         }
       }
-      // Phone is intentionally NOT validated - optional field, any format accepted
+      // Phone (field[36]) is intentionally NOT validated - optional, any format accepted
       return no_error;
     };
 
