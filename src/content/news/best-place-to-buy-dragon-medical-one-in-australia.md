@@ -2,15 +2,8 @@
 title: "Best Place to Buy Dragon Medical One in Australia"
 date: "2026-03-17"
 metaDescription: "Where to buy Dragon Medical One in Australia, what to look for in a reseller, and why the distributor you choose matters for setup, training, and ongoing support."
-breakImage2: "dictationsolutions/2026/03/17/images-dragonmedicalone-best-place-to-buy-dragon-medical-one-in-austra-0a8208f2.png"
-breakImage1: "dictationsolutions/2026/03/17/images-dragonmedicalone-best-place-to-buy-dragon-medical-one-in-austra-e5681219.png"
 heroImage: "dictationsolutions/2026/03/17/images-dragonmedicalone-best-place-to-buy-dragon-medical-one-in-austra-47328f36.png"
-heroPrompt: "Professional Australian healthcare consultant meeting with doctor in modern office, friendly authoritative atmosphere, photorealistic"
 heroImageAlt: "Voice Recognition Australia Dragon Medical One reseller consultation with Australian clinician"
-breakPrompt1: "Australian doctor using speech recognition software in consulting room, focused professional, natural clinic lighting"
-breakImage1Alt: "Dragon Medical One free trial setup in Australian medical practice"
-breakPrompt2: "Friendly Australian medical software support team assisting clinician at computer, professional office environment"
-breakImage2Alt: "Dragon Medical One local Australian support from Voice Recognition Australia"
 ---
 
 Dragon Medical One is available in Australia through Microsoft's authorised reseller network. It is not sold directly by Microsoft or Nuance in Australia — purchasing is done through resellers who are authorised to license the product, provide local support, and assist with deployment.
@@ -28,6 +21,10 @@ This matters more than it might seem. Dragon Medical One is not a plug-and-play 
 **Training capability.** Dragon Medical One produces significantly better results when clinicians are trained to use it effectively. Proper onboarding, including voice profile setup, custom vocabulary configuration, and technique coaching, is the difference between a clinician who loves the product and one who abandons it after two weeks.
 
 **Track record.** How long has the reseller been deploying Dragon in Australian healthcare? A long track record means experience with the full range of EMR integrations, hardware configurations, and clinical environments you are likely to encounter.
+
+<div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/best-medical-voice-to-text-male.jpg" alt="Australian clinician using Dragon Medical One speech recognition in a medical practice" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+</div>
 
 ## Voice Recognition Australia
 
@@ -48,6 +45,10 @@ Clinicians who dictate heavily also tend to generate a high volume of clinical d
 Dragon Medical One offers a free trial for Australian clinicians. Voice Recognition Australia arranges remote installation and setup so the trial reflects real-world conditions in your practice, using your actual EMR and your own microphone or recorder.
 
 A trial conducted properly — with your own clinical vocabulary, in your own system, with your normal documentation workflow — gives you an accurate picture of what the product will do for you day to day.
+
+<div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/nuance-dragon-medical-australia.jpg" alt="Dragon Medical One setup and support for Australian medical practices" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+</div>
 
 ## What About Dragon Copilot?
 

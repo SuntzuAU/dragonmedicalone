@@ -2,15 +2,8 @@
 title: "Dragon Medical Practice Edition is Now Dragon Medical One"
 date: "2026-03-17"
 metaDescription: "Dragon Medical Practice Edition was renamed Dragon Medical One in 2019. Here is what changed, what stayed the same, and why Australian clinicians are still choosing it in 2026."
-breakImage2: "dictationsolutions/2026/03/17/images-dragonmedicalone-dragon-medical-practice-edition-is-now-dragon--9fb88895.png"
-breakImage1: "dictationsolutions/2026/03/17/images-dragonmedicalone-dragon-medical-practice-edition-is-now-dragon--cc9f9fef.png"
 heroImage: "dictationsolutions/2026/03/17/images-dragonmedicalone-dragon-medical-practice-edition-is-now-dragon--b2ee04e1.png"
-heroPrompt: "Australian GP doctor dictating clinical notes at desktop computer in warm modern clinic, professional photorealistic"
 heroImageAlt: "Australian doctor dictating clinical notes using Dragon Medical One speech recognition software"
-breakPrompt1: "Cloud computing concept with medical data, clean blue tones, stethoscope and laptop, professional healthcare technology"
-breakImage1Alt: "Dragon Medical One cloud-based speech recognition for Australian healthcare professionals"
-breakPrompt2: "Modern Australian medical clinic reception, doctor reviewing patient records on screen, natural light, professional"
-breakImage2Alt: "Dragon Medical One integration with Australian medical practice management software"
 ---
 
 If you have been searching for Dragon Medical Practice Edition and finding references to Dragon Medical One instead, you are not missing a product. They are the same software — Microsoft renamed Dragon Medical Practice Edition to Dragon Medical One in 2019 when it moved the product to a cloud-based subscription model.
@@ -35,6 +28,10 @@ Accuracy improved. Cloud-based processing allowed Nuance to deploy larger, more 
 
 EMR integration deepened. Dragon Medical One is designed to work within clinical applications rather than just as a dictation layer on top of them, with certified integrations across a wide range of Australian practice management and medical records systems.
 
+<div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/dragon-medical-one-australia.jpg" alt="Dragon Medical One cloud-based speech recognition for Australian healthcare professionals" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+</div>
+
 ## What Stayed the Same?
 
 The core proposition did not change. Dragon Medical One is still a clinician-directed dictation tool — the doctor speaks, the words appear in the record. It is not ambient listening. The clinician controls exactly what is documented.
@@ -57,6 +54,10 @@ For clinicians, the medical-specific product has always been the right choice be
 
 For those exploring cloud-based alternatives, [speech-to-text software](https://www.speechrecognition.cloud) has advanced significantly since the DMPE era, with AI-native platforms now offering viable options across a range of professional use cases beyond healthcare.
 
+<div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/voice-to-text-medical.jpg" alt="Dragon Medical One in Australian medical practice today" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+</div>
+
 ## Dragon Medical One in Australian Practice Today
 
 As of 2026, [Dragon Medical One in Australia](/) is distributed through authorised resellers including Voice Recognition Australia, which has been deploying Dragon in healthcare environments across the country for over 26 years.
@@ -65,10 +66,11 @@ The product has continued to develop since 2019. Integration with Australian EMR
 
 For practices that were using Dragon Medical Practice Edition and have not yet moved to Dragon Medical One, the transition is straightforward. Voice Recognition Australia provides migration support including voice profile transfer, EMR configuration, and staff training.
 
-## Summary
+## Ready to Make the Move to Dragon Medical One?
 
-- Dragon Medical Practice Edition and Dragon Medical One are the same product family — DMPE was renamed and re-architected as DMO in 2019
-- The key changes were cloud-based processing, subscription licensing, and improved accuracy
-- The core value — clinician-directed dictation with medical vocabulary — remained unchanged
-- DMPE is no longer sold or supported; practices still running it should consider upgrading
-- Dragon Medical One is available in Australia through authorised resellers
+Whether you are upgrading from Dragon Medical Practice Edition or evaluating clinical speech recognition for the first time, Voice Recognition Australia handles the entire setup — remote installation, EMR configuration, and one-on-one training with your actual clinical system. They hold more Dragon Medical One subscribers than any other Australian distributor and have been doing it for over 26 years.
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px">
+  <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:#f59e0b;color:#0f172a;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none">Buy Dragon Medical One</a>
+  <a href="https://www.voicerecognition.com.au/pages/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:white;color:#0c4a6e;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none;border:2px solid #0c4a6e">More Information</a>
+</div>
