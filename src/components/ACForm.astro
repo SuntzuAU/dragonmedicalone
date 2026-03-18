@@ -5,10 +5,12 @@ import site from '../site.config.json';
 const c = site.colours;
 const { submitText = site.form.submitText } = Astro.props;
 ---
-<div class="formbox">
-  <div style="font-weight:800;font-size:20px;color:#0f172a;margin-bottom:4px">Get in touch</div>
-  <div style="color:#475569;font-size:15px;margin-bottom:16px">Local Australian support. Fast response.</div>
+<div style="color:white">
+  <div style="font-weight:800;font-size:20px;margin-bottom:4px">Get in touch</div>
+  <div style="font-size:15px;margin-bottom:16px;opacity:0.8">Local Australian support. Fast response.</div>
+</div>
 
+<div class="formbox">
   <form method="POST" action="https://voicerecognition.activehosted.com/proc.php" id="_form_289_" class="_form _form_289 _inline-form" novalidate data-styles-version="5">
     <input type="hidden" name="u" value="289" />
     <input type="hidden" name="f" value="289" />
@@ -53,6 +55,11 @@ const { submitText = site.form.submitText } = Astro.props;
 </div>
 
 <style is:inline>
+  .formbox {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+  }
   ._form_element { margin-bottom: 10px; }
   ._form_element input[type="text"],
   ._form_element textarea {
