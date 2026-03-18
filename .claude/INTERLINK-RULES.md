@@ -1,23 +1,38 @@
-# Interlink Rules - Cross-Site and Internal Linking
+# Interlink Rules — Cross-Site and Internal Linking
 
-## Rules
+## Rules — Non-Negotiable
 
-- No footer links. Ever. All links contextual in body copy.
-- Every blog post declares `internalLinks` and `externalLinks` in frontmatter
-- Min 1 internal link, max 3
-- Min 1 external link, max 2
-- Never repeat same anchor text to same destination
+- **No footer links. Ever.** All links must be contextual in body copy.
+- Every blog post must declare `internalLinks` and `externalLinks` in frontmatter
+- Min 1 internal link per post, max 3
+- Min 1 external link per post, max 2
+- Never link to the same external site twice on one page
+- Never repeat the same anchor text to the same destination across the site
 
-## Before Writing Content
+## CRITICAL: Body Links Must Match Frontmatter
 
-1. Read `src/data/link-network.json` for network config and anchor pools
+Every hyperlink in body copy MUST also be declared in frontmatter. Links without frontmatter declarations are invisible to tracking.
+
+## CRITICAL: Embed Links During Drafting, Not After
+
+Links MUST be woven into articles during initial drafting. Identify targets BEFORE writing. Retrofitting produces awkward placements.
+
+## Before Writing Any Content
+
+1. Read `src/data/link-network.json` for anchor pools, bridge phrases, adjacency map
 2. Read `src/data/link-usage.json` for coverage counts and used anchors
-3. Pick external target with lowest coverage count + relevant topic
+3. Pick external target: lowest coverage count with relevant topic match
 
-## Blog Post Frontmatter
+## Pre-Commit Link Audit
 
-See BUILD-RULES.md for full frontmatter schema.
+- [ ] Internal link in frontmatter AND body
+- [ ] Cross-site link in frontmatter AND body
+- [ ] Target is lowest-coverage site with topic relevance
+- [ ] Anchor text not already used for that destination
+- [ ] Bridge paragraph in conclusion using adjacency map
+- [ ] All body hyperlinks have matching frontmatter
+- [ ] Link summary at end of draft
 
 ## Anchor Text Approval
 
-Claude suggests 2-3 options, owner chooses. Never commit without approval.
+Suggest 2-3 options, let owner choose. Never commit without approval.
