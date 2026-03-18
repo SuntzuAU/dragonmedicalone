@@ -53,7 +53,9 @@ If your practice is still running Dragon Medical Practice Edition, it is worth c
 
 Dragon Medical Practice Edition was always a medical-specific version of the broader Dragon product line. The general-purpose desktop product — [Dragon NaturallySpeaking](https://www.dragonnaturallyspeaking.com.au) — followed a similar evolution, with the professional desktop version becoming Dragon Professional and later Dragon Professional Anywhere for cloud deployment.
 
-For clinicians, the medical-specific product has always been the right choice because of the clinical vocabulary and the healthcare-specific compliance considerations around data handling. General-purpose Dragon products are not designed for medical documentation workflows.
+For clinicians, the medical-specific product has always been the right choice because of the clinical vocabulary and the healthcare-specific compliance considerations around data handling. General-purpose Dragon products are not designed for medical documentation workflows. For non-clinical staff in the same practice — administrators, practice managers, billers — [Dragon Professional 16](https://www.dragonprofessional16.com.au) remains a practical desktop option for general dictation and document automation without a cloud subscription.
+
+For those exploring cloud-based alternatives, [speech-to-text software](https://www.speechrecognition.cloud) has advanced significantly since the DMPE era, with AI-native platforms now offering viable options across a range of professional use cases beyond healthcare.
 
 ## Dragon Medical One in Australian Practice Today
 

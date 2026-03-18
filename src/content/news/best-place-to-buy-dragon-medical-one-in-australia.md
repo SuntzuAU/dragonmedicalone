@@ -35,7 +35,7 @@ Voice Recognition Australia has been the longest-serving Dragon distributor in A
 
 Purchasing through Voice Recognition Australia includes remote installation and configuration, voice profile setup, EMR integration assistance, and ongoing local support. For practices migrating from Dragon Medical Practice Edition or another dictation solution, they provide transition support including voice profile migration where applicable.
 
-Dragon Medical One can be purchased directly at [voicerecognition.com.au](https://www.voicerecognition.com.au/pages/dragon-medical-one).
+Dragon Medical One can be purchased directly from [Voice Recognition Australia](https://www.voicerecognition.com.au/pages/dragon-medical-one), Australia's longest-established speech-to-text software distributor.
 
 ## What About Other Dictation Hardware and Workflow Tools?
 
@@ -43,7 +43,7 @@ For practices that also need dictation recorders, microphones, transcription ser
 
 For the full range of [professional dictation solutions](https://www.dictationsolutions.com.au) including Philips SpeechLive, dictation hardware, and transcription services, Dictation Solutions covers the broader workflow beyond Dragon itself.
 
-Clinicians who dictate heavily also tend to generate a high volume of clinical documents — letters, referrals, reports. Having capable [PDF software](https://www.pdfsoftware.com.au) to edit, combine, and manage those documents without an expensive Adobe subscription is a practical complement to a dictation workflow.
+Clinicians who dictate heavily also tend to generate a high volume of clinical documents — letters, referrals, reports. Having capable [PDF software](https://www.pdfsoftware.com.au) to edit, combine, and manage those documents without an expensive Adobe subscription is a practical complement to a dictation workflow. For practices that still need to physically print referral letters or patient correspondence, [cloud printing](https://www.cloudprinting.au) services can remove the last manual step in that document chain.
 
 ## Free Trial Before You Buy
 
