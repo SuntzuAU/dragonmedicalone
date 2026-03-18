@@ -6,9 +6,11 @@ const c = site.colours;
 const year = new Date().getFullYear();
 const R2_BASE = import.meta.env.PUBLIC_R2_BASE || '';
 function imgSrc(key) {
+  if (!key || !R2_BASE) return '';
   const entry = manifest[key];
-  if (!entry?.r2Key || !R2_BASE) return '';
-  return `${R2_BASE.replace(/\/$/, '')}/${entry.r2Key}`;
+  if (entry?.r2Key) return `${R2_BASE.replace(/\/$/, '')}/${entry.r2Key}`;
+  if (key.includes('/')) return `${R2_BASE.replace(/\/$/, '')}/${key}`;
+  return '';
 }
 const posts = (await getCollection('news')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
