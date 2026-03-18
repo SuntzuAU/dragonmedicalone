@@ -31,11 +31,9 @@ This matters more than it might seem. Dragon Medical One is not a plug-and-play 
 
 ## Voice Recognition Australia
 
-Voice Recognition Australia has been the longest-serving Dragon distributor in Australia, with over 26 years of deployment across general practice, specialist clinics, private hospitals, and public health. They hold more Dragon Medical One subscribers than any other Australian distributor.
+Voice Recognition Australia has been the longest-serving Dragon distributor in Australia, with over 26 years of deployment across general practice, specialist clinics, private hospitals, and public health. They hold more Dragon Medical One subscribers than any other Australian distributor — not because of pricing alone, but because of what comes with the purchase: remote installation handled by their team, one-on-one training with your actual EMR and microphone, and ongoing Australian support for the life of the subscription.
 
-Purchasing through Voice Recognition Australia includes remote installation and configuration, voice profile setup, EMR integration assistance, and ongoing local support. For practices migrating from Dragon Medical Practice Edition or another dictation solution, they provide transition support including voice profile migration where applicable.
-
-Dragon Medical One can be purchased directly from [Voice Recognition Australia](https://www.voicerecognition.com.au/pages/dragon-medical-one), Australia's longest-established speech-to-text software distributor.
+For practices migrating from Dragon Medical Practice Edition or another dictation solution, they provide transition support including voice profile migration where applicable.
 
 ## What About Other Dictation Hardware and Workflow Tools?
 
@@ -55,12 +53,15 @@ A trial conducted properly — with your own clinical vocabulary, in your own sy
 
 If you are researching Dragon Medical One, you may also have come across [Dragon Copilot](/dragon-copilot), Microsoft's ambient AI documentation assistant that goes a step further than dictation. Rather than requiring the clinician to dictate, Copilot listens to the consultation and generates structured notes automatically.
 
-Dragon Copilot is not yet available in Australia as of early 2026, though it is available in several other markets and Australian availability is expected. For practices that want to get started now with proven, supported dictation, Dragon Medical One is the current option. Copilot is worth watching for practices interested in where clinical AI documentation is heading.
+Dragon Copilot is not yet available in Australia as of early 2026, though it is available in several other markets and Australian availability is expected. For practices that want to get started now with proven, supported dictation, Dragon Medical One is the current option.
 
-## Summary
+## Ready to Get Dragon Medical One for Your Practice?
 
-- Dragon Medical One is sold through authorised Australian resellers, not directly by Microsoft
-- The right reseller provides authorised licensing, local support, EMR integration assistance, and training
-- Voice Recognition Australia is Australia's longest-serving Dragon distributor with the largest DMO subscriber base
-- A properly conducted free trial is available and worth doing before committing
-- For broader dictation workflow needs beyond Dragon, specialist suppliers cover hardware, transcription, and workflow software
+Voice Recognition Australia is Australia's longest-serving Dragon distributor, with the largest Dragon Medical One subscriber base of any Australian reseller. Every purchase includes remote installation, personalised training, and 12 months of local Australian support.
+
+If you know Dragon Medical One is the right fit, you can purchase directly online. If you want to talk through your practice setup, EMR, or trial options first, the information page has everything you need to get in touch.
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px">
+  <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:#f59e0b;color:#0f172a;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none">Buy Dragon Medical One</a>
+  <a href="https://www.voicerecognition.com.au/pages/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:white;color:#0c4a6e;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none;border:2px solid #0c4a6e">More Information</a>
+</div>
