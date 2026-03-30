@@ -42,8 +42,8 @@ const comparisonRows = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.siteName} - Cloud Speech Recognition for Australian Clinicians</title>
-    <meta name="description" content={site.branding.subheadline} />
+    <title>{s{site.branding.metaTitle ?? site.siteName}</title>
+    <meta name="description" content={site.branding.metaDesc ?? site.branding.subheadline} />
     <link rel="canonical" href={site.domain} />
 
     {site.googleAnalyticsId && (
