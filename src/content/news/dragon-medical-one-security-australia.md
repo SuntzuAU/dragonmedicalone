@@ -43,7 +43,7 @@ Australian healthcare buyers comparing options usually look at several security 
 - **Dragon Medical One.** Cloud, Australian Azure tenant for AU subscriptions, encrypted in transit and at rest, HITRUST CSF and ISO 27001 on Azure infrastructure.
 - **[Dragon Naturally Speaking](https://www.dragonnaturallyspeaking.com.au/dragon-medical-one/) (desktop).** Fully local on the clinician's Windows PC. Audio and text never leave the machine. Best for environments that mandate offline-only processing. No medical vocabulary built in.
 - **Windows / Microsoft 365 Dictation.** Cloud, processed in the Microsoft 365 tenant your organisation is subscribed to. Tenancy region depends on your M365 setup. General vocabulary only, no medical specialties.
-- **AI scribe tools (Heidi, Lyrebird, etc.).** Cloud, vendor-specific data handling. Generative AI means output is not a verbatim record of what was said. Different regulatory considerations apply.
+- **AI scribe tools.** Cloud, vendor-specific data handling. Generative AI means output is not a verbatim record of what was said. Different regulatory considerations apply.
 
 ## Questions an IT or compliance team will ask
 
