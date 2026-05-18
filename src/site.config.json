@@ -108,7 +108,7 @@
       },
       {
         "name": "Dragon Professional 16",
-        "url": "https://www.dragonprofessional16.com.au",
+        "url": "https://www.voicerecognition.com.au/products/dragon-professional-16-download",
         "tier": "other",
         "type": "Desktop (local)",
         "medicalVocab": "No medical vocabulary",
@@ -246,7 +246,7 @@
     { "label": "FAQ", "url": "/#faq" },
     { "label": "Copilot", "url": "/dragon-copilot" },
     { "label": "News", "url": "/news" },
-    { "label": "Contact", "url": "/#final-cta" }
+    { "label": "Buy Now", "url": "https://www.voicerecognition.com.au/products/dragon-medical-one" }
   ],
   "primaryCTA": {
     "text": "Request Free Trial",
@@ -341,6 +341,7 @@
     { "label": "About", "url": "/about" },
     { "label": "Dragon Copilot", "url": "/dragon-copilot" },
     { "label": "News", "url": "/news" },
+    { "label": "Buy from Voice Recognition Australia", "url": "https://www.voicerecognition.com.au/products/dragon-medical-one" },
     { "label": "Privacy Policy", "url": "/privacy" },
     { "label": "Terms", "url": "/terms" },
     { "label": "Contact", "url": "/#final-cta" }
