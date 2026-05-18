@@ -6,13 +6,13 @@ heroImage: "feature-cloud-security"
 heroImageAlt: "Dragon Medical One cloud security - Microsoft Azure with Australian data residency"
 ---
 
-Dragon Medical One runs on Microsoft Azure. Subscriptions sold by Voice Recognition Australia are provisioned on the Australian Azure tenant, so audio and transcribed text are processed in Australia, not overseas. This article covers the specifics: which encryption standards apply, which certifications cover the underlying platform, what is and isn't stored, and the questions an IT or compliance team will want answered before a deployment.
+Dragon Medical One runs on Microsoft Azure. Subscriptions sold by [Voice Recognition Australia](https://www.voicerecognition.com.au) are provisioned on the Australian Azure tenant, so audio and transcribed text are processed in Australia, not overseas. This article covers the specifics: which encryption standards apply, which certifications cover the underlying platform, what is and isn't stored, and the questions an IT or compliance team will want answered before a deployment.
 
-**The short version:** Dragon Medical One is hosted on Microsoft Azure with Australian-region processing for AU subscriptions. Audio is streamed for recognition and is not retained on the client device. Traffic is encrypted in transit (TLS 1.2, AES-256) and at rest. The underlying Azure platform is HITRUST CSF certified and ISO 27001 certified. Voice Recognition Australia handles enrolment, configuration, and ongoing support locally.
+**The short version:** Dragon Medical One is hosted on Microsoft Azure with Australian-region processing for AU subscriptions. Audio is streamed for recognition and is not retained on the client device. Traffic is encrypted in transit (TLS 1.2, AES-256) and at rest. The underlying Azure platform is HITRUST CSF certified and ISO 27001 certified. Voice Recognition Australia handles enrolment, configuration, and ongoing support locally — you can [buy a Dragon Medical One subscription here](https://www.voicerecognition.com.au/products/dragon-medical-one).
 
 ## Where Dragon Medical One processes audio for Australian customers
 
-Dragon Medical One is a cloud service. The desktop app on the clinician's PC captures audio and streams it to Nuance/Microsoft servers, which perform recognition and stream text back. For subscriptions sold by Voice Recognition Australia, the service is provisioned on the Australian Azure tenant, with two geographically distributed Azure regions in Australia for resilience.
+Dragon Medical One is a cloud service. The desktop app on the clinician's PC captures audio and streams it to Nuance/Microsoft servers, which perform recognition and stream text back. For [subscriptions sold by Voice Recognition Australia](https://www.voicerecognition.com.au/products/dragon-medical-one), the service is provisioned on the Australian Azure tenant, with two geographically distributed Azure regions in Australia for resilience.
 
 The implication for an Australian healthcare buyer: audio recognition happens inside Australia, not the US or EU. That matters for Privacy Act compliance, hospital procurement, and conversations with information security officers who ask *where does the data go?*
 
@@ -24,7 +24,7 @@ The implication for an Australian healthcare buyer: audio recognition happens in
 - **Specialty vocabulary.** Selected at login (general practice, cardiology, oncology, radiology, etc.). Loaded from the Microsoft/Nuance vocabulary set.
 - **Usage analytics.** Aggregate usage data available to system administrators via the Nuance Management Center for hospital/enterprise deployments.
 
-Verify current retention and data handling specifics directly with Voice Recognition Australia or in your tenancy contract. Cloud product details can change without notice.
+Verify current retention and data handling specifics directly with [Voice Recognition Australia](https://www.voicerecognition.com.au/pages/contact-us) or in your tenancy contract. Cloud product details can change without notice.
 
 ## Encryption and certifications
 
@@ -34,20 +34,26 @@ Three security claims are documented by Microsoft for the Azure infrastructure D
 - **Encryption at rest:** AES-256 on Azure storage.
 - **Infrastructure certifications:** HITRUST CSF certified, ISO 27001 certified, plus the wider Azure compliance posture (GDPR, SOC 2 Type II) on the underlying platform.
 
-The certifications listed apply to the Azure platform Dragon Medical One is deployed on. They are public Microsoft/Nuance claims. Healthcare buyers should request current compliance documentation from Microsoft or Voice Recognition Australia as part of procurement.
+The certifications listed apply to the Azure platform Dragon Medical One is deployed on. They are public Microsoft/Nuance claims. Healthcare buyers should request current compliance documentation from Microsoft or [Voice Recognition Australia](https://www.voicerecognition.com.au/pages/contact-us) as part of procurement.
+
+---
+
+**Ready to deploy Dragon Medical One in your practice?** [Buy Dragon Medical One direct from Voice Recognition Australia](https://www.voicerecognition.com.au/products/dragon-medical-one) — the package includes the 12-month licence, PowerMic Mobile, remote installation, personalised training, and 12 months of Australian-based technical support. For hospitals and volume deployments, [contact us for enterprise pricing](https://www.voicerecognition.com.au/pages/contact-us).
+
+---
 
 ## How this compares to other dictation options
 
 Australian healthcare buyers comparing options usually look at several security postures:
 
-- **Dragon Medical One.** Cloud, Australian Azure tenant for AU subscriptions, encrypted in transit and at rest, HITRUST CSF and ISO 27001 on Azure infrastructure.
-- **Dragon Professional 16 (desktop).** Fully local on the clinician's Windows PC. Audio and text never leave the machine. Best for environments that mandate offline-only processing. No medical vocabulary built in.
+- **[Dragon Medical One](https://www.voicerecognition.com.au/products/dragon-medical-one).** Cloud, Australian Azure tenant for AU subscriptions, encrypted in transit and at rest, HITRUST CSF and ISO 27001 on Azure infrastructure.
+- **Dragon Professional 16 (desktop).** Fully local on the clinician's Windows PC. Audio and text never leave the machine. Best for environments that mandate offline-only processing. No medical vocabulary built in. [Buy Dragon Professional 16](https://www.voicerecognition.com.au/products/dragon-professional-16).
 - **Windows / Microsoft 365 Dictation.** Cloud, processed in the Microsoft 365 tenant your organisation is subscribed to. Tenancy region depends on your M365 setup. General vocabulary only, no medical specialties.
 - **AI scribe tools (Heidi, Lyrebird, etc.).** Cloud, vendor-specific data handling. Generative AI means output is not a verbatim record of what was said. Different regulatory considerations apply.
 
 ## Questions an IT or compliance team will ask
 
-If you're putting Dragon Medical One in front of a hospital infosec review or a practice manager evaluating procurement, expect questions like the ones below. We'll walk you through the answers and provide written documentation for procurement files where needed.
+If you're putting Dragon Medical One in front of a hospital infosec review or a practice manager evaluating procurement, expect questions like the ones below. [Voice Recognition Australia](https://www.voicerecognition.com.au/pages/contact-us) will walk you through the answers and provide written documentation for procurement files where needed.
 
 - Where is audio processed?
 - Where is the user profile stored?
@@ -64,7 +70,7 @@ If you're putting Dragon Medical One in front of a hospital infosec review or a 
 
 ### Is Dragon Medical One hosted in Australia?
 
-Yes. Subscriptions sold by Voice Recognition Australia are provisioned on the Australian Microsoft Azure tenant, with two geographically distributed Australian Azure regions providing resilience. Audio is processed in Australia, not the US or EU.
+Yes. Subscriptions sold by [Voice Recognition Australia](https://www.voicerecognition.com.au/products/dragon-medical-one) are provisioned on the Australian Microsoft Azure tenant, with two geographically distributed Australian Azure regions providing resilience. Audio is processed in Australia, not the US or EU.
 
 ### Is Dragon Medical One HIPAA-compliant?
 
@@ -80,12 +86,21 @@ Traffic between the client and the cloud uses TLS 1.2 with AES-256. Data at rest
 
 ### Can our hospital IT team manage Dragon Medical One centrally?
 
-Yes. The Nuance Management Center (NMC) gives hospital IT teams a single console to manage user accounts, speech profiles, shared AutoText, shared vocabulary, and usage analytics across the organisation. Voice Recognition Australia configures NMC as part of enterprise deployments.
+Yes. The Nuance Management Center (NMC) gives hospital IT teams a single console to manage user accounts, speech profiles, shared AutoText, shared vocabulary, and usage analytics across the organisation. Voice Recognition Australia configures NMC as part of enterprise deployments — [contact us to scope your hospital deployment](https://www.voicerecognition.com.au/pages/contact-us).
 
 ### How does this compare to keeping dictation offline with Dragon Professional 16?
 
-[Dragon Professional 16](https://www.dragonprofessional16.com.au) processes everything locally on the clinician's Windows PC, so audio and text never leave the machine. It works fully offline after activation. The trade-off is that it has no medical specialty vocabularies, no PowerMic Mobile, no centralised management, and no automatic updates. If offline-only processing is a contractual or compliance requirement, Dragon Professional 16 is the right choice; if not, Dragon Medical One is built for clinical work and the security posture is appropriate for most Australian healthcare environments.
+[Dragon Professional 16](https://www.voicerecognition.com.au/products/dragon-professional-16) processes everything locally on the clinician's Windows PC, so audio and text never leave the machine. It works fully offline after activation. The trade-off is that it has no medical specialty vocabularies, no PowerMic Mobile, no centralised management, and no automatic updates. If offline-only processing is a contractual or compliance requirement, Dragon Professional 16 is the right choice; if not, [Dragon Medical One](https://www.voicerecognition.com.au/products/dragon-medical-one) is built for clinical work and the security posture is appropriate for most Australian healthcare environments.
 
 ### Who do I contact about a security review?
 
-Contact Voice Recognition Australia through our [contact form](/#final-cta). We provide current Microsoft and Nuance compliance documentation, can arrange direct contact with Microsoft healthcare cloud specialists for hospital-scale deployments, and can answer practical implementation questions about your specific environment.
+[Contact Voice Recognition Australia directly](https://www.voicerecognition.com.au/pages/contact-us). We provide current Microsoft and Nuance compliance documentation, can arrange direct contact with Microsoft healthcare cloud specialists for hospital-scale deployments, and can answer practical implementation questions about your specific environment.
+
+## Next steps
+
+If you've reached the end of this article, the most likely useful next steps are:
+
+- **Ready to subscribe.** [Buy Dragon Medical One from Voice Recognition Australia](https://www.voicerecognition.com.au/products/dragon-medical-one) — annual subscription, includes PowerMic Mobile, remote install, training, and 12 months of Australian support.
+- **Hospital or multi-clinician deployment.** [Contact Voice Recognition Australia](https://www.voicerecognition.com.au/pages/contact-us) for volume pricing, NMC configuration, and IT/procurement documentation.
+- **Need offline-only desktop dictation instead.** [Dragon Professional 16](https://www.voicerecognition.com.au/products/dragon-professional-16) is the perpetual-licence option that runs entirely on your local Windows PC.
+- **Still evaluating.** Browse the full [Dragon product range at voicerecognition.com.au](https://www.voicerecognition.com.au) — Australia's longest-serving Dragon distributor, over 26 years.
