@@ -244,7 +244,7 @@
       "slug": "dragon-medical-one-security",
       "topicLabel": "Security & Data Residency",
       "title": "Dragon Medical One Security & Australian Data Residency",
-      "metaDescription": "Where Dragon Medical One stores audio and text, what's encrypted, what isn't, and what Australian data residency actually means in practice. Independent reseller guide for Australian healthcare buyers.",
+      "metaDescription": "Where Dragon Medical One stores audio and text, what's encrypted, what isn't, and what Australian data residency actually means in practice.",
       "heroHeading": "How secure is Dragon Medical One, and where is the data stored?",
       "lede": "Dragon Medical One runs on Microsoft Azure. Subscriptions sold by Voice Recognition Australia are provisioned on the Australian Azure tenant, so audio and transcribed text are processed in Australia, not overseas. This page covers the specifics: which encryption standards, which certifications apply, what is and isn't stored, and the questions an IT or compliance team will want answered before a deployment.",
       "tldr": "Dragon Medical One is hosted on Microsoft Azure with Australian-region processing for AU subscriptions. Audio is streamed for recognition and is <strong>not retained on the client device</strong>. Traffic is encrypted in transit (TLS 1.2, AES-256) and at rest. The underlying Azure platform is HITRUST CSF certified and ISO 27001 certified. Voice Recognition Australia handles enrolment, configuration, and ongoing support locally.",
@@ -355,10 +355,10 @@
   "navItems": [
     { "label": "Benefits", "url": "/#benefits" },
     { "label": "Compare", "url": "/#comparison" },
+    { "label": "Resources", "url": "/#resources" },
     { "label": "Enterprise", "url": "/#enterprise" },
     { "label": "FAQ", "url": "/#faq" },
     { "label": "Copilot", "url": "/dragon-copilot" },
-    { "label": "News", "url": "/news" },
     { "label": "Contact", "url": "/#final-cta" }
   ],
   "primaryCTA": {
