@@ -341,7 +341,7 @@
     { "label": "About", "url": "/about" },
     { "label": "Dragon Copilot", "url": "/dragon-copilot" },
     { "label": "News", "url": "/news" },
-    { "label": "Buy from Voice Recognition Australia", "url": "https://www.voicerecognition.com.au/products/dragon-medical-one" },
+    { "label": "Buy Dragon Medical One", "url": "https://www.voicerecognition.com.au/products/dragon-medical-one" },
     { "label": "Privacy Policy", "url": "/privacy" },
     { "label": "Terms", "url": "/terms" },
     { "label": "Contact", "url": "/#final-cta" }
