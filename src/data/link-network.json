@@ -127,7 +127,7 @@
       "anchors": {
         "brand": ["SpeechRecognition Cloud", "speechrecognition.cloud"],
         "descriptive": ["cloud-based speech recognition platform", "AI speech to text in the browser", "multi-language speech recognition", "affordable cloud dictation platform"],
-        "medical": ["cloud speech recognition for healthcare"],
+        "medical": ["cloud speech recognition for healthcare", "medical dictation software"],
         "legal": ["cloud-based dictation for legal professionals"],
         "action": ["try SpeechRecognition Cloud free", "explore cloud speech recognition"],
         "comparison": ["browser-based speech recognition alternative", "cloud dictation vs desktop software"]
