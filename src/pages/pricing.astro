@@ -10,6 +10,16 @@ const PRICE_STANDARD = 1490;
 const PRICE_VERIFIED = '13 August 2026';
 const BUY_URL = 'https://www.voicerecognition.com.au/products/dragon-medical-one';
 
+const R2 = import.meta.env.PUBLIC_R2_BASE || 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev';
+const img = {
+  hero: `${R2}/dragonmedicalone/2026/08/12/dragon-medical-one-pricing-doctor-dictating-photo-4f9857aa.jpg`,
+  heroAlt: 'Australian doctor dictating clinical notes with Dragon Medical One using a smartphone as a wireless microphone',
+  quotes: `${R2}/dragonmedicalone/2026/08/12/dragon-medical-one-comparing-quotes-practice-manager-photo-bd544cf4.jpg`,
+  quotesAlt: 'Practice manager comparing Dragon Medical One quotations at a medical reception desk',
+  team: `${R2}/dragonmedicalone/2026/08/12/dragon-medical-one-clinical-team-hospital-deployment-banner-b59111c8.jpg`,
+  teamAlt: 'Hospital clinicians discussing a Dragon Medical One deployment in a modern hospital corridor',
+};
+
 const title = 'Dragon Medical One Pricing Australia | $1,290 per Year Including Support';
 const metaDesc =
   'Dragon Medical One pricing in Australia. A$1,290 per user per year on automatic renewal, or A$1,490 without. Both include PowerMic Mobile, remote installation, one-on-one training and 12 months of Australian support. GST inclusive.';
@@ -148,71 +158,79 @@ const faqSchema = {
       .mobile-nav{display:none;padding:0 0 14px}
       .mobile-nav a{display:block;padding:10px 0;text-decoration:none;color:#334155;font-weight:600;border-bottom:1px solid #f1f5f9}
 
-      .hero{padding:56px 0 12px;background:#f0f9ff}
-      .hero-pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0c4a6e;background:#e0f2fe;padding:6px 14px;border-radius:20px;margin-bottom:16px}
-      .hero h1{font-size:40px;line-height:1.15;margin:0 0 16px;letter-spacing:-0.02em}
-      .hero p.lede{font-size:18px;color:#334155;max-width:760px;margin:0 0 8px}
-      .verified{font-size:13px;color:#64748b;margin:0 0 32px}
+      .hero{padding:44px 0 8px;background:#f0f9ff}
+      .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+      .hero-pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0c4a6e;background:#e0f2fe;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+      .hero h1{font-size:33px;line-height:1.15;margin:0 0 12px;letter-spacing:-0.02em}
+      .hero p.lede{font-size:16.5px;color:#334155;margin:0 0 6px}
+      .verified{font-size:12.5px;color:#64748b;margin:0 0 24px}
+      .hero-img{width:100%;height:100%;max-height:300px;object-fit:cover;border-radius:14px;box-shadow:0 16px 40px rgba(12,74,110,.16)}
 
-      section{padding:48px 0}
-      h2{font-size:28px;margin:0 0 10px;letter-spacing:-0.01em}
-      .sub{color:#475569;margin:0 0 28px;max-width:720px}
+      section{padding:38px 0}
+      h2{font-size:24px;margin:0 0 8px;letter-spacing:-0.01em}
+      .sub{color:#475569;margin:0 0 22px;max-width:700px;font-size:15.5px}
 
-      .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;padding-bottom:8px}
-      .card{border:1px solid #e2e8f0;border-radius:16px;padding:28px;background:#fff;display:flex;flex-direction:column}
-      .card.featured{border:2px solid #0c4a6e;box-shadow:0 18px 44px rgba(12,74,110,.12);position:relative}
-      .ribbon{position:absolute;top:-13px;left:28px;background:#0c4a6e;color:#fff;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:20px}
-      .card h3{font-size:17px;margin:0 0 4px;color:#0c4a6e}
-      .card .who{font-size:14px;color:#64748b;margin:0 0 18px}
-      .amount{font-size:46px;font-weight:800;letter-spacing:-0.03em;line-height:1;margin:0}
-      .per{font-size:14px;color:#475569;margin:8px 0 4px}
-      .gst{font-size:13px;color:#64748b;margin:0 0 20px}
-      .save{display:inline-block;background:#fef3c7;color:#92400e;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin:0 0 16px}
-      .card .btn{margin-top:auto;text-align:center}
-      .strike{text-decoration:line-through;color:#94a3b8;font-weight:600;font-size:20px;margin-left:10px}
+      .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;max-width:760px}
+      .card{border:1px solid #e2e8f0;border-radius:13px;padding:20px 22px;background:#fff;display:flex;flex-direction:column}
+      .card.featured{border:2px solid #0c4a6e;box-shadow:0 12px 30px rgba(12,74,110,.11);position:relative}
+      .ribbon{position:absolute;top:-11px;left:20px;background:#0c4a6e;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
+      .card h3{font-size:15.5px;margin:6px 0 2px;color:#0c4a6e}
+      .card .who{font-size:13px;color:#64748b;margin:0 0 12px;line-height:1.45}
+      .amount{font-size:33px;font-weight:800;letter-spacing:-0.03em;line-height:1;margin:0}
+      .per{font-size:13px;color:#475569;margin:6px 0 2px}
+      .gst{font-size:12.5px;color:#64748b;margin:0 0 12px}
+      .save{display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin:0 0 12px;align-self:flex-start}
+      .card .btn{margin-top:auto;text-align:center;padding:10px 16px;font-size:14px}
+      .strike{text-decoration:line-through;color:#94a3b8;font-weight:600;font-size:16px;margin-left:8px}
 
-      .inc{list-style:none;padding:0;margin:0}
-      .inc li{padding:12px 0;border-bottom:1px solid #f1f5f9;font-size:15.5px;color:#334155;display:flex;gap:12px;align-items:flex-start}
-      .inc li:last-child{border-bottom:0}
+      .inc{list-style:none;padding:0;margin:0;columns:2;column-gap:36px}
+      .inc li{padding:8px 0;font-size:15px;color:#334155;display:flex;gap:10px;align-items:flex-start;break-inside:avoid}
       .inc li::before{content:"\2713";color:#059669;font-weight:800;flex-shrink:0}
 
-      .warn{border:1px solid #fcd34d;background:#fffbeb;border-left:5px solid #f59e0b;border-radius:14px;padding:26px 28px}
-      .warn h3{margin:0 0 10px;font-size:19px;color:#92400e}
-      .warn p{margin:0 0 14px;color:#451a03;font-size:15.5px}
-      .warn ol{margin:0 0 14px;padding-left:22px;color:#451a03;font-size:15.5px}
-      .warn ol li{padding:5px 0}
-      .warn .fineprint{font-size:13.5px;color:#78350f;margin:0}
+      .note{border:1px solid #cbd5e1;border-left:4px solid #0c4a6e;background:#f8fafc;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1.35fr .65fr}
+      .note-body{padding:22px 24px}
+      .note h3{margin:0 0 8px;font-size:18px;color:#0c4a6e}
+      .note p{margin:0 0 11px;color:#334155;font-size:15px}
+      .note ol{margin:0 0 11px;padding-left:20px;color:#334155;font-size:14.5px;columns:2;column-gap:28px}
+      .note ol li{padding:3px 0;break-inside:avoid}
+      .note .fineprint{font-size:12.5px;color:#64748b;margin:0}
+      .note-img{width:100%;height:100%;object-fit:cover;min-height:100%}
 
-      .two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-      .panel{background:#f0f9ff;border-radius:14px;padding:26px}
-      .panel h3{margin:0 0 8px;font-size:19px;color:#0c4a6e}
-      .panel p{margin:0;color:#334155;font-size:15.5px}
+      .strip{width:100%;height:190px;object-fit:cover;object-position:center 38%;border-radius:14px;display:block;margin-bottom:26px}
 
-      details.faq{border-bottom:1px solid #e2e8f0;padding:16px 0}
-      details.faq summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+      .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+      .panel{background:#f0f9ff;border-radius:12px;padding:20px 22px}
+      .panel h3{margin:0 0 6px;font-size:17px;color:#0c4a6e}
+      .panel p{margin:0;color:#334155;font-size:15px}
+
+      details.faq{border-bottom:1px solid #e2e8f0;padding:13px 0}
+      details.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
       details.faq summary::-webkit-details-marker{display:none}
       details.faq summary::after{content:"+";color:#0c4a6e;font-weight:800;flex-shrink:0}
       details.faq[open] summary::after{content:"\2212"}
-      details.faq p{margin:12px 0 0;color:#334155;font-size:15.5px}
+      details.faq p{margin:10px 0 0;color:#334155;font-size:15px}
 
-      .cta{background:linear-gradient(135deg,#0c4a6e,#0e7490);color:#fff;padding:56px 0}
+      .cta{background:linear-gradient(135deg,#0c4a6e,#0e7490);color:#fff;padding:46px 0}
       .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-      .cta h2{color:#fff;margin:0 0 12px}
-      .cta p{color:#bae6fd;margin:0 0 16px}
+      .cta h2{color:#fff;margin:0 0 10px}
+      .cta p{color:#bae6fd;margin:0 0 14px}
 
-      footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px}
+      footer{background:#0f172a;color:#64748b;padding:26px 0;font-size:14px}
       .footer-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
       .footer-links{display:flex;gap:20px;flex-wrap:wrap}
       .footer-links a{color:#64748b;text-decoration:none}
       .footer-links a:hover{color:#fff}
       .legal{max-width:1080px;margin:14px auto 0;padding:0 24px;font-size:11.5px;color:#475569;line-height:1.6}
 
-      @media(max-width:860px){
-        .price-grid,.two,.cta-grid{grid-template-columns:1fr}
+      @media(max-width:900px){
+        .price-grid,.two,.cta-grid,.hero-split,.note{grid-template-columns:1fr}
+        .inc,.note ol{columns:1}
+        .note-img{max-height:200px}
         .nav-links{display:none}
         .hamburger{display:flex}
-        .hero h1{font-size:30px}
-        .amount{font-size:38px}
+        .hero h1{font-size:27px}
+        .amount{font-size:30px}
+        .strip{height:150px}
       }
     </style>
   </head>
@@ -242,14 +260,19 @@ const faqSchema = {
     <main>
       <section class="hero">
         <div class="wrap">
-          <div class="hero-pill">Pricing &bull; Australia</div>
-          <h1>Dragon Medical One pricing in Australia</h1>
-          <p class="lede">
-            One clinician, one annual subscription, everything needed to be dictating properly — licence,
-            PowerMic Mobile, remote installation, personalised training and a year of Australian support.
-            Two ways to pay, and the only difference between them is how renewal is handled.
-          </p>
-          <p class="verified">All prices in Australian dollars and GST inclusive. Verified {PRICE_VERIFIED}.</p>
+          <div class="hero-split">
+            <div>
+              <div class="hero-pill">Pricing &bull; Australia</div>
+              <h1>Dragon Medical One pricing in Australia</h1>
+              <p class="lede">
+                One clinician, one annual subscription, everything needed to be dictating properly — licence,
+                PowerMic Mobile, remote installation, personalised training and a year of Australian support.
+                Two ways to pay, and the only difference is how renewal is handled.
+              </p>
+              <p class="verified">All prices in Australian dollars and GST inclusive. Verified {PRICE_VERIFIED}.</p>
+            </div>
+            <img class="hero-img" src={img.hero} alt={img.heroAlt} width="2752" height="1536" loading="eager" decoding="async" />
+          </div>
         </div>
       </section>
 
@@ -295,7 +318,8 @@ const faqSchema = {
 
       <section>
         <div class="wrap">
-          <div class="warn">
+          <div class="note">
+            <div class="note-body">
             <h3>Before you compare on price alone</h3>
             <p>
               You will see Dragon Medical One advertised in Australia for under A$1,000. That is a real price for
@@ -317,12 +341,15 @@ const faqSchema = {
               differ legitimately across the market. This is simply the comparison we would want a clinician to
               make before committing.
             </p>
+            </div>
+            <img class="note-img" src={img.quotes} alt={img.quotesAlt} loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
 
       <section style="background:#f8fafc">
         <div class="wrap">
+          <img class="strip" src={img.team} alt={img.teamAlt} loading="lazy" decoding="async" />
           <h2>More than one clinician?</h2>
           <p class="sub">Volume, practice and hospital licensing is priced separately.</p>
           <div class="two">
