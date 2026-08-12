@@ -52,10 +52,22 @@
     "muted": "#475569"
   },
   "stats": [
-    { "value": "600,000+", "label": "Doctors worldwide" },
-    { "value": "Cloud", "label": "Microsoft Azure hosted" },
-    { "value": "AU", "label": "Australian data residency" },
-    { "value": "26 yrs", "label": "Local Australian support" }
+    {
+      "value": "600,000+",
+      "label": "Doctors worldwide"
+    },
+    {
+      "value": "Cloud",
+      "label": "Microsoft Azure hosted"
+    },
+    {
+      "value": "AU",
+      "label": "Australian data residency"
+    },
+    {
+      "value": "26 yrs",
+      "label": "Local Australian support"
+    }
   ],
   "benefits": [
     {
@@ -192,7 +204,13 @@
       "heroHeading": "Dragon Medical One and Best Practice",
       "heroBody": "Best Practice is one of Australia's most widely used clinical software systems. Dragon Medical One integrates directly with Best Practice, allowing you to dictate patient notes, referral letters, and clinical documentation in real time. The floating dictation bar sits over your Best Practice window - just click into any text field and start speaking.",
       "howItWorks": "Dragon Medical One runs as a lightweight overlay on your Windows desktop. When you open Best Practice and click into a clinical notes field, progress notes, or referral letter, DMO is ready to transcribe. Speak naturally using medical terminology and your words appear in Best Practice as you dictate. Voice commands let you navigate, format, and correct text without touching the keyboard.",
-      "keyBenefits": ["Dictate directly into Best Practice clinical notes, progress notes, and referral letters", "Medical vocabulary across multiple specialties recognised automatically", "No voice training required - start dictating immediately", "PowerMic Mobile lets you dictate wirelessly from anywhere in the practice", "Works alongside Best Practice without changing your existing workflow"]
+      "keyBenefits": [
+        "Dictate directly into Best Practice clinical notes, progress notes, and referral letters",
+        "Medical vocabulary across multiple specialties recognised automatically",
+        "No voice training required - start dictating immediately",
+        "PowerMic Mobile lets you dictate wirelessly from anywhere in the practice",
+        "Works alongside Best Practice without changing your existing workflow"
+      ]
     },
     {
       "slug": "dragon-medical-one-medical-director",
@@ -203,7 +221,13 @@
       "heroHeading": "Dragon Medical One and Medical Director",
       "heroBody": "Medical Director is a trusted clinical software platform used across Australian general practices. Dragon Medical One works seamlessly with Medical Director, letting you dictate clinical notes, patient histories, and correspondence directly into the application. The cloud-based speech recognition understands your medical terminology without voice training.",
       "howItWorks": "With Dragon Medical One running on your Windows desktop, simply click into any text field within Medical Director and begin dictating. DMO's floating interface stays accessible without interfering with your Medical Director workflow. Your dictation appears in real time as you speak, with medical terminology recognised accurately from the first use.",
-      "keyBenefits": ["Dictate into Medical Director clinical notes, histories, and correspondence", "Automatic recognition of medical terminology across specialties", "Cloud-based - minimal impact on your computer's performance", "Use your mobile phone as a wireless microphone with PowerMic Mobile", "Australian data residency on Microsoft Azure"]
+      "keyBenefits": [
+        "Dictate into Medical Director clinical notes, histories, and correspondence",
+        "Automatic recognition of medical terminology across specialties",
+        "Cloud-based - minimal impact on your computer's performance",
+        "Use your mobile phone as a wireless microphone with PowerMic Mobile",
+        "Australian data residency on Microsoft Azure"
+      ]
     },
     {
       "slug": "dragon-medical-one-genie",
@@ -214,7 +238,13 @@
       "heroHeading": "Dragon Medical One and Genie Solutions",
       "heroBody": "Genie Solutions is widely used across Australian specialist and GP practices. Dragon Medical One integrates directly with Genie, enabling you to dictate clinical notes, letters, and documentation in real time. The speech recognition is cloud-based on Microsoft Azure with Australian data residency, so your clinical content stays in-country.",
       "howItWorks": "Dragon Medical One floats over your Genie Solutions interface. Click into any text field in Genie - clinical notes, correspondence, reports - and dictate naturally. DMO transcribes your speech in real time with medical vocabulary already built in. Voice commands let you navigate and format without leaving your Genie workflow.",
-      "keyBenefits": ["Dictate directly into Genie Solutions clinical notes, letters, and reports", "Specialist medical vocabulary across multiple specialties", "Cloud-powered with Australian data residency", "No voice training needed - accurate from day one", "Wireless dictation with the included PowerMic Mobile app"]
+      "keyBenefits": [
+        "Dictate directly into Genie Solutions clinical notes, letters, and reports",
+        "Specialist medical vocabulary across multiple specialties",
+        "Cloud-powered with Australian data residency",
+        "No voice training needed - accurate from day one",
+        "Wireless dictation with the included PowerMic Mobile app"
+      ]
     },
     {
       "slug": "dragon-medical-one-shexie",
@@ -225,7 +255,13 @@
       "heroHeading": "Dragon Medical One and Shexie",
       "heroBody": "Shexie is a popular practice management and clinical software system used by Australian medical practices. Dragon Medical One works with Shexie, allowing clinicians to dictate patient notes and clinical documentation directly into the application. Cloud-based speech recognition means accurate medical transcription without local processing overhead.",
       "howItWorks": "With Dragon Medical One installed, open Shexie and click into any text field where you need to enter clinical notes or documentation. DMO's floating dictation interface activates and transcribes your speech in real time. Medical terminology is recognised automatically across specialties.",
-      "keyBenefits": ["Dictate into Shexie clinical notes and documentation fields", "Medical vocabulary built in across multiple specialties", "No voice training required", "PowerMic Mobile included - use your phone as a wireless mic", "Cloud-based with Australian data residency on Microsoft Azure"]
+      "keyBenefits": [
+        "Dictate into Shexie clinical notes and documentation fields",
+        "Medical vocabulary built in across multiple specialties",
+        "No voice training required",
+        "PowerMic Mobile included - use your phone as a wireless mic",
+        "Cloud-based with Australian data residency on Microsoft Azure"
+      ]
     },
     {
       "slug": "dragon-medical-one-gentu",
@@ -236,17 +272,48 @@
       "heroHeading": "Dragon Medical One and Gentu",
       "heroBody": "Gentu is used by Australian medical practices for clinical and practice management. Dragon Medical One integrates with Gentu, letting you dictate clinical documentation directly into the application with real-time cloud-based speech recognition. No voice training required - start dictating with accurate medical terminology recognition from day one.",
       "howItWorks": "Dragon Medical One runs as a lightweight overlay on your desktop. When working in Gentu, click into any text field and begin dictating. Your speech is processed in the cloud on Microsoft Azure and transcribed in real time with medical vocabulary automatically applied.",
-      "keyBenefits": ["Dictate directly into Gentu clinical documentation fields", "Medical vocabulary across multiple specialties built in", "Cloud-based - no local processing burden", "Wireless dictation with PowerMic Mobile", "Australian data residency and encryption in transit and at rest"]
+      "keyBenefits": [
+        "Dictate directly into Gentu clinical documentation fields",
+        "Medical vocabulary across multiple specialties built in",
+        "Cloud-based - no local processing burden",
+        "Wireless dictation with PowerMic Mobile",
+        "Australian data residency and encryption in transit and at rest"
+      ]
     }
   ],
   "navItems": [
-    { "label": "Benefits", "url": "/#benefits" },
-    { "label": "Compare", "url": "/#comparison" },
-    { "label": "Enterprise", "url": "/#enterprise" },
-    { "label": "FAQ", "url": "/#faq" },
-    { "label": "Copilot", "url": "/dragon-copilot" },
-    { "label": "News", "url": "/news" },
-    { "label": "Buy Now", "url": "https://www.voicerecognition.com.au/products/dragon-medical-one" }
+    {
+      "label": "Benefits",
+      "url": "/#benefits"
+    },
+    {
+      "label": "Compare",
+      "url": "/#comparison"
+    },
+    {
+      "label": "Pricing",
+      "url": "/pricing"
+    },
+    {
+      "label": "Enterprise",
+      "url": "/#enterprise"
+    },
+    {
+      "label": "FAQ",
+      "url": "/#faq"
+    },
+    {
+      "label": "Copilot",
+      "url": "/dragon-copilot"
+    },
+    {
+      "label": "News",
+      "url": "/news"
+    },
+    {
+      "label": "Buy Now",
+      "url": "https://www.voicerecognition.com.au/products/dragon-medical-one"
+    }
   ],
   "primaryCTA": {
     "text": "Request Free Trial",
@@ -259,7 +326,7 @@
   "aboutEditions": [
     {
       "name": "Dragon Medical One - Complete Package",
-      "desc": "12-month licence, PowerMic Mobile app, professional remote installation, one hour personalised training, 12 months Australian technical support, subscriber-only training videos, automatic cloud updates.",
+      "desc": "A$1,290 per clinician per year on automatic renewal, or A$1,490 without. 12-month licence, PowerMic Mobile app, professional remote installation, one hour personalised training, 12 months Australian technical support, subscriber-only training videos, automatic cloud updates. GST inclusive, verified 13 August 2026.",
       "highlight": true
     },
     {
@@ -306,7 +373,7 @@
   "faqs": [
     {
       "q": "How much does Dragon Medical One cost in Australia?",
-      "a": "Contact us for current pricing. Dragon Medical One is sold as an annual subscription that includes the software licence, PowerMic Mobile app, remote installation, personalised training, and 12 months of Australian technical support. Enterprise and volume pricing is available for hospitals and large practices."
+      "a": "Voice Recognition Australia lists Dragon Medical One at A$1,290 per clinician per year on the automatic renewal option, or A$1,490 per clinician per year without automatic renewal. Both are GST inclusive and include the licence, PowerMic Mobile, remote installation, one hour of personalised training and 12 months of Australian technical support. Volume pricing applies for practices and hospitals. See our pricing page for the full breakdown. Verified 13 August 2026 and subject to change."
     },
     {
       "q": "Does Dragon Medical One work with Best Practice, Genie, and Medical Director?",
@@ -338,12 +405,37 @@
     }
   ],
   "footerLinks": [
-    { "label": "About", "url": "/about" },
-    { "label": "Dragon Copilot", "url": "/dragon-copilot" },
-    { "label": "News", "url": "/news" },
-    { "label": "Buy Dragon Medical One", "url": "https://www.voicerecognition.com.au/products/dragon-medical-one" },
-    { "label": "Privacy Policy", "url": "/privacy" },
-    { "label": "Terms", "url": "/terms" },
-    { "label": "Contact", "url": "/#final-cta" }
+    {
+      "label": "About",
+      "url": "/about"
+    },
+    {
+      "label": "Pricing",
+      "url": "/pricing"
+    },
+    {
+      "label": "Dragon Copilot",
+      "url": "/dragon-copilot"
+    },
+    {
+      "label": "News",
+      "url": "/news"
+    },
+    {
+      "label": "Buy Dragon Medical One",
+      "url": "https://www.voicerecognition.com.au/products/dragon-medical-one"
+    },
+    {
+      "label": "Privacy Policy",
+      "url": "/privacy"
+    },
+    {
+      "label": "Terms",
+      "url": "/terms"
+    },
+    {
+      "label": "Contact",
+      "url": "/#final-cta"
+    }
   ]
 }
