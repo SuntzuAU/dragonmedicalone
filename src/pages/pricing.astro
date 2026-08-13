@@ -1,0 +1,446 @@
+---
+import site from '../site.config.json';
+import ACForm from '../components/ACForm.astro';
+
+const c = site.colours;
+const year = new Date().getFullYear();
+
+const PRICE_AUTO = 1290;
+const PRICE_STANDARD = 1490;
+const PRICE_VERIFIED = '13 August 2026';
+const BUY_URL = 'https://www.voicerecognition.com.au/products/dragon-medical-one';
+
+const R2 = import.meta.env.PUBLIC_R2_BASE || 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev';
+const img = {
+  hero: `${R2}/dragonmedicalone/2026/08/12/dragon-medical-one-pricing-doctor-dictating-photo-4f9857aa.jpg`,
+  heroAlt: 'Australian doctor dictating clinical notes with Dragon Medical One using a smartphone as a wireless microphone',
+  quotes: `${R2}/dragonmedicalone/2026/08/12/dragon-medical-one-comparing-quotes-practice-manager-photo-bd544cf4.jpg`,
+  quotesAlt: 'Practice manager comparing Dragon Medical One quotations at a medical reception desk',
+  team: `${R2}/dragonmedicalone/2026/08/12/dragon-medical-one-clinical-team-hospital-deployment-banner-b59111c8.jpg`,
+  teamAlt: 'Hospital clinicians discussing a Dragon Medical One deployment in a modern hospital corridor',
+};
+
+const title = 'Dragon Medical One Pricing Australia | $1,290 per Year Including Support';
+const metaDesc =
+  'Dragon Medical One pricing in Australia. A$1,290 per user per year on automatic renewal, or A$1,490 without. Both include PowerMic Mobile, remote installation, one-on-one training and 12 months of Australian support. GST inclusive.';
+
+const included = [
+  'Dragon Medical One 12-month licence, one clinician',
+  'PowerMic Mobile app — use your iPhone or Android as a wireless microphone',
+  'Professional remote installation on your Windows environment',
+  'One hour of personalised one-on-one training',
+  '12 months of Australian-based technical support by phone, email and remote session',
+  'Access to subscriber-only training videos',
+  'Automatic cloud updates for the life of the subscription',
+];
+
+const checklist = [
+  'Is remote installation included, or charged separately?',
+  'Is one-on-one training included, or charged separately?',
+  'Is technical support included for the full 12 months, and is it based in Australia?',
+  'Is the PowerMic Mobile app included?',
+  'What does the licence cost to renew in year two?',
+  'Is the advertised figure GST inclusive or exclusive?',
+];
+
+const faqs = [
+  {
+    q: 'How much does Dragon Medical One cost in Australia?',
+    a: `Voice Recognition Australia lists Dragon Medical One at A$${PRICE_AUTO} per user per year on the automatic renewal option, or A$${PRICE_STANDARD} per user per year without automatic renewal. Both figures are GST inclusive and include the licence, PowerMic Mobile, remote installation, one hour of personalised training and 12 months of Australian technical support. Pricing verified ${PRICE_VERIFIED} and may change.`,
+  },
+  {
+    q: 'What is the difference between the two options?',
+    a: `The only difference is how renewal is handled. At A$${PRICE_AUTO} your subscription renews automatically on your card each year and you save A$200. At A$${PRICE_STANDARD} nothing renews automatically and we contact you before expiry. What you receive in the first 12 months is identical.`,
+  },
+  {
+    q: 'Is there a discount for multiple clinicians?',
+    a: 'Yes. Volume pricing is available for practices, medical centres and hospitals, along with centralised management through the Nuance Management Center and support for Citrix, VMware and RDS environments. Tell us how many clinicians you have and we will price it.',
+  },
+  {
+    q: 'Can I try it before I buy?',
+    a: 'Yes. We arrange a free trial, install it remotely on your Windows environment and walk you through it. Most practices are dictating on the day the trial starts.',
+  },
+  {
+    q: 'Why are some Dragon Medical One offers advertised for less?',
+    a: 'Advertised figures are not always comparing the same thing. Some are licence-only and exclude installation, training, support or the PowerMic Mobile app; some are exclusive of GST; and renewal pricing in year two can differ from the first-year figure. Ask any supplier to confirm in writing what is included and what renewal costs, then compare the totals.',
+  },
+  {
+    q: 'What happens at the end of the 12 months?',
+    a: `On the A$${PRICE_AUTO} option the subscription renews automatically and support continues uninterrupted. On the A$${PRICE_STANDARD} option we contact you before expiry to arrange renewal. You can change between the two at any renewal.`,
+  },
+];
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Dragon Medical One — Complete Package (Australia)',
+  description:
+    'Dragon Medical One cloud medical speech recognition, supplied by Voice Recognition Australia with PowerMic Mobile, remote installation, personalised training and 12 months of Australian technical support.',
+  brand: { '@type': 'Brand', name: 'Dragon Medical One' },
+  category: 'Medical speech recognition software',
+  url: `${site.domain}/pricing`,
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Automatic renewal',
+      price: String(PRICE_AUTO),
+      priceCurrency: 'AUD',
+      availability: 'https://schema.org/InStock',
+      url: BUY_URL,
+      priceValidUntil: '2026-12-31',
+      seller: { '@type': 'Organization', name: 'Voice Recognition Australia' },
+      areaServed: 'AU',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Standard, no automatic renewal',
+      price: String(PRICE_STANDARD),
+      priceCurrency: 'AUD',
+      availability: 'https://schema.org/InStock',
+      url: BUY_URL,
+      priceValidUntil: '2026-12-31',
+      seller: { '@type': 'Organization', name: 'Voice Recognition Australia' },
+      areaServed: 'AU',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={metaDesc} />
+    <link rel="canonical" href={`${site.domain}/pricing`} />
+
+    {site.googleAnalyticsId && (
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.googleAnalyticsId}`}></script>
+      <script define:vars={{ gaId: site.googleAnalyticsId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+      </script>
+    )}
+
+    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <style is:inline>
+      *,*::before,*::after{box-sizing:border-box}
+      body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a;line-height:1.7;background:#fff}
+      .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+      a{color:inherit}
+      header{border-bottom:1px solid #e2e8f0;background:#fff}
+      .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+      .logo img{height:44px;width:auto;display:block}
+      .nav-links{display:flex;gap:20px;font-size:14px;font-weight:600}
+      .nav-links a{text-decoration:none;color:#334155}
+      .nav-links a:hover{color:#0c4a6e}
+      .nav-ctas{display:flex;gap:10px;align-items:center}
+      .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+      .btn-primary{background:#f59e0b;color:#0f172a}
+      .btn-secondary{background:#fff;border-color:#cbd5e1;color:#0c4a6e}
+      .hamburger{display:none;background:none;border:0;flex-direction:column;gap:4px;padding:8px}
+      .hamburger span{display:block;width:22px;height:2px;background:#0f172a}
+      .mobile-nav{display:none;padding:0 0 14px}
+      .mobile-nav a{display:block;padding:10px 0;text-decoration:none;color:#334155;font-weight:600;border-bottom:1px solid #f1f5f9}
+
+      .hero{padding:44px 0 8px;background:#f0f9ff}
+      .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+      .hero-pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0c4a6e;background:#e0f2fe;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+      .hero h1{font-size:33px;line-height:1.15;margin:0 0 12px;letter-spacing:-0.02em}
+      .hero p.lede{font-size:16.5px;color:#334155;margin:0 0 6px}
+      .verified{font-size:12.5px;color:#64748b;margin:0 0 24px}
+      .hero-img{width:100%;height:100%;max-height:300px;object-fit:cover;border-radius:14px;box-shadow:0 16px 40px rgba(12,74,110,.16)}
+
+      section{padding:38px 0}
+      h2{font-size:24px;margin:0 0 8px;letter-spacing:-0.01em}
+      .sub{color:#475569;margin:0 0 22px;max-width:700px;font-size:15.5px}
+
+      .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;max-width:760px}
+      .card{border:1px solid #e2e8f0;border-radius:13px;padding:20px 22px;background:#fff;display:flex;flex-direction:column}
+      .card.featured{border:2px solid #0c4a6e;box-shadow:0 12px 30px rgba(12,74,110,.11);position:relative}
+      .ribbon{position:absolute;top:-11px;left:20px;background:#0c4a6e;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
+      .card h3{font-size:15.5px;margin:6px 0 2px;color:#0c4a6e}
+      .card .who{font-size:13px;color:#64748b;margin:0 0 12px;line-height:1.45}
+      .amount{font-size:33px;font-weight:800;letter-spacing:-0.03em;line-height:1;margin:0}
+      .per{font-size:13px;color:#475569;margin:6px 0 2px}
+      .gst{font-size:12.5px;color:#64748b;margin:0 0 12px}
+      .save{display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin:0 0 12px;align-self:flex-start}
+      .card .btn{margin-top:auto;text-align:center;padding:10px 16px;font-size:14px}
+      .strike{text-decoration:line-through;color:#94a3b8;font-weight:600;font-size:16px;margin-left:8px}
+
+      .inc{list-style:none;padding:0;margin:0;columns:2;column-gap:36px}
+      .inc li{padding:8px 0;font-size:15px;color:#334155;display:flex;gap:10px;align-items:flex-start;break-inside:avoid}
+      .inc li::before{content:"\2713";color:#059669;font-weight:800;flex-shrink:0}
+
+      .note{border:1px solid #cbd5e1;border-left:4px solid #0c4a6e;background:#f8fafc;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1.5fr .5fr}
+      .note-body{padding:22px 24px}
+      .note h3{margin:0 0 8px;font-size:18px;color:#0c4a6e}
+      .note p{margin:0 0 11px;color:#334155;font-size:15px}
+      .note ol{margin:0 0 11px;padding-left:20px;color:#334155;font-size:14.5px;columns:2;column-gap:28px}
+      .note ol li{padding:3px 0;break-inside:avoid}
+      .note .fineprint{font-size:12.5px;color:#64748b;margin:0}
+      .note-img{width:100%;height:100%;object-fit:cover;object-position:72% 32%;min-height:100%}
+
+      .strip{width:100%;height:190px;object-fit:cover;object-position:center 38%;border-radius:14px;display:block;margin-bottom:26px}
+
+      .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+      .panel{background:#f0f9ff;border-radius:12px;padding:20px 22px}
+      .panel h3{margin:0 0 6px;font-size:17px;color:#0c4a6e}
+      .panel p{margin:0;color:#334155;font-size:15px}
+
+      details.faq{border-bottom:1px solid #e2e8f0;padding:13px 0}
+      details.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+      details.faq summary::-webkit-details-marker{display:none}
+      details.faq summary::after{content:"+";color:#0c4a6e;font-weight:800;flex-shrink:0}
+      details.faq[open] summary::after{content:"\2212"}
+      details.faq p{margin:10px 0 0;color:#334155;font-size:15px}
+
+      .cta{background:linear-gradient(135deg,#0c4a6e,#0e7490);color:#fff;padding:46px 0}
+      .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+      .cta h2{color:#fff;margin:0 0 10px}
+      .cta p{color:#bae6fd;margin:0 0 14px}
+
+      footer{background:#0f172a;color:#64748b;padding:26px 0;font-size:14px}
+      .footer-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+      .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+      .footer-links a{color:#64748b;text-decoration:none}
+      .footer-links a:hover{color:#fff}
+      .legal{max-width:1080px;margin:14px auto 0;padding:0 24px;font-size:11.5px;color:#475569;line-height:1.6}
+
+      @media(max-width:900px){
+        .price-grid,.two,.cta-grid,.hero-split,.note{grid-template-columns:1fr}
+        .inc,.note ol{columns:1}
+        .note-img{max-height:200px}
+        .nav-links{display:none}
+        .hamburger{display:flex}
+        .hero h1{font-size:27px}
+        .amount{font-size:30px}
+        .strip{height:150px}
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="nav">
+          <div class="logo"><a href="/"><img src="/logo.jpg" alt={site.siteName} /></a></div>
+          <nav class="nav-links" aria-label="Primary">
+            {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
+          </nav>
+          <div class="nav-ctas">
+            <a class="btn btn-secondary" href={BUY_URL}>Buy Dragon Medical</a>
+            <a class="btn btn-primary" href="#pricing-cta">Request Free Trial</a>
+            <button class="hamburger" aria-label="Open menu" onclick="var mn=this.closest('header').querySelector('.mobile-nav');mn.style.display=mn.style.display==='block'?'none':'block'">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-split">
+            <div>
+              <div class="hero-pill">Pricing &bull; Australia</div>
+              <h1>Dragon Medical One pricing in Australia</h1>
+              <p class="lede">
+                One clinician, one annual subscription, everything needed to be dictating properly — licence,
+                PowerMic Mobile, remote installation, personalised training and a year of Australian support.
+                Two ways to pay, and the only difference is how renewal is handled.
+              </p>
+              <p class="verified">All prices in Australian dollars and GST inclusive. Verified {PRICE_VERIFIED}.</p>
+            </div>
+            <img class="hero-img" src={img.hero} alt={img.heroAlt} width="2752" height="1536" loading="eager" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section style="padding-top:28px">
+        <div class="wrap">
+          <div class="price-grid">
+            <div class="card featured">
+              <div class="ribbon">Most practices choose this</div>
+              <h3>Automatic renewal</h3>
+              <p class="who">Renews on your card each year, support never lapses</p>
+              <p class="amount">A${PRICE_AUTO}<span class="strike">A${PRICE_STANDARD}</span></p>
+              <p class="per">per clinician, per year</p>
+              <p class="gst">GST inclusive</p>
+              <span class="save">Save A$200</span>
+              <a class="btn btn-primary" href={BUY_URL}>Buy Dragon Medical One</a>
+            </div>
+
+            <div class="card">
+              <h3>Standard</h3>
+              <p class="who">No card stored, we contact you before expiry</p>
+              <p class="amount">A${PRICE_STANDARD}</p>
+              <p class="per">per clinician, per year</p>
+              <p class="gst">GST inclusive</p>
+              <span class="save" style="background:#e0f2fe;color:#0c4a6e">Nothing charged automatically</span>
+              <a class="btn btn-secondary" href={BUY_URL}>Buy Dragon Medical One</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#f8fafc">
+        <div class="wrap">
+          <h2>What is included at both prices</h2>
+          <p class="sub">
+            Identical on either option. The figure you see is the figure you pay for the first 12 months —
+            there is nothing separate to buy before a clinician can start dictating.
+          </p>
+          <ul class="inc">
+            {included.map((i) => <li><span>{i}</span></li>)}
+          </ul>
+          <p style="margin:22px 0 0;font-size:15.5px;color:#334155;max-width:760px">
+            Every subscription on this page is supplied and supported by Voice Recognition Australia, an
+            authorised Australian reseller of
+            <a href={BUY_URL} style="color:#0c4a6e;font-weight:600">Dragon Medical One</a>. The full product
+            listing there carries current stock, customer reviews and the ordering process, and is where the
+            buttons above lead.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="note">
+            <div class="note-body">
+            <h3>Before you compare on price alone</h3>
+            <p>
+              You will see Dragon Medical One advertised in Australia for under A$1,000. That is a real price for
+              a real licence — but an advertised figure and the amount a practice ends up paying are not always
+              the same thing, because different sellers include different things in it.
+            </p>
+            <p>Whoever you buy from, ask these six questions and get the answers in writing:</p>
+            <ol>
+              {checklist.map((q) => <li>{q}</li>)}
+            </ol>
+            <p>
+              A licence-only price with installation, training and support added afterwards can land higher than
+              a package price that looked dearer at first glance. Put both on the same basis over two years and
+              compare the totals. If a seller will not confirm inclusions in writing, that in itself tells you
+              something.
+            </p>
+            <p class="fineprint">
+              We are not suggesting any particular supplier is doing anything improper. Pricing structures
+              differ legitimately across the market. This is simply the comparison we would want a clinician to
+              make before committing.
+            </p>
+            </div>
+            <img class="note-img" src={img.quotes} alt={img.quotesAlt} loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#f8fafc">
+        <div class="wrap">
+          <img class="strip" src={img.team} alt={img.teamAlt} loading="lazy" decoding="async" />
+          <h2>More than one clinician?</h2>
+          <p class="sub">Volume, practice and hospital licensing is priced separately.</p>
+          <div class="two">
+            <div class="panel">
+              <h3>Practices and medical centres</h3>
+              <p>
+                Volume pricing applies from a handful of clinicians upward. Installation and training are
+                scheduled around your practice rather than done once and left. Tell us the number of clinicians
+                and which clinical software you run and we will come back with a figure.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>Hospitals and enterprise</h3>
+              <p>
+                Centralised administration through the Nuance Management Center, shared vocabularies and
+                auto-texts, Active Directory authentication, and support for Citrix, VMware and RDS. We work
+                with your IT and procurement teams on deployment planning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Common questions about pricing</h2>
+          <p class="sub">
+            Anything not covered here, ask us directly — we would rather answer it before you buy.
+          </p>
+          {faqs.map((f) => (
+            <details class="faq">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+          <p style="margin-top:26px;font-size:15px;color:#475569">
+            Not sure Dragon Medical One is the right fit? The
+            <a href="/#comparison" style="color:#0c4a6e;font-weight:600"> comparison table on our home page </a>
+            sets it against desktop dictation, built-in Windows tools and ambient AI, and our
+            <a href="/dragon-copilot" style="color:#0c4a6e;font-weight:600"> Dragon Copilot page </a>
+            covers what is coming to Australia next.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta" id="pricing-cta">
+        <div class="wrap">
+          <div class="cta-grid">
+            <div>
+              <h2>Try it before you pay for it</h2>
+              <p>
+                Tell us about your practice and we will arrange a free trial, install it remotely and train
+                whoever will be using it. We will confirm your exact price in writing at the same time.
+              </p>
+              <p style="color:#94a3b8;font-size:14px;margin:0">
+                Voice Recognition Australia has been distributing Dragon in Australia for over 26 years and has
+                the most Dragon Medical One subscribers of any Australian distributor.
+              </p>
+            </div>
+            <div>
+              <ACForm submitText="Request Free Trial" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>&copy; {year} {site.siteName}</div>
+        <div class="footer-links">
+          {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
+        </div>
+      </div>
+      <div class="legal">
+        Pricing accurate at time of publication and verified {PRICE_VERIFIED}. Software vendors and resellers may
+        change pricing without notice. Verify current pricing directly with the supplier before making a
+        purchasing decision. Prices shown are Australian dollars, GST inclusive, per clinician, for a 12-month
+        subscription supplied by Voice Recognition Australia. Dragon, Dragon Medical One, PowerMic and Nuance are
+        trademarks of Microsoft Corporation or its affiliates. This website is operated by an authorised reseller
+        and is not affiliated with, endorsed by, or sponsored by Microsoft or Nuance Communications except
+        through authorised reseller agreements. Dragon Medical One is a documentation tool intended to assist
+        administrative clinical documentation workflows.
+      </div>
+    </footer>
+  </body>
+</html>
