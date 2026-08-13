@@ -291,10 +291,6 @@
       "url": "/#comparison"
     },
     {
-      "label": "Pricing",
-      "url": "/pricing"
-    },
-    {
       "label": "Enterprise",
       "url": "/#enterprise"
     },
@@ -311,8 +307,8 @@
       "url": "/news"
     },
     {
-      "label": "Buy Now",
-      "url": "https://www.voicerecognition.com.au/products/dragon-medical-one"
+      "label": "Pricing",
+      "url": "/pricing"
     }
   ],
   "primaryCTA": {
