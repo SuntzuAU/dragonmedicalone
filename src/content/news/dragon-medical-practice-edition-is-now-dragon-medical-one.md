@@ -60,7 +60,7 @@ For those exploring cloud-based alternatives, [speech-to-text software](https://
 
 ## Dragon Medical One in Australian Practice Today
 
-As of 2026, [Dragon Medical One in Australia](/) is distributed through authorised resellers including Voice Recognition Australia, which has been deploying Dragon in healthcare environments across the country for over 26 years.
+As of 2026, [Dragon Medical One in Australia](/) is distributed through authorised resellers including Voice Recognition Australia, which has been deploying Dragon in healthcare environments across the country since 2003.
 
 The product has continued to develop since 2019. Integration with Australian EMR and practice management systems has expanded, cloud infrastructure has matured, and the product now sits within Microsoft's broader healthcare AI portfolio alongside Dragon Copilot, the ambient documentation product that extends beyond dictation into AI-generated notes.
 
@@ -68,7 +68,7 @@ For practices that were using Dragon Medical Practice Edition and have not yet m
 
 ## Ready to Make the Move to Dragon Medical One?
 
-Whether you are upgrading from Dragon Medical Practice Edition or evaluating clinical speech recognition for the first time, Voice Recognition Australia handles the entire setup — remote installation, EMR configuration, and one-on-one training with your actual clinical system. They hold more Dragon Medical One subscribers than any other Australian distributor and have been doing it for over 26 years.
+Whether you are upgrading from Dragon Medical Practice Edition or evaluating clinical speech recognition for the first time, Voice Recognition Australia handles the entire setup — remote installation, EMR configuration, and one-on-one training with your actual clinical system. They hold more Dragon Medical One subscribers than any other Australian distributor and have been doing it since 2003.
 
 <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px">
   <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:#f59e0b;color:#0f172a;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none">Buy Dragon Medical One</a>
