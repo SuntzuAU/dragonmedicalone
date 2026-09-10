@@ -28,7 +28,7 @@ This matters more than it might seem. Dragon Medical One is not a plug-and-play 
 
 ## Voice Recognition Australia
 
-Voice Recognition Australia has been the longest-serving Dragon distributor in Australia, with over 26 years of deployment across general practice, specialist clinics, private hospitals, and public health. They hold more Dragon Medical One subscribers than any other Australian distributor — not because of pricing alone, but because of what comes with the purchase: remote installation handled by their team, one-on-one training with your actual EMR and microphone, and ongoing Australian support for the life of the subscription.
+Voice Recognition Australia has been the longest-serving Dragon distributor in Australia, deploying since 2003 across general practice, specialist clinics, private hospitals, and public health. They hold more Dragon Medical One subscribers than any other Australian distributor — not because of pricing alone, but because of what comes with the purchase: remote installation handled by their team, one-on-one training with your actual EMR and microphone, and ongoing Australian support for the life of the subscription.
 
 For practices migrating from Dragon Medical Practice Edition or another dictation solution, they provide transition support including voice profile migration where applicable.
 
