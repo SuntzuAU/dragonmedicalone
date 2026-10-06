@@ -103,6 +103,7 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-genie');
       <div class="content-block">
         <h2>How it works</h2>
         <p>{emr.howItWorks}</p>
+        {emr.buyAnchor && <p>{emr.buyBefore}<a href={emr.buyUrl}>{emr.buyAnchor}</a>{emr.buyAfter}</p>}
       </div>
     </div>
   </section>

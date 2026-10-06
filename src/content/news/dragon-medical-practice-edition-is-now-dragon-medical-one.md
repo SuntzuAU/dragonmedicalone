@@ -72,5 +72,5 @@ Whether you are upgrading from Dragon Medical Practice Edition or evaluating cli
 
 <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px">
   <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:#f59e0b;color:#0f172a;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none">Buy Dragon Medical One</a>
-  <a href="https://www.voicerecognition.com.au/pages/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:white;color:#0c4a6e;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none;border:2px solid #0c4a6e">More Information</a>
+  <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" style="display:inline-block;padding:14px 28px;background:white;color:#0c4a6e;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none;border:2px solid #0c4a6e">More Information</a>
 </div>
