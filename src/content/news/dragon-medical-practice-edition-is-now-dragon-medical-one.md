@@ -62,7 +62,7 @@ For those exploring cloud-based alternatives, [speech-to-text software](https://
 
 As of 2026, [Dragon Medical One in Australia](/) is distributed through authorised resellers including Voice Recognition Australia, which has been deploying Dragon in healthcare environments across the country since 2003.
 
-The product has continued to develop since 2019. Integration with Australian EMR and practice management systems has expanded, cloud infrastructure has matured, and the product now sits within Microsoft's broader healthcare AI portfolio alongside Dragon Copilot, the ambient documentation product that extends beyond dictation into AI-generated notes.
+The product has continued to develop since 2019. Integration with Australian EMR and practice management systems has expanded, cloud infrastructure has matured, and the product now sits within Microsoft's broader healthcare AI portfolio alongside [Dragon Copilot](https://dragoncopilot.com.au), the ambient documentation product that extends beyond dictation into AI-generated notes. Dragon Copilot is coming to Australia in early 2027.
 
 For practices that were using Dragon Medical Practice Edition and have not yet moved to Dragon Medical One, the transition is straightforward. Voice Recognition Australia provides migration support including voice profile transfer, EMR configuration, and staff training.
 
