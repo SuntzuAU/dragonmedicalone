@@ -17,12 +17,7 @@ function imgAlt(key) {
 
 const c = site.colours;
 
-const benefitIcons = [
-  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#e0f2fe"/><path d="M16 8a8 8 0 1 1 0 16A8 8 0 0 1 16 8zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-6zm1 1v4l3 2-1 1.5L15 15V11h2z" fill="#0c4a6e"/></svg>`,
-  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#e0f2fe"/><path d="M10 12a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1h-2v-1h-8v8h1v2h-1a2 2 0 0 1-2-2v-8zm5 3a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5zm2 0v5h5v-5h-5z" fill="#0c4a6e"/></svg>`,
-  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#e0f2fe"/><path d="M16 9a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-6 12c0-3.3 2.7-6 6-6s6 2.7 6 6H10z" fill="#0c4a6e"/></svg>`,
-  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#e0f2fe"/><path d="M16 8c1.1 0 2 .9 2 2v3h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h2v-3c0-1.1.9-2 2-2zm0 2v3h0zm-4 5v7h8v-7h-8zm4 1a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="#0c4a6e"/></svg>`,
-];
+const emrNames = (site.emrPages ?? []).map((e) => e.emrName).join(", ");
 
 const comparisonRows = [
   { label: "Platform type", key: "type" },
@@ -56,166 +51,264 @@ const comparisonRows = [
       </script>
     )}
 
+    <link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+
     <style is:inline>
+      @font-face{font-family:"Geist";src:url(/fonts/geist.woff2) format("woff2");font-weight:100 900;font-display:swap}
+      @font-face{font-family:"Newsreader";src:url(/fonts/newsreader.woff2) format("woff2");font-weight:200 800;font-display:swap}
+      :root{--navy:#061427;--navy-2:#0c2038;--ink:#0b1a2e;--muted:#4a5a70;--line:#dfe5ec;--paper:#f4f6f8;--green:#a9dc74;--green-deep:#0c6b3c;--serif:"Newsreader",Georgia,"Times New Roman",serif;--sans:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
       *,*::before,*::after{box-sizing:border-box}
-      body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;line-height:1.6}
+      html{scroll-behavior:smooth;scroll-padding-top:84px}
+      body{margin:0;font-family:var(--sans);color:var(--ink);line-height:1.6;background:#fff;-webkit-font-smoothing:antialiased}
       a{color:inherit;text-decoration:none}
       img{max-width:100%;display:block}
-      .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+      :focus-visible{outline:3px solid var(--green);outline-offset:3px}
+      .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
 
-      /* NAV */
-      header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;z-index:100}
-      .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
-      .logo img{height:40px;width:auto}
-      .nav-links{display:flex;gap:18px;font-size:14px;font-weight:500;color:#334155}
+      /* HEADER */
+      .site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .2s,box-shadow .2s}
+      .site-header.solid{background:rgba(6,20,39,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+      .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px}
+      .logo{display:flex;background:#fff;border-radius:10px;padding:7px 12px;flex-shrink:0}
+      .logo img{height:34px;width:auto}
+      .nav-links{display:flex;gap:26px;font-size:15px;font-weight:500;color:rgba(255,255,255,.88)}
+      .nav-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:5px}
       .nav-ctas{display:flex;gap:10px;align-items:center;flex-shrink:0}
-      .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:700;font-size:14px;border:2px solid transparent;cursor:pointer;transition:all .15s;white-space:nowrap}
-      .btn-primary{background:#f59e0b;border-color:#f59e0b;color:#0f172a}
-      .btn-primary:hover{background:#d97706;border-color:#d97706}
-      .btn-secondary{background:white;border-color:#cbd5e1;color:#0c4a6e}
-      .btn-secondary:hover{border-color:#0c4a6e}
-      .btn-lg{padding:14px 28px;font-size:16px;border-radius:10px}
-      .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
-      .hamburger span{display:block;width:22px;height:2px;background:#334155;border-radius:2px}
-      .mobile-nav{display:none;padding:12px 0 8px;border-top:1px solid #e2e8f0}
-      .mobile-nav a{display:block;padding:10px 0;font-size:15px;font-weight:500;color:#334155;border-bottom:1px solid #f1f5f9}
+      .btn{display:inline-block;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;text-align:center}
+      .btn-primary{background:var(--green);border-color:var(--green);color:#06200f}
+      .btn-primary:hover{background:#bfe895;border-color:#bfe895}
+      .btn-secondary{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+      .btn-secondary:hover{border-color:#fff}
+      .btn-lg{padding:16px 30px;font-size:17px}
+      .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+      .hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+      .mobile-nav{display:none;padding:8px 0 16px;background:var(--navy);margin:0 -40px;padding-left:40px;padding-right:40px}
+      .mobile-nav a{display:block;padding:12px 0;font-size:16px;font-weight:500;color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
 
       /* HERO */
-      .hero{padding:72px 0 56px}
-      .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-      .hero-pill{display:inline-flex;align-items:center;background:#e0f2fe;border:1px solid #bae6fd;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#0c4a6e;margin-bottom:18px}
-      .hero h1{font-size:40px;line-height:1.1;margin:0 0 16px;letter-spacing:-0.03em}
-      .hero p{font-size:17px;margin:0 0 28px;line-height:1.7;color:#475569}
-      .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+      .hero{position:relative;background:var(--navy);color:#fff;min-height:820px;display:flex;flex-direction:column;overflow:hidden}
+      .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 30%}
+      .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,20,39,.96) 0%,rgba(6,20,39,.88) 30%,rgba(6,20,39,.4) 55%,rgba(6,20,39,0) 76%),linear-gradient(0deg,rgba(6,20,39,.95) 0%,rgba(6,20,39,0) 36%)}
+      .hero .wrap{position:relative;width:100%;flex:1;display:flex;flex-direction:column}
+      .hero-copy{max-width:660px;padding-top:176px;padding-bottom:56px}
+      .hero h1{margin:0 0 24px;font-weight:400}
+      .hero-kicker{display:block;font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.4;letter-spacing:0;color:var(--green);margin-bottom:18px}
+      .hero-line{display:block;font-family:var(--serif);font-size:78px;line-height:1.02;letter-spacing:-.025em}
+      .hero-sub{font-size:19.5px;line-height:1.55;color:rgba(255,255,255,.84);margin:0 0 34px;max-width:530px}
+      .hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+      .hero-link{font-weight:500;font-size:16px;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px;margin-left:14px}
+      .hero-link:hover{border-color:#fff}
+      .proof{margin-top:auto;display:grid;grid-template-columns:1.7fr repeat(4,1fr);border-top:1px solid rgba(255,255,255,.2)}
+      .proof div{padding:22px 20px 28px 0;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.74)}
+      .proof div+div{padding-left:20px;border-left:1px solid rgba(255,255,255,.2)}
+      .proof b{display:block;font-weight:600;font-size:17px;color:#fff;margin-bottom:3px}
 
-      /* VIDEO */
-      .video-section{padding:32px 0;background:#f0f9ff}
-      .video-outer{max-width:800px;margin:0 auto}
-      .yt-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.15);cursor:pointer;background:#000}
-      .yt-facade img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
+      /* SECTIONS */
+      section{padding:104px 0}
+      .tint{background:var(--paper)}
+      .dark{background:var(--navy);color:#fff}
+      .sh{margin-bottom:52px;max-width:760px}
+      .sh h2,.h2{font-family:var(--serif);font-weight:400;font-size:48px;line-height:1.08;letter-spacing:-.02em;margin:0 0 16px}
+      .sh p{font-size:19px;line-height:1.55;margin:0;color:var(--muted)}
+      .dark .sh p{color:rgba(255,255,255,.72)}
+      .split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+      .photo{border-radius:20px;overflow:hidden;background:#dfe5ec}
+      .photo img{width:100%;height:100%;object-fit:cover}
+
+      /* INTRO + VIDEO */
+      .intro-label{font-size:15px;font-weight:500;color:var(--green-deep);margin:0 0 14px}
+      .intro p.lead{font-size:18.5px;line-height:1.6;color:var(--muted);margin:0 0 20px}
+      .intro p.note{font-size:16px;font-weight:600;color:var(--ink);margin:0;padding-top:20px;border-top:1px solid var(--line)}
+      .yt-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:20px;box-shadow:0 40px 80px -30px rgba(6,20,39,.5);cursor:pointer;background:#000}
+      .yt-facade img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:20px}
       .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:background .15s,transform .15s}
       .yt-facade:hover .yt-play{background:#cc0000;transform:translate(-50%,-50%) scale(1.08)}
       .yt-facade .yt-play svg{width:24px;height:24px;fill:white;margin-left:4px}
-      .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px}
+      .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:20px}
 
-      /* SECTIONS */
-      section{padding:64px 0}
-      .sh{margin-bottom:40px}
-      .sh h2{font-size:32px;letter-spacing:-0.02em;margin:0 0 10px}
-      .sh p{font-size:17px;margin:0;max-width:600px;color:#475569}
-      .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-      .c6{grid-column:span 6}.c4{grid-column:span 4}.c7{grid-column:span 7}.c5{grid-column:span 5}.c3{grid-column:span 3}.c12{grid-column:span 12}
-
-      /* CARDS */
-      .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px}
-      .benefit-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px}
-      .benefit-card h3{margin:8px 0 10px;font-size:18px}
-      .benefit-card p{color:#475569;font-size:15px;margin:0}
-      .card-icon{margin-bottom:14px;line-height:1}
-      .card-img{border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:#e0f2fe;margin-bottom:16px}
-      .card-img img{width:100%;height:100%;object-fit:cover}
-      .card h3{margin:0 0 8px;font-size:17px}
-      .card p{color:#475569;font-size:15px;margin:0}
-
-      /* FULL-WIDTH IMAGE BREAK - cinematic strip */
-      .img-break{display:block;width:100%;border-radius:16px;overflow:hidden;height:220px;background:#e0f2fe;margin:0}
-      .img-break img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
-
-      /* COMPARISON TABLE */
-      .comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:2px solid #0c4a6e;box-shadow:0 8px 32px rgba(12,74,110,.12)}
-      .comparison-table{width:100%;border-collapse:collapse;min-width:700px}
-      .comparison-table thead tr{background:#0c4a6e}
-      .comparison-table th{padding:16px 14px;font-size:13px;font-weight:700;text-align:center;color:#94a3b8;border-right:1px solid rgba(255,255,255,.1);white-space:normal;line-height:1.3}
-      .comparison-table th:last-child{border-right:none}
-      .comparison-table th.th-feature{text-align:left;color:#94a3b8;min-width:130px}
-      .col-header-link{color:inherit;text-decoration:none;display:block}
-      .col-header-link:hover{text-decoration:underline;text-underline-offset:3px}
-      .comparison-table th.col-primary{background:#0e7490;color:#ffffff;font-size:14px}
-      .comparison-table td.col-primary{background:#ffffff;color:#0c4a6e;font-weight:600;border-right:2px solid #0e7490;border-left:2px solid #0e7490}
-      .comparison-table th.col-secondary{background:#0891b2;color:#ffffff;font-size:13px}
-      .comparison-table td.col-secondary{background:#ffffff;color:#0e7490;font-weight:500;border-right:1px solid #e0f2fe;border-left:1px solid #e0f2fe}
-      .comparison-table th.col-other{color:#94a3b8}
-      .comparison-table td.col-other{background:#ffffff;color:#64748b}
-      .comparison-table td.row-label{text-align:left;font-weight:700;color:#0f172a;background:#f8fafc;white-space:nowrap;font-size:12px;letter-spacing:.03em;text-transform:uppercase;border-right:1px solid #e2e8f0;padding:12px 14px}
-      .comparison-table tbody tr{border-bottom:1px solid #e2e8f0}
-      .comparison-table tbody tr:last-child{border-bottom:none}
-      .comparison-table td{padding:11px 14px;font-size:13px;text-align:center;line-height:1.4;border-right:1px solid #e2e8f0}
-      .comparison-table td:last-child{border-right:none}
-      .comparison-table tbody tr:nth-child(even) td.col-other{background:#fafafa}
-      .comparison-table tbody tr:nth-child(even) td.row-label{background:#f1f5f9}
-
-      /* ENTERPRISE */
-      .enterprise-card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.15)}
-      .enterprise-card h3{margin:0 0 8px;font-size:18px;color:white}
-      .enterprise-card p{font-size:14px;color:#94a3b8;margin:0;line-height:1.6}
-
-      /* EMR LINKS */
-      .emr-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-      .emr-link{display:inline-flex;align-items:center;gap:8px;background:white;border:1px solid #e2e8f0;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;color:#0c4a6e;transition:all .15s}
-      .emr-link:hover{border-color:#0e7490;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+      /* BENEFITS */
+      .benefits{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:stretch}
+      .benefits .photo{min-height:520px}
+      .benefit{padding:26px 0;border-top:1px solid var(--line)}
+      .benefit:last-child{border-bottom:1px solid var(--line)}
+      .benefit h3{font-family:var(--serif);font-weight:500;font-size:25px;line-height:1.2;letter-spacing:-.01em;margin:0 0 8px}
+      .benefit p{color:var(--muted);font-size:16.5px;margin:0}
 
       /* STEPS */
-      .step-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;font-weight:800;font-size:16px;background:#f59e0b;color:#0f172a;margin-bottom:14px}
+      .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+      .step{border-top:2px solid var(--navy);padding-top:22px}
+      .step-num{font-family:var(--serif);font-size:54px;line-height:1;color:var(--green-deep);margin-bottom:14px}
+      .step h3{font-size:21px;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}
+      .step p{color:var(--muted);font-size:16.5px;margin:0}
+      .wide-photo{margin-top:64px;height:420px}
+      .wide-photo img{object-position:center 28%}
+
+      /* EMR */
+      .emr-list{border-top:1px solid var(--line)}
+      .emr-link{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:24px;letter-spacing:-.01em;transition:padding .15s,color .15s}
+      .emr-link:hover{color:var(--green-deep);padding-left:12px}
+      .emr-more{display:block;padding:18px 4px;font-size:16px;color:var(--muted)}
+      .emr .photo{aspect-ratio:4/5}
+
+      /* COMPARISON TABLE */
+      .comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:18px;border:1px solid var(--line);background:#fff}
+      .comparison-table{width:100%;border-collapse:collapse;min-width:980px}
+      .comparison-table thead tr{background:var(--navy)}
+      .comparison-table th{padding:20px 16px;font-size:14.5px;font-weight:600;text-align:left;color:rgba(255,255,255,.72);line-height:1.3;vertical-align:bottom}
+      .comparison-table th.th-feature{min-width:150px}
+      .col-header-link{color:inherit;display:block}
+      .col-header-link:hover{text-decoration:underline;text-underline-offset:3px}
+      .comparison-table th.col-primary{background:var(--green);color:#06200f;font-size:16px}
+      .comparison-table th.col-secondary{color:#fff}
+      .comparison-table td{padding:15px 16px;font-size:14.5px;text-align:left;line-height:1.45;border-top:1px solid var(--line);color:var(--muted);vertical-align:top}
+      .comparison-table td.col-primary{background:#f1f9e8;color:var(--ink);font-weight:600}
+      .comparison-table td.col-secondary{color:var(--ink)}
+      .comparison-table td.row-label{font-weight:600;color:var(--ink);white-space:nowrap}
+      .comparison-note{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+      /* ENTERPRISE */
+      .enterprise-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 72px}
+      .enterprise-card{padding:28px 0;border-top:1px solid rgba(255,255,255,.2)}
+      .enterprise-card h3{font-family:var(--serif);font-weight:500;margin:0 0 8px;font-size:25px;letter-spacing:-.01em;color:#fff}
+      .enterprise-card p{font-size:16.5px;color:rgba(255,255,255,.72);margin:0;line-height:1.6}
+
+      /* FEATURES */
+      .feature{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:36px 0}
+      .feature:nth-child(even) .photo{order:2}
+      .feature .photo{aspect-ratio:16/11}
+      .feature h3{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.12;letter-spacing:-.015em;margin:0 0 14px}
+      .feature p{color:var(--muted);font-size:17.5px;margin:0}
 
       /* ABOUT */
-      .edition{background:rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:10px}
-      .edition-name{color:#f59e0b;font-weight:700;margin-bottom:4px;font-size:15px}
-      .edition-desc{font-size:14px;color:#cbd5e1;line-height:1.5}
-      .about-link{color:#0c4a6e;text-decoration:underline;text-underline-offset:2px}
-      .about-link:hover{color:#f59e0b}
+      .about{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+      .about .photo{aspect-ratio:16/8;margin-bottom:32px}
+      .about h3{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px}
+      .about p{font-size:17px;color:var(--muted);margin:0 0 14px}
+      .about-link{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px}
+      .about-link:hover{color:var(--ink)}
+      .proof-list{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--line)}
+      .proof-list li{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);font-size:16.5px;font-weight:500}
+      .proof-list svg{flex-shrink:0;margin-top:4px;color:var(--green-deep)}
+      .get{background:var(--navy);color:#fff;border-radius:24px;padding:36px;position:sticky;top:100px}
+      .get h3{font-size:32px;color:#fff;margin:0 0 8px}
+      .edition{padding:20px 0;border-top:1px solid rgba(255,255,255,.18)}
+      .edition-name{color:var(--green);font-weight:600;margin-bottom:6px;font-size:17px}
+      .edition-desc{font-size:15.5px;color:rgba(255,255,255,.78);line-height:1.55}
 
       /* FAQ */
-      .faq-card h3{font-size:16px;margin:0 0 8px;color:#0f172a}
-      .faq-card p{font-size:14px;color:#475569;margin:0;line-height:1.7}
+      .faq-list{max-width:880px;border-top:1px solid #cfd7e0}
+      .faq-card{border-bottom:1px solid #cfd7e0}
+      .faq-card summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0}
+      .faq-card summary::-webkit-details-marker{display:none}
+      .faq-card summary h3{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.25;letter-spacing:-.01em;margin:0}
+      .faq-card summary::after{content:"";flex-shrink:0;width:12px;height:12px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);margin:0 6px 6px 0;transition:transform .15s}
+      .faq-card[open] summary::after{transform:rotate(-135deg);margin:6px 6px 0 0}
+      .faq-card p{font-size:17px;color:var(--muted);margin:0 0 26px;line-height:1.65;max-width:760px}
+      .faq-card p a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px}
+
+      /* CTA */
+      .cta{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:start}
+      .cta .photo{height:280px;margin-bottom:36px}
+      .cta .photo img{object-position:center 25%}
+      .cta p{color:rgba(255,255,255,.76);font-size:18px;margin:0 0 20px}
+      .cta ul{color:rgba(255,255,255,.76);margin:0;padding-left:20px;line-height:2;font-size:16.5px}
+      body .cta #_form_289_._inline-form._form_289 ._submit{background:var(--green) !important;border-color:var(--green) !important;color:#06200f !important;border-radius:999px !important}
+      body .cta #_form_289_._inline-form._form_289 ._submit:hover{background:#bfe895 !important;border-color:#bfe895 !important}
+      body .cta #_form_289_ ._submit.processing::before{background-image:linear-gradient(#a9dc74,#a9dc74),conic-gradient(#a9dc74,#fff) !important}
 
       /* FOOTER */
-      footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px}
-      .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-      .footer-links{display:flex;gap:20px}
-      .footer-links a:hover{color:white}
-      .footer-disclaimer{font-size:11px;color:#475569;line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px solid #1e293b}
+      footer{background:#040e1c;color:rgba(255,255,255,.62);padding:48px 0 40px;font-size:15px}
+      .footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+      .footer-brand{display:flex;align-items:center;gap:18px}
+      .footer-links{display:flex;gap:22px;flex-wrap:wrap}
+      .footer-links a:hover{color:#fff}
+      .footer-disclaimer{font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.6;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)}
 
+      /* MOBILE TRIAL BAR */
+      .trial-bar{display:none}
+
+      @media(max-width:1100px){
+        .nav-links{gap:16px;font-size:14px}
+        .nav-ctas .btn-secondary{display:none}
+        .hero-line{font-size:64px}
+        .proof{grid-template-columns:repeat(3,1fr)}
+        .proof div:first-child{grid-column:1 / -1;border-bottom:1px solid rgba(255,255,255,.2)}
+        .proof div:nth-child(2){padding-left:0;border-left:0}
+        .proof div:nth-child(5){display:none}
+      }
       @media(max-width:900px){
-        .hero-inner{grid-template-columns:1fr}
-        .hero h1{font-size:32px}
-        .c6,.c4,.c7,.c5,.c3{grid-column:span 12}
-        .sh h2{font-size:26px}
-        .img-break{height:160px}
+        .wrap{padding:0 24px}
+        section{padding:72px 0}
+        .nav-links{display:none}
+        .hamburger{display:flex}
+        .mobile-nav{margin:0 -24px;padding-left:24px;padding-right:24px}
+        .site-header.open{background:var(--navy)}
+        .split,.benefits,.feature,.about,.cta,.enterprise-grid{grid-template-columns:1fr;gap:36px}
+        .steps{grid-template-columns:1fr;gap:32px}
+        .benefits .photo{min-height:0;aspect-ratio:16/10}
+        .emr .photo{aspect-ratio:16/10}
+        .feature:nth-child(even) .photo{order:0}
+        .feature{padding:24px 0}
+        .get{position:static}
+        .sh h2,.h2{font-size:38px}
+        .wide-photo{height:280px;margin-top:40px}
       }
       @media(max-width:600px){
-        .nav-links{display:none}
-        .nav-ctas .btn-secondary{display:none}
-        .nav-ctas .btn-primary{padding:8px 16px;font-size:13px}
-        .hamburger{display:flex}
-        section{padding:40px 0}
-        .hero{padding:36px 0 28px}
-        .hero h1{font-size:26px}
-        .hero p{font-size:15px}
-        .sh h2{font-size:22px}
-        .sh{margin-bottom:24px}
-        .hero-btns{flex-direction:column}
-        .hero-btns .btn-lg{width:100%;text-align:center}
-        .benefit-card{padding:20px}
-        .footer-inner{flex-direction:column;align-items:center;text-align:center}
-        .footer-links{justify-content:center}
-        .enterprise-grid{grid-template-columns:1fr !important}
-        .img-break{height:120px}
+        .wrap{padding:0 20px}
+        section{padding:56px 0}
+        .mobile-nav{margin:0 -20px;padding-left:20px;padding-right:20px}
+        .logo img{height:28px}
+        .nav-ctas .btn-primary{padding:9px 14px;font-size:13.5px}
+        .hero{min-height:0}
+        .hero-photo{object-position:74% 20%}
+        .hero-shade{background:linear-gradient(0deg,rgba(6,20,39,1) 0%,rgba(6,20,39,.94) 52%,rgba(6,20,39,.5) 78%,rgba(6,20,39,.35) 100%)}
+        .hero-copy{padding-top:250px;padding-bottom:36px}
+        .hero-kicker{font-size:14.5px;margin-bottom:12px}
+        .hero-line{font-size:44px}
+        .hero-sub{font-size:17px;margin-bottom:26px}
+        .hero-btns{flex-direction:column;align-items:stretch}
+        .hero-link{margin:6px 0 0;align-self:flex-start}
+        .proof{grid-template-columns:1fr 1fr}
+        .proof div{padding:16px 12px 18px 0;font-size:13.5px}
+        .proof div+div{padding-left:0;border-left:0}
+        .proof div:nth-child(n+2){border-bottom:1px solid rgba(255,255,255,.2)}
+        .proof div:nth-child(5){display:block}
+        .proof b{font-size:15.5px}
+        .sh{margin-bottom:32px}
+        .sh h2,.h2{font-size:31px}
+        .sh p{font-size:17px}
+        .benefit h3,.enterprise-card h3,.faq-card summary h3{font-size:21px}
+        .emr-link{font-size:20px}
+        .feature h3,.about h3{font-size:28px}
+        .get{padding:26px;border-radius:20px}
+        .wide-photo{height:200px}
+        .cta .photo{height:180px}
+        .footer-inner{flex-direction:column;align-items:flex-start}
+        footer{padding-bottom:104px}
+        .trial-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:12px 20px calc(12px + env(safe-area-inset-bottom));background:rgba(6,20,39,.96);backdrop-filter:blur(12px);transform:translateY(110%);transition:transform .2s}
+        .trial-bar.show{transform:none}
+        .trial-bar .btn{display:block;width:100%;padding:14px}
+      }
+      @media(prefers-reduced-motion:reduce){
+        html{scroll-behavior:auto}
+        *,*::before,*::after{transition:none !important}
       }
     </style>
   </head>
   <body>
 
-    <header>
+    <header class="site-header" id="site-header">
       <div class="wrap">
         <div class="nav">
-          <div class="logo"><img src="/logo.jpg" alt={site.siteName} /></div>
+          <a class="logo" href="/"><img src="/logo.jpg" alt={site.siteName} width="162" height="34" /></a>
           <nav class="nav-links" aria-label="Primary">
             {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
           </nav>
           <div class="nav-ctas">
             {site.secondaryCTA?.text && <a class="btn btn-secondary" href={site.secondaryCTA.url}>{site.secondaryCTA.text}</a>}
             <a class="btn btn-primary" href={site.primaryCTA.url}>{site.primaryCTA.text}</a>
-            <button class="hamburger" aria-label="Open menu" onclick="var mn=this.closest('header').querySelector('.mobile-nav');mn.style.display=mn.style.display==='block'?'none':'block'">
+            <button class="hamburger" aria-label="Open menu" onclick="var h=this.closest('header'),mn=h.querySelector('.mobile-nav'),o=mn.style.display==='block';mn.style.display=o?'none':'block';h.classList.toggle('open',!o)">
               <span></span><span></span><span></span>
             </button>
           </div>
@@ -229,109 +322,101 @@ const comparisonRows = [
     <main>
 
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero" style="padding:0">
+        {imgSrc("hero") && <img class="hero-photo" src={imgSrc("hero")} alt={imgAlt("hero")} loading="eager" fetchpriority="high" decoding="async" />}
+        <div class="hero-shade"></div>
         <div class="wrap">
-          <div class="hero-inner">
-            <div>
-              <div class="hero-pill">{site.branding.industry} &bull; {site.branding.region}</div>
-              <h1>{site.branding.headline}</h1>
-              <p>{site.branding.subheadline}</p>
-              <div class="hero-btns">
-                <a class="btn btn-primary btn-lg" href={site.primaryCTA.url}>{site.primaryCTA.text}</a>
-                {site.secondaryCTA?.text && <a class="btn btn-secondary btn-lg" href={site.secondaryCTA.url}>{site.secondaryCTA.text}</a>}
-              </div>
+          <div class="hero-copy">
+            <h1>
+              <span class="hero-kicker">{site.branding.headline}</span>
+              <span class="hero-line">{site.branding.heroLine}</span>
+            </h1>
+            <p class="hero-sub">{site.branding.heroSub}</p>
+            <div class="hero-btns">
+              <a class="btn btn-primary btn-lg" href={site.primaryCTA.url}>{site.primaryCTA.text}</a>
+              {site.secondaryCTA?.text && <a class="btn btn-secondary btn-lg" href={site.secondaryCTA.url}>{site.secondaryCTA.text}</a>}
+              <a class="hero-link" href="/pricing">See pricing</a>
             </div>
-            <div style="border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#e0f2fe;box-shadow:0 24px 64px rgba(0,0,0,.18)">
-              {imgSrc("hero")
-                ? <img src={imgSrc("hero")} alt={imgAlt("hero")} loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover" />
-                : <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#0c4a6e;font-size:14px;font-weight:600">Dragon Medical One</div>
-              }
-            </div>
+          </div>
+          <div class="proof">
+            <div><b>{emrNames}</b>Works with your medical records software</div>
+            {site.stats?.map((s) => (
+              <div><b>{s.value}</b>{s.label}</div>
+            ))}
           </div>
         </div>
       </section>
 
-      <!-- STATS BAR -->
-      <div style={`background:linear-gradient(135deg, ${c.primary}, ${c.primaryLight});padding:16px 0`}>
+      <!-- INTRO + VIDEO -->
+      <section class="intro">
         <div class="wrap">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-            <div style={`font-size:15px;font-weight:800;color:${c.accent};text-align:center`}>{site.branding.statsMessage}</div>
-            <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center">
-              {site.stats?.map((s) => (
-                <div style="font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:4px">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="7" cy="7" r="7" fill="#f59e0b" fill-opacity="0.2"/>
-                    <path d="M3.5 7l2.5 2.5 4.5-5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span style="color:white;font-weight:600">{s.value}</span> {s.label}
-                </div>
-              ))}
+          <div class="split">
+            <div>
+              <p class="intro-label">{site.branding.industry} &bull; {site.branding.region}</p>
+              <h2 class="h2">{site.branding.introHeading}</h2>
+              <p class="lead">{site.branding.subheadline}</p>
+              <p class="note">{site.branding.statsMessage}</p>
             </div>
+            {site.heroVideo?.enabled && (
+              <div>
+                <div class="yt-facade" data-ytid={site.heroVideo.youtubeId}>
+                  <img src={`https://i.ytimg.com/vi/${site.heroVideo.youtubeId}/maxresdefault.jpg`} alt="Dragon Medical One demonstration" loading="lazy" decoding="async" />
+                  <div class="yt-play"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <script>
+                  document.querySelectorAll('.yt-facade').forEach(function(el) {
+                    el.addEventListener('click', function() {
+                      var id = el.dataset.ytid;
+                      var iframe = document.createElement('iframe');
+                      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+                      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                      iframe.allowFullscreen = true;
+                      el.innerHTML = '';
+                      el.appendChild(iframe);
+                    });
+                  });
+                </script>
+              </div>
+            )}
           </div>
         </div>
-      </div>
-
-      <!-- VIDEO -->
-      {site.heroVideo?.enabled && (
-        <section class="video-section">
-          <div class="wrap">
-            <div class="video-outer">
-              <div class="yt-facade" data-ytid={site.heroVideo.youtubeId}>
-                <img src={`https://i.ytimg.com/vi/${site.heroVideo.youtubeId}/maxresdefault.jpg`} alt="Dragon Medical One demonstration" loading="lazy" decoding="async" />
-                <div class="yt-play"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
-              </div>
-            </div>
-            <script>
-              document.querySelectorAll('.yt-facade').forEach(function(el) {
-                el.addEventListener('click', function() {
-                  var id = el.dataset.ytid;
-                  var iframe = document.createElement('iframe');
-                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
-                  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-                  iframe.allowFullscreen = true;
-                  el.innerHTML = '';
-                  el.appendChild(iframe);
-                });
-              });
-            </script>
-          </div>
-        </section>
-      )}
+      </section>
 
       <!-- BENEFITS -->
-      <section id="benefits">
+      <section id="benefits" class="tint">
         <div class="wrap">
           <div class="sh">
             <h2>{site.branding.benefitsHeading}</h2>
             <p>{site.branding.benefitsSubheading}</p>
           </div>
-          <div class="grid">
-            {site.benefits?.map((b, i) => (
-              <div class="benefit-card c6">
-                <div class="card-icon" set:html={benefitIcons[i] ?? benefitIcons[0]} />
-                <h3>{b.title}</h3>
-                <p>{b.body}</p>
+          <div class="benefits">
+            {imgSrc("benefits-banner") && (
+              <div class="photo">
+                <img src={imgSrc("benefits-banner")} alt={imgAlt("benefits-banner")} loading="lazy" decoding="async" />
               </div>
-            ))}
-          </div>
-          {imgSrc("benefits-banner") && (
-            <div class="img-break" style="margin-top:24px">
-              <img src={imgSrc("benefits-banner")} alt={imgAlt("benefits-banner")} loading="lazy" decoding="async" />
+            )}
+            <div>
+              {site.benefits?.map((b) => (
+                <div class="benefit">
+                  <h3>{b.title}</h3>
+                  <p>{b.body}</p>
+                </div>
+              ))}
             </div>
-          )}
+          </div>
         </div>
       </section>
 
       <!-- HOW IT WORKS -->
-      <section id="how-it-works" style={`background:${c.neutral}`}>
+      <section id="how-it-works">
         <div class="wrap">
           <div class="sh">
             <h2>How it works</h2>
             <p>{site.branding.howItWorksSubheading}</p>
           </div>
-          <div class="grid">
+          <div class="steps">
             {site.steps?.map((s, i) => (
-              <div class="card c4">
+              <div class="step">
                 <div class="step-num">{i + 1}</div>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
@@ -339,7 +424,7 @@ const comparisonRows = [
             ))}
           </div>
           {imgSrc("workflow-banner") && (
-            <div class="img-break" style="margin-top:24px">
+            <div class="photo wide-photo">
               <img src={imgSrc("workflow-banner")} alt={imgAlt("workflow-banner")} loading="lazy" decoding="async" />
             </div>
           )}
@@ -347,31 +432,35 @@ const comparisonRows = [
       </section>
 
       <!-- EMR INTEGRATIONS -->
-      <section>
+      <section class="tint emr">
         <div class="wrap">
-          <div class="sh">
-            <h2>Works with your clinical software</h2>
-            <p>Dragon Medical One integrates with the medical records systems used across Australian practices and hospitals.</p>
-          </div>
-          <div class="emr-grid">
-            {site.emrPages?.map((emr) => (
-              <a href={`/${emr.slug}`} class="emr-link">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="#0e7490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                DMO + {emr.emrName}
-              </a>
-            ))}
-            <span style="display:inline-flex;align-items:center;padding:12px 20px;font-size:14px;color:#475569">+ Epic, Cerner, and more</span>
-          </div>
-          {imgSrc("emr-banner") && (
-            <div class="img-break" style="margin-top:32px">
-              <img src={imgSrc("emr-banner")} alt={imgAlt("emr-banner")} loading="lazy" decoding="async" />
+          <div class="split">
+            <div>
+              <div class="sh" style="margin-bottom:36px">
+                <h2>Works with your clinical software</h2>
+                <p>Dragon Medical One integrates with the medical records systems used across Australian practices and hospitals.</p>
+              </div>
+              <div class="emr-list">
+                {site.emrPages?.map((emr) => (
+                  <a href={`/${emr.slug}`} class="emr-link">
+                    DMO + {emr.emrName}
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </a>
+                ))}
+                <span class="emr-more">+ Epic, Cerner, and more</span>
+              </div>
             </div>
-          )}
+            {imgSrc("emr-banner") && (
+              <div class="photo">
+                <img src={imgSrc("emr-banner")} alt={imgAlt("emr-banner")} loading="lazy" decoding="async" />
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
       <!-- COMPARISON TABLE -->
-      <section id="comparison" style={`background:${c.neutral}`}>
+      <section id="comparison">
         <div class="wrap">
           <div class="sh">
             <h2>{site.branding.comparisonHeading}</h2>
@@ -404,18 +493,18 @@ const comparisonRows = [
               </tbody>
             </table>
           </div>
-          <p style="font-size:12px;color:#94a3b8;margin-top:12px;font-style:italic">{site.comparison.note}</p>
+          <p class="comparison-note">{site.comparison.note}</p>
         </div>
       </section>
 
       <!-- ENTERPRISE -->
-      <section id="enterprise" style={`background:linear-gradient(135deg, ${c.primary}, ${c.primaryLight});color:white`}>
+      <section id="enterprise" class="dark">
         <div class="wrap">
           <div class="sh">
-            <h2 style="color:white">{site.branding.enterpriseHeading}</h2>
-            <p style="color:#94a3b8">{site.branding.enterpriseSubheading}</p>
+            <h2>{site.branding.enterpriseHeading}</h2>
+            <p>{site.branding.enterpriseSubheading}</p>
           </div>
-          <div class="enterprise-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="enterprise-grid">
             {site.enterprise?.points?.map((ep) => (
               <div class="enterprise-card">
                 <h3>{ep.title}</h3>
@@ -433,13 +522,14 @@ const comparisonRows = [
             <h2>{site.branding.featuresHeading}</h2>
             <p>{site.branding.featuresSubheading}</p>
           </div>
-          <div class="grid">
-            {site.features?.map((f, i) => (
-              <div class="card c6">
-                {imgSrc(f.key) && <div class="card-img"><img src={imgSrc(f.key)} alt={imgAlt(f.key)} loading="lazy" decoding="async" /></div>}
-                <div class="card-icon" set:html={benefitIcons[i + 2] ?? benefitIcons[0]} />
-                <h3>{f.title}</h3>
-                <p>{f.body}</p>
+          <div>
+            {site.features?.map((f) => (
+              <div class="feature">
+                {imgSrc(f.key) && <div class="photo"><img src={imgSrc(f.key)} alt={imgAlt(f.key)} loading="lazy" decoding="async" /></div>}
+                <div>
+                  <h3>{f.title}</h3>
+                  <p>{f.body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -447,22 +537,25 @@ const comparisonRows = [
       </section>
 
       <!-- ABOUT -->
-      <section id="about">
+      <section id="about" class="tint">
         <div class="wrap">
-          <div class="grid">
-            <div class="card c7">
-              {imgSrc("about-banner") && <div class="card-img"><img src={imgSrc("about-banner")} alt={imgAlt("about-banner")} loading="lazy" decoding="async" /></div>}
+          <div class="about">
+            <div>
+              {imgSrc("about-banner") && <div class="photo"><img src={imgSrc("about-banner")} alt={imgAlt("about-banner")} loading="lazy" decoding="async" /></div>}
               <h3>{site.branding.aboutHeading}</h3>
-              <p style="font-size:15px;color:#334155">{site.branding.aboutBody}</p>
-              <p style="font-size:15px;color:#475569;margin-top:8px">You can <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" class="about-link">buy Dragon Medical One in Australia</a> from Voice Recognition Australia - the country's longest-serving speech-to-text software distributor deploying across healthcare, legal, government, and enterprise environments since 2003. For non-clinical staff in the same practice who need desktop dictation without a cloud subscription, <a href="https://www.dragonprofessional16.com.au" class="about-link">Dragon Professional 16</a> is the current perpetual licence option. For practices wanting a lower-cost cloud option with medical vocabulary built in, our <a href="https://speechrecognition.cloud/medical/" class="about-link">medical dictation software</a> runs on Windows and works with the same EMRs.</p>
-              <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px">
+              <p>{site.branding.aboutBody}</p>
+              <p>You can <a href="https://www.voicerecognition.com.au/products/dragon-medical-one" class="about-link">buy Dragon Medical One in Australia</a> from Voice Recognition Australia - the country's longest-serving speech-to-text software distributor deploying across healthcare, legal, government, and enterprise environments since 2003. For non-clinical staff in the same practice who need desktop dictation without a cloud subscription, <a href="https://www.dragonprofessional16.com.au" class="about-link">Dragon Professional 16</a> is the current perpetual licence option. For practices wanting a lower-cost cloud option with medical vocabulary built in, our <a href="https://speechrecognition.cloud/medical/" class="about-link">medical dictation software</a> runs on Windows and works with the same EMRs.</p>
+              <ul class="proof-list">
                 {site.proofPoints?.map((p) => (
-                  <div style="background:#f0f9ff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#0c4a6e">&#10003; {p}</div>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+                    {p}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-            <div class="card c5" style={`background:${c.primary};color:white;border-color:${c.primary}`}>
-              <h3 style="color:white;margin:0 0 16px">What you get</h3>
+            <div class="get">
+              <h3>What you get</h3>
               {site.aboutEditions?.map((e) => (
                 <div class="edition">
                   <div class="edition-name">{e.name}{e.highlight ? " *" : ""}</div>
@@ -475,35 +568,35 @@ const comparisonRows = [
       </section>
 
       <!-- FAQ -->
-      <section id="faq" style={`background:${c.neutral}`}>
+      <section id="faq">
         <div class="wrap">
           <div class="sh">
             <h2>Frequently asked questions</h2>
           </div>
-          <div class="grid">
-            {site.faqs?.map((f) => (
-              <div class="card c6 faq-card">
-                <h3>{f.q}</h3>
+          <div class="faq-list">
+            {site.faqs?.map((f, i) => (
+              <details class="faq-card" open={i === 0}>
+                <summary><h3>{f.q}</h3></summary>
                 <p set:html={f.a} />
-              </div>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
       <!-- CTA -->
-      <section id="final-cta" style={`background:linear-gradient(135deg, ${c.primary}, ${c.primaryLight});color:white`}>
+      <section id="final-cta" class="dark">
         <div class="wrap">
-          <div class="grid">
-            <div class="c7">
-              {imgSrc("cta-banner") && <div style="display:block;width:100%;border-radius:16px;overflow:hidden;height:220px;margin-bottom:24px"><img src={imgSrc("cta-banner")} alt={imgAlt("cta-banner")} loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 25%" /></div>}
-              <h2 style="color:white;font-size:28px;margin:0 0 12px">{site.branding.ctaHeading}</h2>
-              <p style="color:#94a3b8;margin:0 0 20px">{site.branding.ctaBody}</p>
-              <ul style="color:#94a3b8;margin:0;padding-left:20px;line-height:2.2;font-size:15px">
+          <div class="cta">
+            <div>
+              {imgSrc("cta-banner") && <div class="photo"><img src={imgSrc("cta-banner")} alt={imgAlt("cta-banner")} loading="lazy" decoding="async" /></div>}
+              <h2 class="h2">{site.branding.ctaHeading}</h2>
+              <p>{site.branding.ctaBody}</p>
+              <ul>
                 {site.branding.ctaBullets?.map((b) => <li>{b}</li>)}
               </ul>
             </div>
-            <div class="c5">
+            <div>
               <ACForm />
             </div>
           </div>
@@ -515,7 +608,10 @@ const comparisonRows = [
     <footer>
       <div class="wrap">
         <div class="footer-inner">
-          <div>&copy; {year} {site.siteName}</div>
+          <div class="footer-brand">
+            <span class="logo"><img src="/logo.jpg" alt={site.siteName} width="133" height="28" style="height:28px" loading="lazy" /></span>
+            <span>&copy; {year} {site.siteName}</span>
+          </div>
           <div class="footer-links">
             {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
           </div>
@@ -525,6 +621,23 @@ const comparisonRows = [
         </div>
       </div>
     </footer>
+
+    <div class="trial-bar" id="trial-bar">
+      <a class="btn btn-primary" href={site.primaryCTA.url}>{site.primaryCTA.text}</a>
+    </div>
+
+    <script is:inline>
+      (function(){
+        var h=document.getElementById('site-header'),b=document.getElementById('trial-bar'),f=document.getElementById('final-cta');
+        function on(){
+          var y=window.scrollY||0;
+          h.classList.toggle('solid',y>40);
+          var nearForm=f&&f.getBoundingClientRect().top<window.innerHeight;
+          b.classList.toggle('show',y>600&&!nearForm);
+        }
+        window.addEventListener('scroll',on,{passive:true});on();
+      })();
+    </script>
 
   </body>
 </html>
