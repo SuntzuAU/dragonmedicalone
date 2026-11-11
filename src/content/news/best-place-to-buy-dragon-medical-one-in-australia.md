@@ -2,7 +2,7 @@
 title: "Best Place to Buy Dragon Medical One in Australia"
 date: "2026-03-17"
 metaDescription: "Where to buy Dragon Medical One in Australia, what to look for in a reseller, and why the distributor you choose matters for setup, training, and ongoing support."
-heroImage: "dictationsolutions/2026/03/17/images-dragonmedicalone-best-place-to-buy-dragon-medical-one-in-austra-47328f36.png"
+heroImage: "dragonmedicalone/2026/11/11/best-place-to-buy-dragon-medical-one-australia-reseller-cons-596e4b61.jpg"
 heroImageAlt: "Voice Recognition Australia Dragon Medical One reseller consultation with Australian clinician"
 ---
 
@@ -23,7 +23,7 @@ This matters more than it might seem. Dragon Medical One is not a plug-and-play 
 **Track record.** How long has the reseller been deploying Dragon in Australian healthcare? A long track record means experience with the full range of EMR integrations, hardware configurations, and clinical environments you are likely to encounter.
 
 <div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
-  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/best-medical-voice-to-text-male.jpg" alt="Australian clinician using Dragon Medical One speech recognition in a medical practice" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/11/11/dragon-medical-one-medical-specialty-vocabulary-specialist-c6236f67.jpg" alt="Australian clinician using Dragon Medical One speech recognition in a medical practice" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
 </div>
 
 ## Voice Recognition Australia
@@ -47,7 +47,7 @@ Dragon Medical One offers a free trial for Australian clinicians. Voice Recognit
 A trial conducted properly — with your own clinical vocabulary, in your own system, with your normal documentation workflow — gives you an accurate picture of what the product will do for you day to day.
 
 <div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
-  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/nuance-dragon-medical-australia.jpg" alt="Dragon Medical One setup and support for Australian medical practices" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/11/11/voice-recognition-australia-dragon-medical-one-training-supp-d77e2dca.jpg" alt="Dragon Medical One setup and support for Australian medical practices" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
 </div>
 
 ## What About Dragon Copilot?

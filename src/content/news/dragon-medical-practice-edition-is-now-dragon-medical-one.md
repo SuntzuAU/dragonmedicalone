@@ -2,7 +2,7 @@
 title: "Dragon Medical Practice Edition is Now Dragon Medical One"
 date: "2026-03-17"
 metaDescription: "Dragon Medical Practice Edition was renamed Dragon Medical One in 2019. Here is what changed, what stayed the same, and why Australian clinicians are still choosing it in 2026."
-heroImage: "dictationsolutions/2026/03/17/images-dragonmedicalone-dragon-medical-practice-edition-is-now-dragon--b2ee04e1.png"
+heroImage: "dragonmedicalone/2026/11/11/dragon-medical-practice-edition-now-dragon-medical-one-docto-e9198879.jpg"
 heroImageAlt: "Australian doctor dictating clinical notes using Dragon Medical One speech recognition software"
 ---
 
@@ -29,7 +29,7 @@ Accuracy improved. Cloud-based processing allowed Nuance to deploy larger, more 
 EMR integration deepened. Dragon Medical One is designed to work within clinical applications rather than just as a dictation layer on top of them, with certified integrations across a wide range of Australian practice management and medical records systems.
 
 <div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
-  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/dragon-medical-one-australia.jpg" alt="Dragon Medical One cloud-based speech recognition for Australian healthcare professionals" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/11/11/dragon-medical-one-australia-gp-dictating-notes-hero-82e5f6ba.jpg" alt="Dragon Medical One cloud-based speech recognition for Australian healthcare professionals" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
 </div>
 
 ## What Stayed the Same?
@@ -55,7 +55,7 @@ For clinicians, the medical-specific product has always been the right choice be
 For those exploring cloud-based alternatives, [speech-to-text software](https://www.speechrecognition.cloud) has advanced significantly since the DMPE era, with AI-native platforms now offering viable options across a range of professional use cases beyond healthcare.
 
 <div style="border-radius:12px;overflow:hidden;margin:32px 0;aspect-ratio:16/7">
-  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/03/17/voice-to-text-medical.jpg" alt="Dragon Medical One in Australian medical practice today" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+  <img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/dragonmedicalone/2026/11/11/dragon-medical-one-clinical-documentation-workflow-wide-ffc23c34.jpg" alt="Dragon Medical One in Australian medical practice today" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
 </div>
 
 ## Dragon Medical One in Australian Practice Today
