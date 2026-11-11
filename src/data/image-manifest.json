@@ -6,37 +6,37 @@
   },
   "about-banner": {
     "key": "about-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/voice-to-text-medical.jpg",
-    "altText": "Voice to text medical software - Australian healthcare documentation with Dragon Medical One"
+    "r2Key": "dragonmedicalone/2026/11/11/voice-recognition-australia-dragon-medical-one-training-supp-d77e2dca.jpg",
+    "altText": "Voice Recognition Australia trainer running a remote Dragon Medical One training session"
   },
   "cta-banner": {
     "key": "cta-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/Where-to-buy-Dragon-Medical-One-in-Australia.jpg",
-    "altText": "Dragon Medical One Australia - request a free trial from Voice Recognition Australia"
+    "r2Key": "dragonmedicalone/2026/11/11/dragon-medical-one-australia-free-trial-doctor-welcome-99498edc.jpg",
+    "altText": "Australian GP in her consulting room - request a free trial of Dragon Medical One"
   },
   "benefits-banner": {
     "key": "benefits-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/best-medical-voice-to-text-male.jpg",
-    "altText": "Medical voice to text software for Australian clinicians - Dragon Medical One speech recognition"
+    "r2Key": "dragonmedicalone/2026/11/11/dragon-medical-one-gp-dictating-clinical-notes-benefits-db0127d2.jpg",
+    "altText": "Australian GP dictating clinical notes into a handheld microphone with Dragon Medical One"
   },
   "feature-cloud-security": {
     "key": "feature-cloud-security",
-    "r2Key": "dragonmedicalone/2026/03/17/dragon-medical-one-australia.jpg",
-    "altText": "Dragon Medical One cloud security - Microsoft Azure with Australian data residency"
+    "r2Key": "dragonmedicalone/2026/11/11/dragon-medical-one-australian-data-residency-cloud-security-1e0d714f.jpg",
+    "altText": "Practice manager and IT technician reviewing Dragon Medical One security and Australian data residency settings"
   },
   "feature-specialty-vocab": {
     "key": "feature-specialty-vocab",
-    "r2Key": "dragonmedicalone/2026/03/17/Speech-to-text-medical-software.jpg",
-    "altText": "Speech to text medical software with specialty vocabulary for Australian doctors"
+    "r2Key": "dragonmedicalone/2026/11/11/dragon-medical-one-medical-specialty-vocabulary-specialist-c6236f67.jpg",
+    "altText": "Australian specialist physician dictating a letter with Dragon Medical One specialty vocabulary"
   },
   "workflow-banner": {
     "key": "workflow-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/Best-Value-Speech-to-text-doctor.jpg",
-    "altText": "Dragon Medical One clinical documentation workflow for Australian medical practices"
+    "r2Key": "dragonmedicalone/2026/11/11/dragon-medical-one-clinical-documentation-workflow-wide-ffc23c34.jpg",
+    "altText": "Australian specialist dictating clinical documentation using her phone as a microphone with Dragon Medical One"
   },
   "emr-banner": {
     "key": "emr-banner",
-    "r2Key": "dragonmedicalone/2026/03/17/nuance-dragon-medical-australia.jpg",
-    "altText": "Dragon Medical One EMR integration - works with Best Practice, Genie, Medical Director and more"
+    "r2Key": "dragonmedicalone/2026/11/11/dragon-medical-one-works-with-medical-records-software-5b74b62b.jpg",
+    "altText": "Doctor dictating into medical records software on a Windows PC with Dragon Medical One"
   }
 }

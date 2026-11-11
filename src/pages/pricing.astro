@@ -1,6 +1,9 @@
 ---
 import site from '../site.config.json';
 import ACForm from '../components/ACForm.astro';
+import Theme from '../components/Theme.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const c = site.colours;
 const year = new Date().getFullYear();
@@ -138,128 +141,92 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
+    <Theme />
     <style is:inline>
-      *,*::before,*::after{box-sizing:border-box}
-      body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a;line-height:1.7;background:#fff}
-      .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-      a{color:inherit}
-      header{border-bottom:1px solid #e2e8f0;background:#fff}
-      .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
-      .logo img{height:44px;width:auto;display:block}
-      .nav-links{display:flex;gap:18px;font-size:14px;font-weight:500;color:#334155}
-      .nav-links a{text-decoration:none;color:#334155;white-space:nowrap}
-      .nav-links a:hover{color:#0c4a6e}
-      .nav-ctas{display:flex;gap:10px;align-items:center;flex-shrink:0}
-      .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:all .15s;white-space:nowrap;line-height:1.2}
-      .btn-primary{background:#f59e0b;border-color:#f59e0b;color:#0f172a}
-      .btn-primary:hover{background:#d97706;border-color:#d97706}
-      .btn-secondary{background:#fff;border-color:#cbd5e1;color:#0c4a6e}
-      .btn-secondary:hover{border-color:#0c4a6e}
-      .hamburger{display:none;background:none;border:0;flex-direction:column;gap:4px;padding:8px}
-      .hamburger span{display:block;width:22px;height:2px;background:#0f172a}
-      .mobile-nav{display:none;padding:0 0 14px}
-      .mobile-nav a{display:block;padding:10px 0;text-decoration:none;color:#334155;font-weight:600;border-bottom:1px solid #f1f5f9}
+      section{padding:72px 0}
+      h2{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.12;letter-spacing:-.02em;margin:0 0 12px}
+      .sub{color:var(--muted);margin:0 0 30px;max-width:720px;font-size:18px}
 
-      .hero{padding:44px 0 8px;background:#f0f9ff}
-      .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
-      .hero-pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0c4a6e;background:#e0f2fe;padding:5px 12px;border-radius:20px;margin-bottom:12px}
-      .hero h1{font-size:33px;line-height:1.15;margin:0 0 12px;letter-spacing:-0.02em}
-      .hero p.lede{font-size:16.5px;color:#334155;margin:0 0 6px}
-      .verified{font-size:12.5px;color:#64748b;margin:0 0 24px}
-      .hero-img{width:100%;height:100%;max-height:300px;object-fit:cover;border-radius:14px;box-shadow:0 16px 40px rgba(12,74,110,.16)}
+      .hero{padding:64px 0 120px;background:var(--navy);color:#fff}
+      .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+      .hero-pill{display:inline-block;font-size:15px;font-weight:500;color:var(--green);margin-bottom:16px}
+      .hero h1{font-family:var(--serif);font-weight:400;font-size:58px;line-height:1.04;letter-spacing:-.025em;margin:0 0 20px}
+      .hero p.lede{font-size:18.5px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 14px}
+      .verified{font-size:14px;color:rgba(255,255,255,.6);margin:0}
+      .hero-img{width:100%;height:100%;max-height:380px;object-fit:cover;border-radius:20px}
 
-      section{padding:38px 0}
-      h2{font-size:24px;margin:0 0 8px;letter-spacing:-0.01em}
-      .sub{color:#475569;margin:0 0 22px;max-width:700px;font-size:15.5px}
+      .prices{padding:0 0 72px}
+      .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;max-width:860px;margin-top:-72px;position:relative}
+      .card{border:1px solid var(--line);border-radius:22px;padding:32px;background:#fff;display:flex;flex-direction:column;box-shadow:0 30px 60px -30px rgba(6,20,39,.35)}
+      .card.featured{border:2px solid var(--green-deep);position:relative}
+      .ribbon{position:absolute;top:-14px;left:28px;background:var(--green-deep);color:#fff;font-size:13px;font-weight:600;padding:5px 14px;border-radius:999px}
+      .card h3{font-size:19px;font-weight:600;margin:4px 0 4px;color:var(--ink)}
+      .card .who{font-size:15px;color:var(--muted);margin:0 0 20px;line-height:1.45}
+      .amount{font-family:var(--serif);font-size:60px;font-weight:400;letter-spacing:-.03em;line-height:1;margin:0;color:var(--ink)}
+      .per{font-size:15px;color:var(--muted);margin:10px 0 2px}
+      .gst{font-size:14px;color:#6b7a8f;margin:0 0 16px}
+      .save{display:inline-block;background:#e9f6dd;color:var(--green-deep);font-size:14px;font-weight:600;padding:5px 12px;border-radius:999px;margin:0 0 22px;align-self:flex-start}
+      .save.plain{background:var(--paper);color:var(--muted)}
+      .card .btn{margin-top:auto;text-align:center;padding:14px 18px;font-size:16px;white-space:normal}
+      .strike{font-family:var(--sans);text-decoration:line-through;color:#94a3b8;font-weight:500;font-size:19px;letter-spacing:0;margin-left:12px}
 
-      .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;max-width:760px}
-      .card{border:1px solid #e2e8f0;border-radius:13px;padding:20px 22px;background:#fff;display:flex;flex-direction:column}
-      .card.featured{border:2px solid #0c4a6e;box-shadow:0 12px 30px rgba(12,74,110,.11);position:relative}
-      .ribbon{position:absolute;top:-11px;left:20px;background:#0c4a6e;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
-      .card h3{font-size:15.5px;margin:6px 0 2px;color:#0c4a6e}
-      .card .who{font-size:13px;color:#64748b;margin:0 0 12px;line-height:1.45}
-      .amount{font-size:33px;font-weight:800;letter-spacing:-0.03em;line-height:1;margin:0}
-      .per{font-size:13px;color:#475569;margin:6px 0 2px}
-      .gst{font-size:12.5px;color:#64748b;margin:0 0 12px}
-      .save{display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin:0 0 12px;align-self:flex-start}
-      .card .btn{margin-top:auto;text-align:center;padding:11px 14px;font-size:14px;white-space:normal}
-      .strike{text-decoration:line-through;color:#94a3b8;font-weight:600;font-size:16px;margin-left:8px}
+      .inc{list-style:none;padding:0;margin:0;columns:2;column-gap:56px}
+      .inc li{padding:13px 0;border-bottom:1px solid #cfd7e0;font-size:16.5px;color:var(--ink);display:flex;gap:12px;align-items:flex-start;break-inside:avoid}
+      .inc li::before{content:"";flex-shrink:0;width:18px;height:18px;margin-top:4px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230c6b3c' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat}
+      .inc-note{margin:30px 0 0;font-size:16.5px;color:var(--muted);max-width:780px}
+      .tlink{color:var(--green-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
-      .inc{list-style:none;padding:0;margin:0;columns:2;column-gap:36px}
-      .inc li{padding:8px 0;font-size:15px;color:#334155;display:flex;gap:10px;align-items:flex-start;break-inside:avoid}
-      .inc li::before{content:"\2713";color:#059669;font-weight:800;flex-shrink:0}
-
-      .note{border:1px solid #cbd5e1;border-left:4px solid #0c4a6e;background:#f8fafc;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1.5fr .5fr}
-      .note-body{padding:22px 24px}
-      .note h3{margin:0 0 8px;font-size:18px;color:#0c4a6e}
-      .note p{margin:0 0 11px;color:#334155;font-size:15px}
-      .note ol{margin:0 0 11px;padding-left:20px;color:#334155;font-size:14.5px;columns:2;column-gap:28px}
-      .note ol li{padding:3px 0;break-inside:avoid}
-      .note .fineprint{font-size:12.5px;color:#64748b;margin:0}
+      .note{background:var(--navy);color:#fff;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.5fr .5fr}
+      .note-body{padding:44px 48px}
+      .note h3{font-family:var(--serif);font-weight:400;margin:0 0 14px;font-size:34px;letter-spacing:-.02em;line-height:1.1}
+      .note p{margin:0 0 14px;color:rgba(255,255,255,.8);font-size:16.5px}
+      .note ol{margin:0 0 14px;padding-left:22px;color:#fff;font-size:16px;columns:2;column-gap:36px}
+      .note ol li{padding:4px 0;break-inside:avoid}
+      .note .fineprint{font-size:14px;color:rgba(255,255,255,.55);margin:0}
       .note-img{width:100%;height:100%;object-fit:cover;object-position:72% 32%;min-height:100%}
 
-      .strip{width:100%;height:190px;object-fit:cover;object-position:center 38%;border-radius:14px;display:block;margin-bottom:26px}
+      .strip{width:100%;height:340px;object-fit:cover;object-position:center 38%;border-radius:20px;display:block;margin-bottom:44px}
 
-      .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-      .panel{background:#f0f9ff;border-radius:12px;padding:20px 22px}
-      .panel h3{margin:0 0 6px;font-size:17px;color:#0c4a6e}
-      .panel p{margin:0;color:#334155;font-size:15px}
+      .two{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+      .panel{padding:26px 0;border-top:2px solid var(--navy)}
+      .panel h3{font-family:var(--serif);font-weight:500;margin:0 0 8px;font-size:25px;letter-spacing:-.01em}
+      .panel p{margin:0;color:var(--muted);font-size:16.5px}
 
-      details.faq{border-bottom:1px solid #e2e8f0;padding:13px 0}
-      details.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+      .faqs{max-width:880px;border-top:1px solid #cfd7e0}
+      details.faq{border-bottom:1px solid #cfd7e0}
+      details.faq summary{cursor:pointer;font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:-.01em;line-height:1.25;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0}
       details.faq summary::-webkit-details-marker{display:none}
-      details.faq summary::after{content:"+";color:#0c4a6e;font-weight:800;flex-shrink:0}
-      details.faq[open] summary::after{content:"\2212"}
-      details.faq p{margin:10px 0 0;color:#334155;font-size:15px}
+      details.faq summary::after{content:"";flex-shrink:0;width:12px;height:12px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);margin:0 6px 6px 0;transition:transform .15s}
+      details.faq[open] summary::after{transform:rotate(-135deg);margin:6px 6px 0 0}
+      details.faq p{margin:0 0 24px;color:var(--muted);font-size:17px;max-width:760px}
+      .after-faq{margin-top:32px;font-size:16.5px;color:var(--muted);max-width:780px}
 
-      .cta{background:linear-gradient(135deg,#0c4a6e,#0e7490);color:#fff;padding:46px 0}
-      .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-      .cta h2{color:#fff;margin:0 0 10px}
-      .cta p{color:#bae6fd;margin:0 0 14px}
-
-      footer{background:#0f172a;color:#64748b;padding:26px 0;font-size:14px}
-      .footer-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
-      .footer-links{display:flex;gap:20px;flex-wrap:wrap}
-      .footer-links a{color:#64748b;text-decoration:none}
-      .footer-links a:hover{color:#fff}
-      .legal{max-width:1080px;margin:14px auto 0;padding:0 24px;font-size:11.5px;color:#475569;line-height:1.6}
+      .cta h2{font-size:44px;line-height:1.08;color:#fff;margin:0 0 16px}
 
       @media(max-width:900px){
-        .price-grid,.two,.cta-grid,.hero-split,.note{grid-template-columns:1fr}
+        section{padding:56px 0}
+        .price-grid,.two,.hero-split,.note{grid-template-columns:1fr}
         .inc,.note ol{columns:1}
-        .note-img{max-height:200px}
-        .nav-links{display:none}
-        .nav-ctas .btn-secondary{display:none}
-        .nav-ctas .btn-primary{padding:8px 16px;font-size:13px}
-        .hamburger{display:flex}
-        .hero h1{font-size:27px}
-        .amount{font-size:30px}
-        .strip{height:150px}
+        .note-img{max-height:220px}
+        .note-body{padding:30px 26px}
+        .hero{padding:44px 0 104px}
+        .hero h1{font-size:42px}
+        .amount{font-size:50px}
+        .strip{height:220px;margin-bottom:32px}
+        h2{font-size:31px}
+        .cta h2{font-size:31px}
+      }
+      @media(max-width:600px){
+        .hero h1{font-size:34px}
+        .card{padding:26px 22px}
+        .note h3{font-size:27px}
+        details.faq summary{font-size:20px}
       }
     </style>
   </head>
 
   <body>
-    <header>
-      <div class="wrap">
-        <div class="nav">
-          <div class="logo"><a href="/"><img src="/logo.jpg" alt={site.siteName} /></a></div>
-          <nav class="nav-links" aria-label="Primary">
-            {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
-          </nav>
-          <div class="nav-ctas">
-            <a class="btn btn-secondary" href={BUY_URL}>Buy Dragon Medical</a>
-            <a class="btn btn-primary" href="#pricing-cta">Request Free Trial</a>
-            <button class="hamburger" aria-label="Open menu" onclick="var mn=this.closest('header').querySelector('.mobile-nav');mn.style.display=mn.style.display==='block'?'none':'block'">
-              <span></span><span></span><span></span>
-            </button>
-          </div>
-        </div>
-        <nav class="mobile-nav" aria-label="Mobile navigation">
-          {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
-        </nav>
-      </div>
-    </header>
+    <SiteHeader trialUrl="#pricing-cta" />
 
     <main>
       <section class="hero">
@@ -280,7 +247,7 @@ const faqSchema = {
         </div>
       </section>
 
-      <section style="padding-top:28px">
+      <section class="prices">
         <div class="wrap">
           <div class="price-grid">
             <div class="card featured">
@@ -300,14 +267,14 @@ const faqSchema = {
               <p class="amount">A${PRICE_STANDARD}</p>
               <p class="per">per clinician, per year</p>
               <p class="gst">GST inclusive</p>
-              <span class="save" style="background:#e0f2fe;color:#0c4a6e">Nothing charged automatically</span>
-              <a class="btn btn-secondary" href={BUY_URL}>Buy Dragon Medical One</a>
+              <span class="save plain">Nothing charged automatically</span>
+              <a class="btn btn-outline" href={BUY_URL}>Buy Dragon Medical One</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section style="background:#f8fafc">
+      <section class="tint">
         <div class="wrap">
           <h2>What is included at both prices</h2>
           <p class="sub">
@@ -317,10 +284,10 @@ const faqSchema = {
           <ul class="inc">
             {included.map((i) => <li><span>{i}</span></li>)}
           </ul>
-          <p style="margin:22px 0 0;font-size:15.5px;color:#334155;max-width:760px">
+          <p class="inc-note">
             Every subscription on this page is supplied and supported by Voice Recognition Australia, an
             authorised Australian reseller of
-            <a href={BUY_URL} style="color:#0c4a6e;font-weight:600">Dragon Medical One</a>. The full product
+            <a href={BUY_URL} class="tlink">Dragon Medical One</a>. The full product
             listing there carries current stock, customer reviews and the ordering process, and is where the
             buttons above lead.
           </p>
@@ -358,7 +325,7 @@ const faqSchema = {
         </div>
       </section>
 
-      <section style="background:#f8fafc">
+      <section class="tint">
         <div class="wrap">
           <img class="strip" src={img.team} alt={img.teamAlt} loading="lazy" decoding="async" />
           <h2>More than one clinician?</h2>
@@ -390,23 +357,25 @@ const faqSchema = {
           <p class="sub">
             Anything not covered here, ask us directly — we would rather answer it before you buy.
           </p>
+          <div class="faqs">
           {faqs.map((f) => (
             <details class="faq">
               <summary>{f.q}</summary>
               <p>{f.a}</p>
             </details>
           ))}
-          <p style="margin-top:26px;font-size:15px;color:#475569">
+          </div>
+          <p class="after-faq">
             Not sure Dragon Medical One is the right fit? The
-            <a href="/#comparison" style="color:#0c4a6e;font-weight:600"> comparison table on our home page </a>
+            <a href="/#comparison" class="tlink"> comparison table on our home page </a>
             sets it against desktop dictation, built-in Windows tools and ambient AI, and our
-            <a href="/dragon-copilot" style="color:#0c4a6e;font-weight:600"> Dragon Copilot page </a>
+            <a href="/dragon-copilot" class="tlink"> Dragon Copilot page </a>
             covers what is coming to Australia next.
           </p>
         </div>
       </section>
 
-      <section class="cta" id="pricing-cta">
+      <section class="cta dark" id="pricing-cta">
         <div class="wrap">
           <div class="cta-grid">
             <div>
@@ -415,7 +384,7 @@ const faqSchema = {
                 Tell us about your practice and we will arrange a free trial, install it remotely and train
                 whoever will be using it. We will confirm your exact price in writing at the same time.
               </p>
-              <p style="color:#94a3b8;font-size:14px;margin:0">
+              <p class="small">
                 Voice Recognition Australia has been distributing Dragon in Australia since 2003 and has
                 the most Dragon Medical One subscribers of any Australian distributor.
               </p>
@@ -428,15 +397,8 @@ const faqSchema = {
       </section>
     </main>
 
-    <footer>
-      <div class="footer-inner">
-        <div>&copy; {year} {site.siteName}</div>
-        <div class="footer-links">
-          {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
-        </div>
-      </div>
-      <div class="legal">
-        Pricing accurate at time of publication and verified {PRICE_VERIFIED}. Software vendors and resellers may
+    <SiteFooter>
+      Pricing accurate at time of publication and verified {PRICE_VERIFIED}. Software vendors and resellers may
         change pricing without notice. Verify current pricing directly with the supplier before making a
         purchasing decision. Prices shown are Australian dollars, GST inclusive, per clinician, for a 12-month
         subscription supplied by Voice Recognition Australia. Dragon, Dragon Medical One, PowerMic and Nuance are
@@ -444,7 +406,6 @@ const faqSchema = {
         and is not affiliated with, endorsed by, or sponsored by Microsoft or Nuance Communications except
         through authorised reseller agreements. Dragon Medical One is a documentation tool intended to assist
         administrative clinical documentation workflows.
-      </div>
-    </footer>
+    </SiteFooter>
   </body>
 </html>

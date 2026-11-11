@@ -1,4 +1,7 @@
 ---
+import Theme from '../components/Theme.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import site from '../site.config.json';
 import ACForm from '../components/ACForm.astro';
 const c = site.colours;
@@ -22,64 +25,35 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice
       gtag('config', gaId);
     </script>
   )}
+  <Theme />
   <style is:inline>
-    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.7}
-    .wrap{max-width:900px;margin:0 auto;padding:0 24px}
-    a{color:inherit}
-    .back{display:inline-block;margin:24px 0;font-size:14px;font-weight:600;text-decoration:none}
-    .hero{padding:48px 0 32px}
-    .hero h1{font-size:36px;margin:0 0 16px;letter-spacing:-0.02em}
-    .hero p{font-size:17px;color:#334155;max-width:720px;margin:0 0 28px}
-    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent}
-    .video-outer{max-width:760px;margin:0 auto 48px}
-    .yt-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.15);cursor:pointer;background:#000}
-    .yt-facade img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
-    .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:background .15s,transform .15s}
-    .yt-facade:hover .yt-play{background:#cc0000;transform:translate(-50%,-50%) scale(1.08)}
-    .yt-facade .yt-play svg{width:24px;height:24px;fill:white;margin-left:4px}
-    .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px}
-    section{padding:48px 0}
-    .content-block{max-width:720px}
-    .content-block h2{font-size:26px;margin:0 0 12px}
-    .content-block p{font-size:16px;color:#334155;margin:0 0 16px}
-    .benefits-list{list-style:none;padding:0;margin:24px 0}
-    .benefits-list li{padding:12px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#334155;display:flex;gap:10px;align-items:flex-start}
-    .benefits-list li::before{content:"\2713";font-weight:700;flex-shrink:0}
-    .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-    footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:0}
-    .footer-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
-    .footer-links{display:flex;gap:20px}
-    .footer-links a{color:#64748b;text-decoration:none}
-    .footer-links a:hover{color:white}
-    @media(max-width:700px){
-      .cta-grid{grid-template-columns:1fr}
-      .hero h1{font-size:28px}
-    }
+    .emr-video{padding:0 0 8px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <a class="back" href="/" style={`color:${c.primary}`}>&larr; Back to {site.siteName}</a>
-  </div>
+  <SiteHeader trialUrl="#emr-cta" />
 
-  <section class="hero">
-    <div class="wrap">
+  <main>
+  <section class="page-hero" style="padding-bottom:112px">
+    <div class="wrap narrow">
+      <a class="crumb" href="/">&larr; Back to {site.siteName}</a>
       <h1>{emr.heroHeading}</h1>
       <p>{emr.heroBody}</p>
       <div class="hero-btns">
-        <a class="btn" href="#emr-cta" style={`background:${c.accent};color:${c.text}`}>Request Free Trial</a>
-        <a class="btn" href={site.secondaryCTA.url} style={`background:white;border-color:#cbd5e1;color:${c.primary}`}>{site.secondaryCTA.text}</a>
+        <a class="btn btn-primary btn-lg" href="#emr-cta">Request Free Trial</a>
+        <a class="btn btn-secondary btn-lg" href={site.secondaryCTA.url}>{site.secondaryCTA.text}</a>
       </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <div class="video-outer">
-      <div class="yt-facade" data-ytid={emr.youtubeId}>
-        <img src={`https://i.ytimg.com/vi/${emr.youtubeId}/maxresdefault.jpg`} alt={`${emr.title} video demonstration`} loading="lazy" decoding="async" />
-        <div class="yt-play">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+  <div class="emr-video">
+    <div class="wrap narrow">
+      <div class="video-outer">
+        <div class="yt-facade" data-ytid={emr.youtubeId}>
+          <img src={`https://i.ytimg.com/vi/${emr.youtubeId}/maxresdefault.jpg`} alt={`${emr.title} video demonstration`} loading="lazy" decoding="async" />
+          <div class="yt-play">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+          </div>
         </div>
       </div>
     </div>
@@ -98,9 +72,9 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice
     </script>
   </div>
 
-  <section>
-    <div class="wrap">
-      <div class="content-block">
+  <section class="band">
+    <div class="wrap narrow">
+      <div class="prose">
         <h2>How it works</h2>
         <p>{emr.howItWorks}</p>
         {emr.buyAnchor && <p>{emr.buyBefore}<a href={emr.buyUrl}>{emr.buyAnchor}</a>{emr.buyAfter}</p>}
@@ -108,24 +82,22 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice
     </div>
   </section>
 
-  <section style={`background:${c.neutral}`}>
-    <div class="wrap">
-      <div class="content-block">
-        <h2>Key benefits</h2>
-        <ul class="benefits-list">
-          {emr.keyBenefits.map(b => <li style={`color:${c.accent}`}><span style="color:#334155">{b}</span></li>)}
-        </ul>
-      </div>
+  <section class="band tint">
+    <div class="wrap narrow">
+      <h2>Key benefits</h2>
+      <ul class="checks">
+        {emr.keyBenefits.map(b => <li><span>{b}</span></li>)}
+      </ul>
     </div>
   </section>
 
-  <section id="emr-cta" style={`background:linear-gradient(135deg, ${c.primary}, ${c.primaryLight});color:white;padding:56px 0`}>
+  <section id="emr-cta" class="band dark">
     <div class="wrap">
       <div class="cta-grid">
         <div>
-          <h2 style="color:white;font-size:28px;margin:0 0 12px">Try Dragon Medical One with {emr.emrName}</h2>
-          <p style="color:#94a3b8;margin:0 0 20px">Tell us about your practice and we will arrange a free trial with remote installation and personalised training.</p>
-          <p style="color:#94a3b8;font-size:14px;margin:0">Voice Recognition Australia has been distributing Dragon in Australia since 2003. We have the most Dragon Medical One subscribers of any Australian distributor.</p>
+          <h2>Try Dragon Medical One with {emr.emrName}</h2>
+          <p>Tell us about your practice and we will arrange a free trial with remote installation and personalised training.</p>
+          <p class="small">Voice Recognition Australia has been distributing Dragon in Australia since 2003. We have the most Dragon Medical One subscribers of any Australian distributor.</p>
         </div>
         <div>
           <ACForm submitText="Request Free Trial" />
@@ -133,17 +105,10 @@ const emr = site.emrPages.find(e => e.slug === 'dragon-medical-one-best-practice
       </div>
     </div>
   </section>
+  </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>&copy; {year} {site.siteName}</div>
-      <div class="footer-links">
-        {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
-      </div>
-    </div>
-    <div style="max-width:900px;margin:12px auto 0;padding:0 24px;font-size:11px;color:#475569;line-height:1.6">
-      Dragon and Dragon Medical One are trademarks of Microsoft Corporation or its affiliates. {emr.emrName} is a trademark of its respective owner. This website is not affiliated with or endorsed by {emr.emrName}.
-    </div>
-  </footer>
+  <SiteFooter>
+    Dragon and Dragon Medical One are trademarks of Microsoft Corporation or its affiliates. {emr.emrName} is a trademark of its respective owner. This website is not affiliated with or endorsed by {emr.emrName}.
+  </SiteFooter>
 </body>
 </html>

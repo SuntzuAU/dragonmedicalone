@@ -1,10 +1,13 @@
 ---
+import Theme from '../../components/Theme.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { getCollection } from 'astro:content';
 import site from '../../site.config.json';
 import manifest from '../../data/image-manifest.json';
 const c = site.colours;
 const year = new Date().getFullYear();
-const R2_BASE = import.meta.env.PUBLIC_R2_BASE || '';
+const R2_BASE = import.meta.env.PUBLIC_R2_BASE || 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev';
 function imgSrc(key) {
   if (!key || !R2_BASE) return '';
   const entry = manifest[key];
@@ -37,48 +40,47 @@ const d = post.data;
       gtag('config', gaId);
     </script>
   )}
+  <Theme />
   <style is:inline>
-    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.8}
-    .wrap{max-width:720px;margin:0 auto;padding:48px 24px}
-    .back{display:inline-block;margin-bottom:24px;font-size:14px;font-weight:600;text-decoration:none}
-    h1{font-size:32px;margin:0 0 12px;letter-spacing:-0.02em;line-height:1.2}
-    .meta{font-size:13px;color:#94a3b8;margin-bottom:32px}
-    .hero-img{border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#f0f9ff;margin-bottom:32px}
+    .article-hero h1{font-size:50px;max-width:820px}
+    .meta{font-size:15px;color:rgba(255,255,255,.65)}
+    .hero-img{border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#dfe5ec;margin:-56px 0 48px;position:relative;box-shadow:0 40px 80px -30px rgba(6,20,39,.5)}
     .hero-img img{width:100%;height:100%;object-fit:cover}
-    article{font-size:16px;color:#334155}
-    article h2{font-size:24px;color:#0f172a;margin:36px 0 12px}
-    article h3{font-size:19px;color:#0f172a;margin:28px 0 8px}
-    article p{margin:0 0 16px}
-    article a{color:#0c4a6e;text-decoration:underline;text-underline-offset:2px}
-    article a:hover{color:#f59e0b}
-    article ul,article ol{padding-left:24px;margin:0 0 16px}
-    article li{margin-bottom:6px}
-    footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:64px}
-    .footer-inner{max-width:720px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
-    .footer-links{display:flex;gap:20px}
-    .footer-links a{color:#64748b;text-decoration:none}
-    .footer-links a:hover{color:white}
+    .article-wrap{max-width:820px;margin:0 auto;padding:0 40px}
+    article.prose{max-width:none}
+    article.prose h2{font-size:34px}
+    article.prose table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:16px}
+    article.prose th{text-align:left;padding:12px 14px;background:var(--navy);color:#fff;font-weight:600}
+    article.prose td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--muted)}
+    article.prose img{border-radius:16px;margin:8px 0 24px}
+    article.prose blockquote{margin:0 0 20px;padding:4px 0 4px 22px;border-left:3px solid var(--green-deep)}
+    .no-img{height:56px}
+    @media(max-width:900px){.article-wrap{padding:0 24px}.article-hero h1{font-size:38px}}
+    @media(max-width:600px){.article-wrap{padding:0 20px}.article-hero h1{font-size:30px}.hero-img{margin:-36px 0 32px;border-radius:14px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <a class="back" href="/news" style={`color:${c.primary}`}>&larr; All news</a>
-    <h1>{d.title}</h1>
-    <div class="meta">{d.date}</div>
-    {d.heroImage && imgSrc(d.heroImage) && (
+  <SiteHeader />
+
+  <main>
+  <section class="page-hero article-hero" style="padding-bottom:104px">
+    <div class="article-wrap">
+      <a class="crumb" href="/news">&larr; All news</a>
+      <h1>{d.title}</h1>
+      <div class="meta">{d.date}</div>
+    </div>
+  </section>
+
+  <div class="article-wrap" style="padding-bottom:88px">
+    {d.heroImage && imgSrc(d.heroImage) ? (
       <div class="hero-img"><img src={imgSrc(d.heroImage)} alt={d.heroImageAlt || d.title} loading="eager" decoding="async" /></div>
-    )}
-    <article>
+    ) : <div class="no-img"></div>}
+    <article class="prose">
       <Content />
     </article>
   </div>
-  <footer>
-    <div class="footer-inner">
-      <div>&copy; {year} {site.siteName}</div>
-      <div class="footer-links">
-        {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
-      </div>
-    </div>
-  </footer>
+  </main>
+
+  <SiteFooter />
 </body>
 </html>

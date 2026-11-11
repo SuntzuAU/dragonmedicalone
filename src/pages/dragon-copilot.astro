@@ -1,4 +1,7 @@
 ---
+import Theme from '../components/Theme.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import site from '../site.config.json';
 import ACForm from '../components/ACForm.astro';
 const c = site.colours;
@@ -21,68 +24,49 @@ const year = new Date().getFullYear();
       gtag('config', gaId);
     </script>
   )}
+  <Theme />
   <style is:inline>
-    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.7}
-    .wrap{max-width:900px;margin:0 auto;padding:0 24px}
-    a{color:inherit}
-    .back{display:inline-block;margin:24px 0;font-size:14px;font-weight:600;text-decoration:none}
-    .hero{padding:48px 0 40px;text-align:center}
-    .hero-badge{display:inline-block;background:#fef3c7;border:1px solid #fde68a;border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700;color:#92400e;margin-bottom:18px}
-    .hero h1{font-size:38px;margin:0 0 16px;letter-spacing:-0.02em}
-    .hero p{font-size:17px;color:#475569;max-width:700px;margin:0 auto 28px}
-    .video-outer{max-width:760px;margin:0 auto 48px}
-    .yt-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.15);cursor:pointer;background:#000}
-    .yt-facade img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
-    .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:background .15s,transform .15s}
-    .yt-facade:hover .yt-play{background:#cc0000;transform:translate(-50%,-50%) scale(1.08)}
-    .yt-facade .yt-play svg{width:24px;height:24px;fill:white;margin-left:4px}
-    .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px}
-    section{padding:48px 0}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px}
-    .card h3{margin:0 0 8px;font-size:18px}
-    .card p{color:#475569;font-size:15px;margin:0}
-    .content-block{max-width:720px}
-    .content-block h2{font-size:26px;margin:0 0 12px}
-    .content-block p{font-size:16px;color:#334155;margin:0 0 16px}
-    .availability-table{width:100%;border-collapse:collapse;margin:24px 0}
-    .availability-table th{text-align:left;padding:10px 16px;font-size:13px;font-weight:600;color:#475569;border-bottom:2px solid #e2e8f0;background:#f8fafc}
-    .availability-table td{padding:12px 16px;font-size:15px;border-bottom:1px solid #f1f5f9}
-    .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent}
-    footer{background:#0f172a;color:#64748b;padding:28px 0;font-size:14px;margin-top:48px}
-    .footer-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
-    .footer-links{display:flex;gap:20px}
-    .footer-links a{color:#64748b;text-decoration:none}
-    .footer-links a:hover{color:white}
-    @media(max-width:700px){
-      .grid{grid-template-columns:1fr}
-      .hero h1{font-size:28px}
-    }
+    .caps{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;border-bottom:1px solid #cfd7e0}
+    .cap{padding:26px 0;border-top:1px solid #cfd7e0}
+    .cap h3{font-family:var(--serif);font-weight:500;font-size:25px;letter-spacing:-.01em;line-height:1.2;margin:0 0 8px}
+    .cap p{color:var(--muted);font-size:16.5px;margin:0}
+    .availability-table{width:100%;border-collapse:collapse;margin:28px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .availability-table th{text-align:left;padding:14px 18px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,.8);background:var(--navy)}
+    .availability-table td{padding:14px 18px;font-size:16.5px;border-top:1px solid var(--line);color:var(--ink)}
+    .availability-table tr[style] td{background:#f1f9e8}
+    .prose p.fine{font-size:14.5px;color:#6b7a8f}
+    .register{text-align:center}
+    .register h2{font-size:44px;line-height:1.08;max-width:760px;margin:0 auto 14px}
+    .register p{color:rgba(255,255,255,.76);font-size:17.5px;margin:0 0 32px}
+    .register .form{max-width:480px;margin:0 auto;text-align:left}
+    @media(max-width:700px){.caps{grid-template-columns:1fr}.register h2{font-size:31px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <a class="back" href="/" style={`color:${c.primary}`}>&larr; Back to {site.siteName}</a>
-  </div>
+  <SiteHeader trialUrl="/#final-cta" />
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-badge">Coming to Australia</div>
+  <main>
+  <section class="page-hero center" style="padding-bottom:112px">
+    <div class="wrap narrow">
+      <a class="crumb" href="/">&larr; Back to {site.siteName}</a>
+      <div><span class="hero-badge">Coming to Australia</span></div>
       <h1>Dragon Copilot</h1>
       <p>Microsoft's ambient AI assistant for healthcare. Dragon Copilot combines Dragon Medical One dictation with ambient listening and generative AI to create structured clinical notes from patient consultations.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a class="btn" href="#register" style={`background:${c.accent};color:${c.text}`}>Register Your Interest</a>
-        <a class="btn" href="https://www.voicerecognition.com.au/pages/dragon-copilot" style={`background:white;border-color:#cbd5e1;color:${c.primary}`} rel="noopener">Learn More on VRA</a>
+      <div class="hero-btns">
+        <a class="btn btn-primary btn-lg" href="#register">Register Your Interest</a>
+        <a class="btn btn-secondary btn-lg" href="https://www.voicerecognition.com.au/pages/dragon-copilot" rel="noopener">Learn More on VRA</a>
       </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <div class="video-outer">
-      <div class="yt-facade" data-ytid="ALK-1XtwkNs">
-        <img src="https://i.ytimg.com/vi/ALK-1XtwkNs/maxresdefault.jpg" alt="Dragon Copilot overview video" loading="lazy" decoding="async" />
-        <div class="yt-play">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+  <div>
+    <div class="wrap narrow">
+      <div class="video-outer">
+        <div class="yt-facade" data-ytid="ALK-1XtwkNs">
+          <img src="https://i.ytimg.com/vi/ALK-1XtwkNs/maxresdefault.jpg" alt="Dragon Copilot overview video" loading="lazy" decoding="async" />
+          <div class="yt-play">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+          </div>
         </div>
       </div>
     </div>
@@ -101,9 +85,9 @@ const year = new Date().getFullYear();
     </script>
   </div>
 
-  <section>
-    <div class="wrap">
-      <div class="content-block">
+  <section class="band">
+    <div class="wrap narrow">
+      <div class="prose">
         <h2>What is Dragon Copilot?</h2>
         <p>Dragon Copilot is Microsoft's unified clinical AI assistant that brings together Dragon Medical One's proven speech recognition with DAX Copilot ambient listening technology and generative AI. Rather than requiring clinicians to dictate notes after a consultation, Dragon Copilot listens to the natural conversation between clinician and patient and generates structured clinical notes automatically.</p>
         <p>This represents the next step beyond Dragon Medical One. Where DMO requires the clinician to dictate into the record, Copilot aims to remove the documentation step entirely by capturing the consultation as it happens.</p>
@@ -111,23 +95,23 @@ const year = new Date().getFullYear();
     </div>
   </section>
 
-  <section style={`background:${c.neutral}`}>
-    <div class="wrap">
-      <h2 style="font-size:26px;margin:0 0 20px">Key capabilities</h2>
-      <div class="grid">
-        <div class="card">
+  <section class="band tint">
+    <div class="wrap narrow">
+      <h2>Key capabilities</h2>
+      <div class="caps">
+        <div class="cap">
           <h3>Ambient documentation</h3>
           <p>Listens to clinician-patient conversations and generates structured clinical notes, including SOAP-style documentation, without the clinician needing to dictate.</p>
         </div>
-        <div class="card">
+        <div class="cap">
           <h3>Combined dictation and ambient</h3>
           <p>Includes Dragon Medical One dictation alongside ambient AI. Clinicians can choose to dictate when they prefer, or let Copilot listen and draft notes from the conversation.</p>
         </div>
-        <div class="card">
+        <div class="cap">
           <h3>EHR integration</h3>
           <p>Designed to integrate with major electronic health record systems. Works within existing clinical workflows to reduce the documentation burden on clinicians.</p>
         </div>
-        <div class="card">
+        <div class="cap">
           <h3>Healthcare-adapted AI safeguards</h3>
           <p>Built on Microsoft's healthcare cloud infrastructure with security, privacy, and compliance controls designed for clinical environments.</p>
         </div>
@@ -135,9 +119,9 @@ const year = new Date().getFullYear();
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="content-block">
+  <section class="band">
+    <div class="wrap narrow">
+      <div class="prose">
         <h2>Availability</h2>
         <p>As of March 2026, Dragon Copilot is available for physician workflows in a number of countries. <strong>Australia is not yet on the publicly listed availability list.</strong> We expect Australian availability in due course, though no specific date has been confirmed by Microsoft.</p>
         <table class="availability-table">
@@ -152,41 +136,28 @@ const year = new Date().getFullYear();
             <tr style="font-weight:700"><td>Australia</td><td>Not yet listed - expected in due course</td></tr>
           </tbody>
         </table>
-        <p style="font-size:14px;color:#94a3b8">Availability information based on Microsoft's publicly listed Dragon Copilot availability as of March 2026. Nursing workflows are currently US-only. Radiology described as preview/US-only.</p>
-      </div>
-    </div>
-  </section>
+        <p class="fine">Availability information based on Microsoft's publicly listed Dragon Copilot availability as of March 2026. Nursing workflows are currently US-only. Radiology described as preview/US-only.</p>
 
-  <section>
-    <div class="wrap">
-      <div class="content-block">
         <h2>Important: generative output vs verbatim dictation</h2>
         <p>Dragon Copilot generates clinical notes using generative AI. This means the output is not a verbatim transcript of what the clinician said - it is a structured summary generated by AI. Clinicians must review and approve all generated notes before they are committed to the patient record.</p>
-        <p>For clinicians who require verbatim transcription where exactly what they say appears in the record, <a href="/" style={`color:${c.primary}`}>Dragon Medical One</a> continues to be the appropriate solution. Many clinicians may use both - DMO for direct dictation and Copilot for ambient consultation documentation.</p>
+        <p>For clinicians who require verbatim transcription where exactly what they say appears in the record, <a href="/">Dragon Medical One</a> continues to be the appropriate solution. Many clinicians may use both - DMO for direct dictation and Copilot for ambient consultation documentation.</p>
       </div>
     </div>
   </section>
 
-  <section id="register" style={`background:linear-gradient(135deg, ${c.primary}, ${c.primaryLight});color:white;padding:56px 0`}>
-    <div class="wrap" style="text-align:center">
-      <h2 style="color:white;font-size:28px;margin:0 0 12px">Register your interest for Dragon Copilot in Australia</h2>
-      <p style="color:#94a3b8;margin:0 0 28px">Be among the first Australian clinicians notified when Dragon Copilot becomes available. No obligation.</p>
-      <div style="max-width:480px;margin:0 auto">
+  <section id="register" class="band dark register">
+    <div class="wrap">
+      <h2>Register your interest for Dragon Copilot in Australia</h2>
+      <p>Be among the first Australian clinicians notified when Dragon Copilot becomes available. No obligation.</p>
+      <div class="form">
         <ACForm submitText="Register Interest" />
       </div>
     </div>
   </section>
+  </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>&copy; {year} {site.siteName}</div>
-      <div class="footer-links">
-        {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
-      </div>
-    </div>
-    <div style="max-width:900px;margin:12px auto 0;padding:0 24px;font-size:11px;color:#475569;line-height:1.6">
-      Dragon, Dragon Medical One, Dragon Copilot, Nuance, and PowerMic are trademarks of Microsoft Corporation or its affiliates. This website is operated by an authorised reseller and is not affiliated with, endorsed by, or sponsored by Microsoft except through authorised reseller agreements.
-    </div>
-  </footer>
+  <SiteFooter>
+    Dragon, Dragon Medical One, Dragon Copilot, Nuance, and PowerMic are trademarks of Microsoft Corporation or its affiliates. This website is operated by an authorised reseller and is not affiliated with, endorsed by, or sponsored by Microsoft except through authorised reseller agreements.
+  </SiteFooter>
 </body>
 </html>

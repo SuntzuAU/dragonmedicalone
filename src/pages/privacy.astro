@@ -1,4 +1,7 @@
 ---
+import Theme from '../components/Theme.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import site from '../site.config.json';
 const c = site.colours;
 const year = new Date().getFullYear();
@@ -10,20 +13,22 @@ const year = new Date().getFullYear();
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - {site.siteName}</title>
   <link rel="canonical" href={`${site.domain}/privacy`} />
-  <style is:inline>
-    body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.7}
-    .wrap{max-width:720px;margin:0 auto;padding:48px 24px}
-    h1{font-size:32px;margin:0 0 8px}
-    h2{font-size:20px;margin:32px 0 8px}
-    p{color:#334155;font-size:15px}
-    a{text-decoration:underline;text-underline-offset:2px}
-    .back{display:inline-block;margin-bottom:24px;font-size:14px;font-weight:600}
-  </style>
+  <Theme />
 </head>
 <body>
-  <div class="wrap">
-    <a class="back" href="/" style={`color:${c.primary}`}>&larr; Back to {site.siteName}</a>
-    <h1>Privacy Policy</h1>
+  <SiteHeader />
+
+  <main>
+  <section class="page-hero">
+    <div class="wrap narrow">
+      <a class="crumb" href="/">&larr; Back to {site.siteName}</a>
+      <h1>Privacy Policy</h1>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap narrow">
+      <div class="prose">
     <p><em>Last updated: March 2026</em></p>
     <h2>Who we are</h2>
     <p>This website is operated by Voice Recognition Australia ABN [to be confirmed]. We are committed to protecting the privacy of visitors to this website and users of our services.</p>
@@ -40,6 +45,12 @@ const year = new Date().getFullYear();
     <h2>Contact</h2>
     <p>For privacy-related enquiries, contact Voice Recognition Australia at <a href="https://www.voicerecognition.com.au">voicerecognition.com.au</a> or call 1300 255 900.</p>
     <p style="color:#94a3b8;font-size:13px;margin-top:48px">&copy; {year} {site.siteName}</p>
-  </div>
+  
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <SiteFooter />
 </body>
 </html>

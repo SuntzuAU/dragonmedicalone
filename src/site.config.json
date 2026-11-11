@@ -45,14 +45,14 @@
     "youtubeId": "WDUvwq0rlpY"
   },
   "colours": {
-    "primary": "#0c4a6e",
-    "primaryLight": "#0e7490",
+    "primary": "#061427",
+    "primaryLight": "#0c2038",
     "background": "#ffffff",
-    "neutral": "#f0f9ff",
-    "accent": "#f59e0b",
-    "accentHover": "#d97706",
-    "text": "#0f172a",
-    "muted": "#475569"
+    "neutral": "#f4f6f8",
+    "accent": "#a9dc74",
+    "accentHover": "#bfe895",
+    "text": "#0b1a2e",
+    "muted": "#4a5a70"
   },
   "stats": [
     {

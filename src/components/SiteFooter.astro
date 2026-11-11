@@ -1,0 +1,19 @@
+---
+import site from '../site.config.json';
+const year = new Date().getFullYear();
+const hasNote = Astro.slots.has('default');
+---
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo"><img src="/logo-dmo.png" alt="Dragon Medical One - presented in Australia by Voice Recognition Australia" width="215" height="36" style="height:36px" loading="lazy" /></span>
+        <span>&copy; {year} {site.siteName}</span>
+      </div>
+      <div class="footer-links">
+        {site.footerLinks?.map((l) => <a href={l.url}>{l.label}</a>)}
+      </div>
+    </div>
+    {hasNote && <div class="footer-disclaimer"><slot /></div>}
+  </div>
+</footer>

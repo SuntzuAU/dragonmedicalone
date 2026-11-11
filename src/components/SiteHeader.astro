@@ -1,0 +1,25 @@
+---
+import site from '../site.config.json';
+// overlay: true on the homepage, where the header floats over the hero photo.
+const { overlay = false, trialUrl = site.primaryCTA.url } = Astro.props;
+---
+<header class={overlay ? "site-header" : "site-header static"} id="site-header">
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="/"><img src="/logo-dmo.png" alt="Dragon Medical One - presented in Australia by Voice Recognition Australia" width="251" height="42" /></a>
+      <nav class="nav-links" aria-label="Primary">
+        {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
+      </nav>
+      <div class="nav-ctas">
+        {site.secondaryCTA?.text && <a class="btn btn-secondary" href={site.secondaryCTA.url}>{site.secondaryCTA.text}</a>}
+        <a class="btn btn-primary" href={trialUrl}>{site.primaryCTA.text}</a>
+        <button class="hamburger" aria-label="Open menu" onclick="var h=this.closest('header'),mn=h.querySelector('.mobile-nav'),o=mn.style.display==='block';mn.style.display=o?'none':'block';h.classList.toggle('open',!o)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
