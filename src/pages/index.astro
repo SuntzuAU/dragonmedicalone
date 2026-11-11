@@ -71,8 +71,8 @@ const comparisonRows = [
       .site-header.solid{background:rgba(6,20,39,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
       .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px}
       .logo{display:flex;background:#fff;border-radius:10px;padding:7px 12px;flex-shrink:0}
-      .logo img{height:34px;width:auto}
-      .nav-links{display:flex;gap:26px;font-size:15px;font-weight:500;color:rgba(255,255,255,.88)}
+      .logo img{height:42px;width:auto}
+      .nav-links{display:flex;gap:20px;font-size:14.5px;font-weight:500;color:rgba(255,255,255,.88)}
       .nav-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:5px}
       .nav-ctas{display:flex;gap:10px;align-items:center;flex-shrink:0}
       .btn{display:inline-block;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;text-align:center}
@@ -228,8 +228,16 @@ const comparisonRows = [
       /* MOBILE TRIAL BAR */
       .trial-bar{display:none}
 
+      @media(max-width:1280px){
+        .nav-ctas .btn-secondary{display:none}
+      }
+      @media(max-width:1040px){
+        .nav-links{display:none}
+        .hamburger{display:flex}
+        .site-header.open{background:var(--navy)}
+      }
       @media(max-width:1100px){
-        .nav-links{gap:16px;font-size:14px}
+        .nav-links{gap:14px;font-size:14px}
         .nav-ctas .btn-secondary{display:none}
         .hero-line{font-size:64px}
         .proof{grid-template-columns:repeat(3,1fr)}
@@ -258,8 +266,8 @@ const comparisonRows = [
         .wrap{padding:0 20px}
         section{padding:56px 0}
         .mobile-nav{margin:0 -20px;padding-left:20px;padding-right:20px}
-        .logo img{height:28px}
-        .nav-ctas .btn-primary{padding:9px 14px;font-size:13.5px}
+        .logo img{height:34px}
+        .nav-ctas .btn-primary{display:none}
         .hero{min-height:0}
         .hero-photo{object-position:74% 20%}
         .hero-shade{background:linear-gradient(0deg,rgba(6,20,39,1) 0%,rgba(6,20,39,.94) 52%,rgba(6,20,39,.5) 78%,rgba(6,20,39,.35) 100%)}
@@ -301,7 +309,7 @@ const comparisonRows = [
     <header class="site-header" id="site-header">
       <div class="wrap">
         <div class="nav">
-          <a class="logo" href="/"><img src="/logo.jpg" alt={site.siteName} width="162" height="34" /></a>
+          <a class="logo" href="/"><img src="/logo-dmo.png" alt="Dragon Medical One - presented in Australia by Voice Recognition Australia" width="251" height="42" /></a>
           <nav class="nav-links" aria-label="Primary">
             {site.navItems?.map((item) => <a href={item.url}>{item.label}</a>)}
           </nav>
@@ -609,7 +617,7 @@ const comparisonRows = [
       <div class="wrap">
         <div class="footer-inner">
           <div class="footer-brand">
-            <span class="logo"><img src="/logo.jpg" alt={site.siteName} width="133" height="28" style="height:28px" loading="lazy" /></span>
+            <span class="logo"><img src="/logo-dmo.png" alt="Dragon Medical One - presented in Australia by Voice Recognition Australia" width="215" height="36" style="height:36px" loading="lazy" /></span>
             <span>&copy; {year} {site.siteName}</span>
           </div>
           <div class="footer-links">
